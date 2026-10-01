@@ -1,0 +1,10 @@
+# HUANTIVE
+
+B2B massage and recovery product platform for distributors, retail chains, private-label brands, and e-commerce sellers.
+
+## Primary pages
+- /products: Product categories and market-ready platforms
+- /contact: Request a quote, catalog, or sample
+
+## Content status
+Product specifications, factory metrics, certifications, and contact details marked as pending are placeholders and must not be treated as verified facts.
