@@ -11,10 +11,10 @@ export function Footer() {
           <p>{site.tagline} for global B2B programs.</p>
         </div>
         <div><h3>Products</h3>{categories.slice(0, 4).map((category) => <Link key={category.slug} href={`/products#${category.slug}`}>{category.name}</Link>)}</div>
-        <div><h3>Capabilities</h3><Link href="/#oem">OEM & ODM</Link><Link href="/#manufacturing">Manufacturing</Link><Link href="/#quality">Quality</Link></div>
-        <div><h3>Connect</h3><Link href="/contact">Request a Quote</Link><Link href="/contact?intent=sample">Request Samples</Link><span>{site.email}</span></div>
+        <div><h3>Company</h3><Link href="/our-story">Our Story</Link><Link href="/#oem">OEM & ODM</Link><Link href="/#manufacturing">Manufacturing</Link><Link href="/#quality">Quality</Link></div>
+        <div><h3>Connect</h3><Link href="/contact">Request a Quote</Link><Link href="/contact?intent=sample">Request Samples</Link><span>{site.phone}</span><span>{site.email}</span></div>
       </div>
-      <div className="shell footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Business details pending confirmation</span></div>
+      <div className="shell footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>{site.manufacturer}</span></div>
     </footer>
   );
 }

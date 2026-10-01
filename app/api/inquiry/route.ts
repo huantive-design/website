@@ -18,6 +18,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "File is too large" }, { status: 413 });
   }
 
-  // Production email delivery will be enabled after recipient and provider credentials are supplied.
-  return NextResponse.json({ ok: true, delivery: "pending-configuration" }, { status: 202 });
+  return NextResponse.json(
+    { error: "Inquiry email delivery is not configured yet. Please contact the factory by phone." },
+    { status: 503 },
+  );
 }

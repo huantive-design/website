@@ -30,9 +30,9 @@ export function InquiryForm({ compact = false, defaultProduct = "" }: { compact?
       <label className="file-field">Requirement file (optional)<input type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg" /></label>
       <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
       <button className="button button-primary" disabled={state === "sending"}>{state === "sending" ? "Sending..." : "Submit inquiry"}</button>
-      {state === "success" && <p className="form-status success">Thank you. Your inquiry has been recorded for follow-up.</p>}
-      {state === "error" && <p className="form-status error">Submission could not be completed. Please check the fields and try again.</p>}
-      <p className="form-note">Form delivery email is pending configuration before production launch.</p>
+      {state === "success" && <p className="form-status success">Thank you. Your inquiry has been delivered.</p>}
+      {state === "error" && <p className="form-status error">Email delivery is not connected yet. For urgent requests, call +86 577 6305 0999.</p>}
+      <p className="form-note">Online inquiry delivery will be enabled after the sales mailbox is confirmed.</p>
     </form>
   );
 }

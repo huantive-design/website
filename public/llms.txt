@@ -3,8 +3,9 @@
 B2B massage and recovery product platform for distributors, retail chains, private-label brands, and e-commerce sellers.
 
 ## Primary pages
-- /products: Product categories and market-ready platforms
-- /contact: Request a quote, catalog, or sample
+- /products: 22 product pages mapped to massage-device category terms and buyer intent
+- /our-story: Company history, real manufacturing images, capabilities and compliance scope
+- /contact: Request a quote, catalog or sample
 
 ## Content status
-Product specifications, factory metrics, certifications, and contact details marked as pending are placeholders and must not be treated as verified facts.
+Product images and company photographs are supplied business assets. Technical specifications, MOQ, lead time and compliance applicability are confirmed against each selected model before quotation. The sales email is pending final configuration.

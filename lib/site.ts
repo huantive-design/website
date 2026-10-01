@@ -1,11 +1,14 @@
 export const site = {
   name: "HUANTIVE",
-  tagline: "Professional Massage & Recovery Solutions",
+  legalName: "Huangtai & Wanyang Group",
+  manufacturer: "Wenzhou Wanyang Electronic Technology Co., Ltd.",
+  tagline: "Massage Device Manufacturing & OEM Solutions",
   description:
-    "B2B massage and recovery device solutions for distributors, retailers, brands, and e-commerce sellers.",
-  email: "To be provided",
-  phone: "To be provided",
-  responseTime: "Response within 24 hours",
+    "China-based B2B manufacturer of massage and recovery devices for distributors, retailers, private-label brands, and e-commerce programs in Europe and North America.",
+  email: "Sales email to be confirmed",
+  phone: "+86 577 6305 0999",
+  address: "No. 952-992, Xingrong Road, Wanquan Town, Pingyang County, Wenzhou, Zhejiang 325409, China",
+  responseTime: "Response target: within 24 hours",
 };
 
 export const navigation = [
@@ -13,7 +16,5 @@ export const navigation = [
   { label: "OEM & ODM", href: "/#oem" },
   { label: "Manufacturing", href: "/#manufacturing" },
   { label: "Quality", href: "/#quality" },
-  { label: "Solutions", href: "/#solutions" },
-  { label: "About", href: "/#about" },
-  { label: "Resources", href: "/#resources" },
+  { label: "Our Story", href: "/our-story" },
 ];
