@@ -5,93 +5,87 @@ import { ProductCard } from "@/components/ProductCard";
 import { categories, products } from "@/lib/products";
 import { organizationSchema } from "@/lib/schema";
 
-const process = ["Inquiry", "Product selection", "Customization", "Sampling", "Testing", "Production", "Quality control", "Delivery"];
-const capabilities = ["Logo & identity", "Color & finish", "Packaging", "Functions", "Accessories", "New development"];
+const process = ["Brief", "Product fit", "Customization", "Sample", "Testing", "Production", "Inspection", "Delivery"];
+const capabilities = ["Industrial design", "Color & finish", "Logo & identity", "Packaging", "Function development", "Accessory sets"];
+const categoryVisuals = [
+  { ...categories[0], image: "/products/3/image-1.jpg", copy: "Kneading, heat and wearable formats" },
+  { ...categories[1], image: "/products/8/image-1.jpg", copy: "Compression and enclosed recovery systems" },
+  { ...categories[2], image: "/products/11/image-1.jpg", copy: "Percussion, heat and cooling concepts" },
+  { ...categories[3], image: "/products/16/image-1.jpg", copy: "Compact pillows and full-back seat pads" },
+  { ...categories[4], image: "/products/21/image-1.jpg", copy: "Hand, waist, ankle and facial devices" },
+];
+const spotlight = [products[10], products[7], products[18]];
 
 export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema()) }} />
-      <section className="hero">
-        <div className="hero-media" aria-hidden="true">
-          <Image src="/company/showroom.jpg" alt="" fill priority sizes="100vw" />
-          <div className="hero-media-wash" />
-        </div>
-        <div className="shell hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">China massage device manufacturer</p>
-            <h1>Built in-house.<br />Engineered to scale.</h1>
-            <p className="hero-lede">OEM and ODM massage devices for importers, distributors, retail chains, private-label brands and high-volume e-commerce programs across Europe and North America.</p>
-            <div className="button-row"><Link className="button button-primary" href="/contact">Request a Quote</Link><Link className="button button-secondary" href="/contact?intent=catalog">Explore Capabilities</Link></div>
-            <div className="hero-notes"><span>OEM & ODM</span><span>Sample support</span><span>Global configurations</span></div>
+
+      <section className="editorial-hero">
+        <div className="hero-wordmark" aria-hidden="true">RECOVERY</div>
+        <div className="shell editorial-hero-grid">
+          <div className="editorial-copy">
+            <p className="eyebrow">Massage device manufacturer · China</p>
+            <h1>Recovery products.<br /><em>Built to become brands.</em></h1>
+            <p>OEM and ODM massage devices developed for distributors, retail chains, private-label brands and e-commerce operators across Europe and North America.</p>
+            <div className="button-row"><Link className="button button-primary" href="/contact">Start a project</Link><Link className="button button-secondary" href="/products">Explore products</Link></div>
           </div>
-          <div className="hero-stage" aria-label="Massage and recovery product family">
-            <div className="stage-caption"><span>Actual product showroom</span><strong>22 product platforms online</strong></div>
+          <div className="editorial-product">
+            <div className="hero-halo" />
+            <Image src="/products/11/image-1.jpg" alt="Hot and cold massage gun available for OEM development" fill priority sizes="(max-width: 980px) 100vw, 56vw" />
+            <div className="hero-product-note"><span>Featured platform</span><strong>Hot & Cold Massage Gun</strong><Link href="/products/hot-cold-massage-gun">View product →</Link></div>
           </div>
         </div>
-        <div className="scroll-cue" aria-hidden="true"><span />Discover</div>
+        <div className="hero-index"><span>01</span><i /><span>06</span></div>
       </section>
 
-      <section className="proof-strip">
-        <div className="shell proof-grid">
-          {[["18+","Years experience"],["15+","R&D engineers"],["260+","Team members"],["3M","Annual capacity"],["34,000+ m²","Factory space"]].map(([value,item]) => <div key={item}><strong>{value}</strong><span>{item}</span><small>Group profile data</small></div>)}
+      <section className="credibility-rail">
+        <div className="shell credibility-grid">
+          {[["18+","Years in massage devices"],["15+","R&D engineers"],["260+","Team members"],["34,000+ m²","Combined factory space"],["3M","Annual device capacity"]].map(([value,label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}
         </div>
       </section>
 
-      <section className="section shell" data-reveal>
-        <div className="section-heading"><div><p className="eyebrow">Product architecture</p><h2>Find the right platform for your market.</h2></div><p>Start with a category, then compare market-ready configurations, customization scope, MOQ, and compliance information.</p></div>
-        <div className="category-grid">{categories.map((category, index) => <Link id={category.slug} key={category.slug} className={`category-card category-${index + 1}`} href="/products"><span>0{index + 1}</span><div className="category-art"><i /><b /></div><h3>{category.name}</h3><p>{category.note}</p><strong>Explore category →</strong></Link>)}</div>
+      <section className="section source-section shell" data-reveal>
+        <div className="source-header"><div><p className="eyebrow">Source by category</p><h2>Built around the way<br />your customers recover.</h2></div><p>Explore verified product imagery and select a platform. Technical specifications, MOQ and compliance scope are confirmed against the exact model you quote.</p></div>
+        <div className="source-grid">{categoryVisuals.map((category, index) => <Link className={`source-card source-card-${index + 1}`} href={`/products#${category.slug}`} key={category.slug}><Image src={category.image} alt={category.name} fill sizes="(max-width: 720px) 100vw, 33vw" /><div className="source-card-overlay" /><div className="source-card-copy"><span>0{index + 1}</span><h3>{category.name}</h3><p>{category.copy}</p><b>Explore →</b></div></Link>)}</div>
       </section>
 
-      <section className="section section-muted">
-        <div className="shell">
-          <div className="section-heading"><div><p className="eyebrow">Market-ready products</p><h2>Built to shorten your sourcing cycle.</h2></div><Link className="text-link" href="/products">View all platforms →</Link></div>
-          <div className="product-grid" data-reveal>{products.slice(0, 6).map((product, index) => <ProductCard key={product.slug} product={product} index={index} />)}</div>
-        </div>
+      <section className="spotlight-section">
+        <div className="shell spotlight-head"><div><p className="eyebrow eyebrow-light">Product spotlight</p><h2>Formats buyers already understand.<br /><em>Execution they can trust.</em></h2></div><Link href="/products">View all 22 products →</Link></div>
+        <div className="spotlight-track">{spotlight.map((product, index) => <article key={product.slug} className="spotlight-card"><div className="spotlight-image"><Image src={product.images[0]} alt={product.name} fill sizes="75vw" /></div><div className="spotlight-copy"><span>0{index + 1}</span><h3>{product.name}</h3><p>{product.summary}</p><Link href={`/products/${product.slug}`}>Explore platform →</Link></div></article>)}</div>
       </section>
 
-      <section id="oem" className="section dark-section">
-        <div className="shell split-grid">
-          <div className="customization-art" data-reveal>
-            <Image src="/images/oem-components.png" alt="Original unbranded component concept illustrating OEM development" fill sizes="(max-width: 980px) 100vw, 52vw" />
-            <div className="media-badge">Concept visualization · No third-party assets</div>
-          </div>
-          <div data-reveal><p className="eyebrow eyebrow-light">OEM & ODM</p><h2>Your product.<br />Your brand.</h2><p>Build a differentiated line through configurable identity, finish, packaging, accessories, and feature development.</p><div className="capability-grid">{capabilities.map((item) => <span key={item}>{item}</span>)}</div><Link className="button button-primary" href="/contact?intent=oem">Start your project</Link></div>
-        </div>
+      <section id="oem" className="engineering-section">
+        <div className="engineering-media"><Image src="/images/oem-components.png" alt="Original component concept illustrating massage device OEM development" fill sizes="100vw" /></div>
+        <div className="shell engineering-grid"><div /><div className="engineering-copy" data-reveal><p className="eyebrow eyebrow-light">OEM & ODM</p><h2>From an existing platform<br />to your next product.</h2><p>Choose a proven product direction or develop a differentiated program around your target market, channel and price position.</p><div className="capability-grid">{capabilities.map((item) => <span key={item}>{item}</span>)}</div><Link className="button button-primary" href="/contact?intent=oem">Discuss your brief</Link></div></div>
       </section>
 
-      <section className="section shell">
-        <div className="section-heading"><div><p className="eyebrow">Development process</p><h2>A clear path from brief to delivery.</h2></div><p>Each milestone is designed to give buyers visibility before the next commitment.</p></div>
-        <ol className="process-list" data-reveal>{process.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><strong>{step}</strong></li>)}</ol>
+      <section id="manufacturing" className="factory-story">
+        <Image src="/company/factory-campus.png" alt="Huangtai and Wanyang Group manufacturing campus" fill sizes="100vw" />
+        <div className="factory-story-shade" />
+        <div className="shell factory-story-copy" data-reveal><p className="eyebrow eyebrow-light">Integrated manufacturing</p><h2>Development, production<br />and quality control.</h2><p>Three production bases and more than 34,000 m² of combined factory space support repeatable massage-device programs for international buyers.</p><div className="factory-facts"><span><b>3M</b>Approx. annual capacity</span><span><b>15+</b>R&D engineers</span><span><b>260+</b>Team members</span></div><Link className="button button-light" href="/our-story">Explore our story</Link></div>
       </section>
 
-      <section id="manufacturing" className="section manufacturing-section">
-        <div className="shell split-grid reverse-mobile">
-          <div data-reveal><p className="eyebrow">Integrated manufacturing</p><h2>Development, production and quality control under one group.</h2><p className="large-copy">Three production bases and more than 34,000 m² of combined factory space support massage-device development and repeatable supply.</p><div className="fact-list"><div><strong>Annual massage-device capacity</strong><span>Approx. 3 million sets</span></div><div><strong>R&D team</strong><span>15+ engineers</span></div><div><strong>Workforce</strong><span>260+ team members</span></div></div><Link className="text-link" href="/our-story">Explore our manufacturing story →</Link></div>
-          <div className="factory-frame" data-reveal><Image src="/company/factory-campus.png" alt="Huangtai and Wanyang Group manufacturing campus" fill sizes="(max-width: 980px) 100vw, 52vw" /><span>ACTUAL MANUFACTURING CAMPUS</span></div>
-        </div>
+      <section className="section process-section shell">
+        <div className="source-header"><div><p className="eyebrow">One accountable process</p><h2>Clear from brief<br />to delivery.</h2></div><p>Every milestone is visible before the next commitment, helping buyers control product fit, customization, testing and delivery risk.</p></div>
+        <ol className="process-list process-editorial">{process.map((step,index) => <li key={step}><span>{String(index + 1).padStart(2,"0")}</span><strong>{step}</strong></li>)}</ol>
       </section>
 
-      <section id="quality" className="section quality-section">
-        <div className="shell quality-grid">
-          <div><p className="eyebrow eyebrow-light">Quality & compliance</p><h2>Evidence matched to each quoted model.</h2><p>Selected products have supporting EU LVD, UK electrical safety, RoHS, REACH, FCC and UL/CSA test documentation. Applicability is confirmed per model and destination market.</p><Link className="text-link" href="/our-story">Review compliance scope →</Link></div>
-          <div className="qc-grid">{[["IQC","Incoming materials"],["IPQC","In-process checks"],["FQC","Final inspection"],["Docs","Model-specific files"]].map(([code,label]) => <div key={code}><strong>{code}</strong><span>{label}</span><small>Scope confirmed per order</small></div>)}</div>
-        </div>
+      <section id="quality" className="evidence-section">
+        <div className="shell evidence-grid"><div><p className="eyebrow eyebrow-light">Quality evidence</p><h2>Documentation matched<br />to the quoted model.</h2><p>Selected products have supporting EU LVD, UK electrical safety, RoHS, REACH, FCC and UL/CSA test documentation. Applicability is confirmed by model and destination market.</p><Link href="/our-story">Review compliance scope →</Link></div><div className="evidence-cards">{[["IQC","Incoming materials"],["IPQC","In-process control"],["FQC","Final inspection"],["DOCS","Model-specific files"]].map(([code,label]) => <article key={code}><strong>{code}</strong><span>{label}</span><small>Confirmed per order</small></article>)}</div></div>
       </section>
 
-      <section id="solutions" className="section shell">
-        <div className="section-heading"><div><p className="eyebrow">Global solutions</p><h2>One platform, different buying models.</h2></div></div>
-        <div className="solution-grid">{[["Distributors","Range planning, territory support, and scalable supply."],["Retail chains","Market-ready products, packaging, and launch coordination."],["Private-label brands","Identity, functions, sampling, and new development."],["E-commerce sellers","Fast evaluation, packaging, and repeatable fulfillment."]].map(([title,copy], index) => <article key={title}><span>0{index+1}</span><h3>{title}</h3><p>{copy}</p><Link href={`/contact?intent=${title.toLowerCase().replaceAll(" ", "-")}`}>Discuss your program →</Link></article>)}</div>
+      <section className="section selected-products shell">
+        <div className="source-header"><div><p className="eyebrow">Selected product platforms</p><h2>Start with a proven form.<br />Make it yours.</h2></div><Link href="/products">Browse all products →</Link></div>
+        <div className="product-grid">{products.slice(0,6).map((product,index) => <ProductCard key={product.slug} product={product} index={index} />)}</div>
       </section>
 
-      <section className="section case-section shell">
-        <div className="section-heading"><div><p className="eyebrow">Inside the group</p><h2>Real places. Real processes.</h2></div><p>Review our actual workshop, inspection area and showroom before starting a sourcing conversation.</p></div>
-        <div className="case-grid">{[["/company/cutting-workshop.jpg","Material cutting"],["/company/inspection-area.jpg","Inspection area"],["/company/showroom.jpg","Product showroom"]].map(([image,title]) => <article key={title}><div className="case-art real-case"><Image src={image} alt={title} fill sizes="(max-width: 640px) 50vw, 33vw" /></div><p>Huangtai & Wanyang Group</p><h3>{title}</h3></article>)}</div>
+      <section className="real-proof shell">
+        <figure><Image src="/company/cutting-workshop.jpg" alt="Material cutting in the massage device workshop" fill sizes="50vw" /><figcaption><span>01</span>Material preparation</figcaption></figure>
+        <figure><Image src="/company/inspection-area.jpg" alt="Inspection area in the massage device factory" fill sizes="50vw" /><figcaption><span>02</span>In-process inspection</figcaption></figure>
       </section>
 
-      <section className="section final-rfq">
-        <div className="shell rfq-layout"><div><p className="eyebrow eyebrow-light">Start a conversation</p><h2>Looking for your next massage product?</h2><p>Share the category, estimated quantity, target market and customization needs. Until the sales mailbox is connected, use the published factory phone for urgent requests.</p><div className="rfq-badges"><span>Sample available</span><span>OEM & ODM</span><span>24h response target</span></div></div><InquiryForm compact /></div>
-      </section>
+      <section className="final-rfq editorial-rfq"><div className="shell rfq-layout"><div><p className="eyebrow eyebrow-light">Build your next range</p><h2>Tell us what your market needs.</h2><p>Share the product direction, estimated quantity, destination market and customization scope. Until the sales mailbox is connected, urgent requests can use the published factory phone.</p><div className="rfq-badges"><span>Sample support</span><span>OEM & ODM</span><span>Europe & North America</span></div></div><InquiryForm compact /></div></section>
     </>
   );
 }

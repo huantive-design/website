@@ -11,7 +11,7 @@ export function Header() {
     <>
       <div className="utility-bar">
         <div className="shell utility-inner">
-          <span>OEM & ODM Available</span><span>Global Supply</span><span>Sample Support</span><span>{site.responseTime}</span>
+          <span>18+ Years in Massage Devices</span><span>3 Production Bases</span><span>OEM & ODM</span><span>{site.responseTime}</span>
         </div>
       </div>
       <header className="site-header">
@@ -25,7 +25,7 @@ export function Header() {
           </button>
           <nav id="main-navigation" className={open ? "nav open" : "nav"}>
             {navigation.map((item) => <Link key={item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}</Link>)}
-            <Link className="nav-catalog" href="/contact?intent=catalog" onClick={() => setOpen(false)}>Get Catalog</Link>
+            <Link className="nav-catalog" href="/products" onClick={() => setOpen(false)}>View Catalog</Link>
             <Link className="button button-primary nav-quote" href="/contact" onClick={() => setOpen(false)}>Request a Quote</Link>
           </nav>
         </div>

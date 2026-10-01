@@ -13,7 +13,6 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <p className="card-kicker">{product.category} · B2B Manufacturer</p>
         <h3><Link href={`/products/${product.slug}`}>{product.name}</Link></h3>
         <p>{product.summary}</p>
-        <p className="keyword-note">Primary buyer intent: {product.primaryKeyword}</p>
         <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         <div className="card-actions"><Link href={`/products/${product.slug}`}>View details</Link><Link href={`/contact?product=${product.slug}`}>Get quote →</Link></div>
       </div>
