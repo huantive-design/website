@@ -12,9 +12,15 @@ export const site = {
 };
 
 export const navigation = [
-  { label: "Products", href: "/products" },
-  { label: "OEM & ODM", href: "/#oem" },
+  { label: "Products", href: "/products", hasMega: true },
+  { label: "OEM & ODM", href: "/oem-odm" },
   { label: "Manufacturing", href: "/#manufacturing" },
   { label: "Quality", href: "/#quality" },
   { label: "Our Story", href: "/our-story" },
+];
+
+export const megaMenuSolutions = [
+  { label: "Private label programs", href: "/oem-odm", note: "Launch under your own brand" },
+  { label: "Wholesale & distribution", href: "/contact?intent=wholesale", note: "Volume supply by market" },
+  { label: "Sample evaluation", href: "/contact?intent=sample", note: "Test before committing" },
 ];
