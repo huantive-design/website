@@ -9,6 +9,7 @@ import { megaMenuSolutions, navigation, site } from "@/lib/site";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(false);
+  const [banner, setBanner] = useState(true);
   const close = () => { setOpen(false); setMega(false); };
   // Hover-to-open applies only to pointer-precise desktop widths; on mobile the
   // arrow button is the single toggle, otherwise hover and click cancel out.
@@ -16,26 +17,26 @@ export function Header() {
 
   return (
     <>
-      <div className="utility-bar">
-        <div className="shell utility-inner">
-          <span>18+ Years in Massage Devices</span><span>3 Production Bases</span><span>OEM & ODM</span><span>{site.responseTime}</span>
+      {banner && (
+        <div className="promo-bar">
+          <div className="shell promo-inner">
+            <p>OEM &amp; ODM massage device programs for Europe and North America — <Link href="/contact">request a quote</Link></p>
+            <button type="button" onClick={() => setBanner(false)} aria-label="Dismiss announcement">×</button>
+          </div>
         </div>
-      </div>
+      )}
       <header className="site-header" onMouseLeave={() => { if (canHover()) setMega(false); }}>
         <div className="shell header-inner">
           <Link className="brand" href="/" aria-label={`${site.name} home`} onClick={close}>
             <span className="brand-mark">H</span>{site.name}
           </Link>
-          <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
-            <span /> <span />
-            <span className="sr-only">Toggle navigation</span>
-          </button>
+
           <nav id="main-navigation" className={open ? "nav open" : "nav"}>
             {navigation.map((item) =>
               item.hasMega ? (
                 <div className="nav-parent" key={item.label} onMouseEnter={() => { if (canHover()) setMega(true); }}>
                   <Link href={item.href} onClick={close}>{item.label}</Link>
-                  <button className="nav-expand" onClick={() => setMega(!mega)} aria-expanded={mega} aria-controls="product-mega">
+                  <button className="nav-expand" onClick={() => setMega(!mega)} onKeyDown={(event) => { if (event.key === "Escape") setMega(false); }} aria-expanded={mega} aria-controls="product-mega">
                     <span className="sr-only">Toggle product categories</span>
                     <i aria-hidden="true" />
                   </button>
@@ -44,7 +45,7 @@ export function Header() {
                 <Link key={item.label} href={item.href} onClick={close}>{item.label}</Link>
               ),
             )}
-            <Link className="button button-primary nav-quote" href="/contact" onClick={close}>Request a Quote</Link>
+            <Link className="nav-mobile-cta button button-primary" href="/contact" onClick={close}>Request a Quote</Link>
 
             <div id="product-mega" className={mega ? "mega open" : "mega"}>
               <div className="shell mega-inner">
@@ -69,6 +70,14 @@ export function Header() {
               </div>
             </div>
           </nav>
+
+          <div className="header-actions">
+            <Link className="header-quote" href="/contact" onClick={close}>Request a Quote</Link>
+            <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
+              <span /> <span />
+              <span className="sr-only">Toggle navigation</span>
+            </button>
+          </div>
         </div>
       </header>
     </>
