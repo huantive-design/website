@@ -17,6 +17,7 @@ export const navigation = [
   { label: "Manufacturing", href: "/#manufacturing" },
   { label: "Quality", href: "/#quality" },
   { label: "Our Story", href: "/our-story" },
+  { label: "Blog", href: "/blog" },
 ];
 
 export const megaMenuSolutions = [

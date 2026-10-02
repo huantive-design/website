@@ -81,3 +81,34 @@ export function itemListSchema(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+
+export const blogFaqSchema = categoryFaqSchema;
+
+export function articleSchema(post: {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  cover: string;
+  published: string;
+  updated: string;
+  lang: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    image: `${base}${post.cover}`,
+    inLanguage: post.lang,
+    datePublished: post.published,
+    dateModified: post.updated,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${base}/blog/${post.slug}` },
+    author: { "@type": "Organization", name: site.name, url: base },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: base,
+    },
+  };
+}
