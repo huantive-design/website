@@ -1,6 +1,7 @@
 import { site } from "./site";
+import { siteUrl } from "./url";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const base = siteUrl;
 
 export function organizationSchema() {
   return {
