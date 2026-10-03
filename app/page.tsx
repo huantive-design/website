@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { InquiryForm } from "@/components/InquiryForm";
+import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
 import { categories, products } from "@/lib/products";
 import { categoryFaqSchema, organizationSchema, websiteSchema } from "@/lib/schema";
@@ -36,9 +37,11 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryFaqSchema(homeFaqs)) }} />
 
       <section className="tb-hero">
-        <div className="tb-hero-media">
-          <Image src="/products/11/image-1.jpg" alt="Hot and cold massage gun manufactured for OEM programs" fill priority sizes="100vw" />
-        </div>
+        <HeroVideo
+          src="/video/hero-massage-devices.mp4"
+          poster="/video/hero-poster.jpg"
+          posterAlt="Massage and recovery devices manufactured for OEM and ODM programs"
+        />
         <div className="shell tb-hero-inner">
           <div className="tb-hero-copy">
             <p className="tb-tag">OEM &amp; ODM manufacturing</p>

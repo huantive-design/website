@@ -141,3 +141,18 @@ body{background:var(--tb-bg)}
   .post-cta{padding:26px 22px}
   .post-cta-actions a{width:100%;text-align:center}
 }
+
+/* Hero background video — matches the previous still-image framing exactly */
+.tb-hero-media{position:absolute;inset:0;overflow:hidden;background:var(--tb-soft)}
+/* Poster is pre-cropped to the 1620x1080 content area, so it needs no scaling. */
+.tb-hero-poster{object-fit:cover;object-position:72% center;opacity:1;transition:opacity .6s ease;z-index:1}
+.tb-hero-poster.is-hidden{opacity:0}
+.tb-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;opacity:0;transition:opacity .6s ease;z-index:0;pointer-events:none;border:0;/* Source has 150px pillarbox bars each side (1620x1080 content in a 1920x1080 frame). The exact fit is 1.1852; 1.22 adds margin so fractional DPR or sub-pixel rounding cannot expose a black edge. */transform:scale(1.22)}
+.tb-hero-video.is-visible{opacity:1;z-index:2}
+@media(max-width:980px){
+  .tb-hero-poster,.tb-hero-video{object-position:78% center}
+}
+@media(prefers-reduced-motion:reduce){
+  .tb-hero-video{display:none}
+  .tb-hero-poster.is-hidden{opacity:1}
+}
