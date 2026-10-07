@@ -69,7 +69,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <Link className="button button-primary" href={`/contact?category=${category.slug}`}>Request a quote</Link>
             <Link className="button button-light" href={`/contact?intent=sample&category=${category.slug}`}>Request a sample</Link>
           </div>
-          <p className="category-source">Alibaba.com category term: <b>{category.sourceTerm}</b></p>
         </div>
       </section>
 

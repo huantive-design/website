@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
 import { getProduct, getCategory, products, productsByCategory } from "@/lib/products";
+import { site } from "@/lib/site";
 import { breadcrumbSchema, productSchema } from "@/lib/schema";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
@@ -52,9 +53,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           <dl className="quick-specs">
             <div><dt>Product category</dt><dd><Link href={`/products/category/${product.categorySlug}`}>{product.category}</Link></dd></div>
-            <div><dt>Alibaba.com category term</dt><dd>{product.sourceTerm}</dd></div>
-            <div><dt>MOQ</dt><dd>Confirm by quotation</dd></div>
-            <div><dt>Specifications</dt><dd>Confirm by selected model</dd></div>
+            <div><dt>Business model</dt><dd>OEM / ODM / private label</dd></div>
+            <div><dt>Markets served</dt><dd>Europe & North America</dd></div>
+            <div><dt>Sales enquiries</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
           </dl>
           <div className="button-row">
             <Link className="button button-primary" href={`/contact?product=${product.slug}`}>Request a Quote</Link>

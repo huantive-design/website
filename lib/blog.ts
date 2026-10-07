@@ -1457,7 +1457,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What we can and cannot confirm about our own platforms",
         paragraphs: [
-          "Our air compression leg massager platform uses wearable calf sleeves with an external control panel. Pressure modes are confirmed per model rather than published as a single figure, because chamber configuration and pump specification change by build.",
+          "Our air compression leg massager platform uses wearable calf sleeves with an external control panel. Pressure modes are specified for each build rather than published as a single figure, because chamber configuration and pump specification differ by model.",
           "We would rather give you a measured figure for the exact build you are quoting than publish a headline number that does not match what ships. Ask for the specification sheet against your target market and channel.",
         ],
       },
@@ -1578,7 +1578,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What we confirm per build",
         paragraphs: [
-          "Our wearable neck platform is an open-neck form factor designed as a compact retail concept. Functions are confirmed per quotation rather than fixed, because the mechanism mix drives both cost and the claim set you can support.",
+          "Our wearable neck platform is an open-neck form factor designed as a compact retail concept. Functions are specified per programme rather than fixed, because the mechanism mix drives both cost and the claim set you can support.",
           "Tell us the claim boundary you need to stay inside and the price point you are targeting, and we will specify the mechanism accordingly rather than the other way round.",
         ],
       },

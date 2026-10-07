@@ -416,3 +416,7 @@ body{background:var(--tb-bg)}
   .post-links ul{grid-template-columns:1fr;gap:12px}
   .post-links a{font-size:16px}
 }
+/* Direct contact line on the quotation page: definite, no hedging. */
+.contact-direct{margin:22px 0 0;font:500 15px/1.85 "Manrope",sans-serif;color:rgba(255,255,255,.82)}
+.contact-direct a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);text-decoration:none}
+.contact-direct a:hover{border-bottom-color:#fff}
