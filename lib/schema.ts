@@ -33,7 +33,23 @@ export function websiteSchema() {
   };
 }
 
-export function productSchema(name: string, description: string) {
+export function productSchema(
+  name: string,
+  description: string,
+  options?: {
+    model?: string;
+    colors?: string;
+    weight?: string;
+    width?: string;
+    images?: string[];
+    category?: string;
+    url?: string;
+  },
+) {
+  const properties: { "@type": "PropertyValue"; name: string; value: string }[] = [];
+  if (options?.colors) properties.push({ "@type": "PropertyValue", name: "Available colours", value: options.colors });
+  if (options?.weight) properties.push({ "@type": "PropertyValue", name: "Net / gross weight", value: options.weight });
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -41,6 +57,11 @@ export function productSchema(name: string, description: string) {
     description,
     brand: { "@type": "Brand", name: site.name },
     manufacturer: { "@type": "Organization", name: site.legalName },
+    ...(options?.model ? { model: options.model, sku: options.model, mpn: options.model } : {}),
+    ...(options?.category ? { category: options.category } : {}),
+    ...(options?.url ? { url: `${base}${options.url}` } : {}),
+    ...(options?.images?.length ? { image: options.images.map((path) => `${base}${path}`) } : {}),
+    ...(properties.length ? { additionalProperty: properties } : {}),
   };
 }
 
