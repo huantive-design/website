@@ -9,33 +9,38 @@ import { articleSchema, blogFaqSchema, breadcrumbSchema } from "@/lib/schema";
 type PostPageProps = { params: Promise<{ slug: string }> };
 
 // Section headings follow the article language so non-English pages do not mix locales.
-const labels: Record<string, { faq: string; sources: string; disclaimer: string }> = {
+const labels: Record<string, { faq: string; links: string; sources: string; disclaimer: string }> = {
   en: {
     faq: "Frequently asked questions",
+    links: "Related reading and products",
     sources: "Sources",
     disclaimer:
       "This article is general information, not medical advice. A therapeutic massager is intended to relieve minor muscle aches and pains; it does not diagnose, treat, cure or prevent any disease. Consult a qualified healthcare professional about your individual circumstances.",
   },
   de: {
     faq: "Haeufige Fragen",
+    links: "Weitere Artikel und Produkte",
     sources: "Quellen",
     disclaimer:
       "Dieser Beitrag dient der allgemeinen Information und ersetzt keine medizinische Beratung. Ein Massagegeraet dient der Linderung leichter Muskelbeschwerden; es diagnostiziert, behandelt oder heilt keine Krankheiten. Wenden Sie sich bei gesundheitlichen Fragen an qualifiziertes Fachpersonal.",
   },
   fr: {
     faq: "Questions frequentes",
+    links: "A lire aussi et produits",
     sources: "Sources",
     disclaimer:
       "Cet article fournit une information generale et ne constitue pas un avis medical. Un appareil de massage vise a soulager des douleurs musculaires legeres ; il ne diagnostique, ne traite ni ne guerit aucune maladie. Consultez un professionnel de sante qualifie pour votre situation personnelle.",
   },
   it: {
     faq: "Domande frequenti",
+    links: "Da leggere e prodotti",
     sources: "Fonti",
     disclaimer:
       "Questo articolo ha finalita informative e non costituisce un parere medico. Un dispositivo di massaggio e destinato ad alleviare lievi fastidi muscolari; non diagnostica, cura ne previene alcuna malattia. Per la propria situazione consultare un professionista sanitario qualificato.",
   },
   es: {
     faq: "Preguntas frecuentes",
+    links: "Lecturas y productos",
     sources: "Fuentes",
     disclaimer:
       "Este articulo ofrece informacion general y no constituye consejo medico. Un dispositivo de masaje esta destinado a aliviar molestias musculares leves; no diagnostica, trata ni cura ninguna enfermedad. Consulte a un profesional sanitario cualificado sobre su caso concreto.",
@@ -113,6 +118,17 @@ export default async function BlogPostPage({ params }: PostPageProps) {
             <details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>
           ))}
         </section>
+
+        {post.internalLinks?.length ? (
+          <nav className="post-links" aria-label={labels[post.lang]?.links ?? labels.en.links}>
+            <h2>{labels[post.lang]?.links ?? labels.en.links}</h2>
+            <ul>
+              {post.internalLinks.map((link) => (
+                <li key={link.href}><Link href={link.href}>{link.label}</Link></li>
+              ))}
+            </ul>
+          </nav>
+        ) : null}
 
         <aside className="post-cta">
           <p>{post.cta.text}</p>

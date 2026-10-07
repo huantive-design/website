@@ -271,7 +271,10 @@ body{background:var(--tb-bg)}
 @media (max-width:980px){
   .tb-hero .tb-hero-inner{padding-top:18px;padding-bottom:4px}
   .tb-hero-copy h1{margin-top:6px;margin-bottom:4px}
-  .tb-hero-copy > p{margin-bottom:8px}
+  /* Must match the specificity of .tb-hero-copy>p:not(.tb-tag) above, which
+     otherwise keeps its 28px bottom margin and pushes the second CTA under the
+     fixed mobile inquiry bar. */
+  .tb-hero-copy>p:not(.tb-tag){margin-bottom:8px}
   .tb-hero-actions{gap:8px}
 }
 
@@ -324,16 +327,20 @@ body{background:var(--tb-bg)}
 .wa-float:focus-visible{outline:3px solid #0f5132;outline-offset:2px}
 
 @media (max-width:980px){
-  /* Sit above the fixed mobile inquiry bar and stay thumb-reachable. */
+  /* The hero CTAs span the full content width, so a bottom-anchored badge will
+     always overlap them. Keep it vertically centred like desktop: it then rests
+     over the decorative video area instead of any interactive element, and
+     clears the fixed inquiry bar entirely. */
   .wa-float{
-    height:50px;
-    max-width:50px;
-    border-radius:8px 0 0 8px;
-    top:auto;
-    bottom:92px;
-    transform:none;
+    height:46px;
+    max-width:46px;
+    border-radius:50% 0 0 50%;
+    top:50%;
+    bottom:auto;
+    right:0;
+    transform:translateY(-50%);
   }
-  .wa-float-icon{flex-basis:50px;width:50px;height:50px}
+  .wa-float-icon{flex-basis:46px;width:46px;height:46px}
   .wa-float-text{display:none}
 }
 @media (prefers-reduced-motion:reduce){
@@ -394,3 +401,18 @@ body{background:var(--tb-bg)}
 .rfq-form select:focus{outline:2px solid var(--tb-ink);outline-offset:1px}
 .form-status a,.form-note a{text-decoration:underline;color:inherit}
 .form-note{font-size:12px;line-height:1.6;color:var(--tb-muted)}
+
+/* Internal link block on blog articles: placed after the FAQ, where decision
+   intent is highest, before the enquiry CTA. */
+.post-links{margin:40px 0 0;padding:26px 28px;background:var(--tb-soft);border:1px solid var(--tb-line);border-radius:4px}
+.post-links h2{font:800 19px/1.25 "Manrope",sans-serif;letter-spacing:-.01em;margin:0 0 14px}
+.post-links ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 24px}
+.post-links li{margin:0}
+.post-links a{display:inline-flex;align-items:center;gap:7px;font:600 15px/1.45 "Manrope",sans-serif;color:var(--tb-ink);text-decoration:none;border-bottom:1px solid rgba(26,26,26,.22);padding-bottom:2px;transition:border-color .2s ease}
+.post-links a::before{content:"";width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);flex:none}
+.post-links a:hover{border-bottom-color:var(--tb-ink)}
+@media (max-width:640px){
+  .post-links{padding:20px 18px;margin-top:30px}
+  .post-links ul{grid-template-columns:1fr;gap:12px}
+  .post-links a{font-size:16px}
+}
