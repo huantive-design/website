@@ -2000,6 +2000,535 @@ export const blogPosts: BlogPost[] = [
       { label: "21 CFR 890.5660 — Therapeutic massager (eCFR)", url: "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-H/part-890/subpart-F/section-890.5660", date: "accessed 7 Oct 2026" },
     ],
   },
+
+  {
+    slug: "massager-import-duty-and-landed-cost",
+    title: "Massager Import Duty and Landed Cost: Working From HS 9019.10 Upward",
+    metaTitle: "Massager Import Duty & Landed Cost | HS 9019.10 Guide",
+    metaDescription:
+      "How massage devices are classified under HS 9019.10, why the US base duty is Free yet China-origin goods still carry a Section 301 layer, and how to model landed cost properly.",
+    market: "United States / United Kingdom / European Union",
+    locale: "en-GB",
+    lang: "en",
+    intent: "Commercial investigation",
+    primaryKeyword: "massager import duty",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    readingMinutes: 9,
+    excerpt:
+      "The tariff line is the easy part. What catches first-time importers is the stack on top of it, and the freight assumptions that quietly decide whether a programme clears margin.",
+    cover: cover(16),
+    coverAlt: "Air compression leg massager cartons prepared for export",
+    relatedCategory: "leg-massagers",
+    relatedPosts: ["sourcing-massage-devices-compliance-checklist", "massager-factory-audit-checklist", "massager-qc-inspection-aql"],
+    sections: [
+      {
+        heading: "Short answer",
+        paragraphs: [
+          "Electro-mechanical massage apparatus is normally classified under HS heading 9019.10. In the United States tariff schedule the column 1 general rate for HTS 9019.10.20 is Free, so buyers who stop reading there conclude the product lands duty-free. That is incorrect for most origins today.",
+          "As of 7 October 2026 the published rate for HTS 9019.10.20 from China is 12.5 percent in total: no regular duty, plus a 12.5 percent Section 301 forced-labour tariff that took effect 24 July 2026. The same 12.5 percent applies to a long list of other origins including Vietnam, Thailand and the Philippines, while EU member states, Canada, Mexico, India and Taiwan sit at 10 percent. The United Kingdom is currently Free.",
+          "Two consequences follow. First, origin shifting buys less than it used to, because the additional layer now covers most plausible alternatives rather than China alone. Second, duty is only one line in landed cost, and for a bulky low-value-density product it is rarely the line that decides the programme.",
+        ],
+      },
+      {
+        heading: "Why the base rate misleads",
+        paragraphs: [
+          "A tariff schedule shows the regular duty. It does not show trade-remedy measures layered on top, and those are published separately and change far more often than the schedule itself.",
+          "The current forced-labour action is also under live legal challenge. The measure is being contested at the US Court of International Trade in In re Section 301 Forced Labor Cases, where the plaintiffs argue it exceeds the agency's statutory authority; twenty-five states filed as amici in September 2026. No ruling had issued as of 1 October 2026, so the rate stands. A buyer signing a twelve-month price agreement should treat the layer as variable rather than fixed, and say so in the contract.",
+        ],
+        bullets: [
+          "Check the regular rate and every additional layer separately, for your specific origin",
+          "Re-check before each shipment rather than once per programme",
+          "Confirm the ten-digit statistical line with your broker, not just the six-digit heading",
+          "Write a tariff-change clause into any fixed-price agreement longer than one quarter",
+        ],
+      },
+      {
+        heading: "The statistical lines under 9019.10.20",
+        paragraphs: [
+          "Entry paperwork uses ten digits, not six. Under 9019.10.20 the lines include 9019.10.2010 for mechano-therapy appliances, 9019.10.2020 for handheld devices, 9019.10.2035 for apparatus powered by an AC adapter, and 9019.10.2090 for parts and accessories. They share the same duty rate, but classification still matters for statistical reporting and for any future measure that targets a narrower line.",
+          "A handheld percussion device and a mains-powered foot unit may therefore sit on different statistical lines while attracting identical duty. Ask your supplier for the product's technical construction so your broker can classify precisely; do not let the broker guess from a product title.",
+        ],
+      },
+      {
+        heading: "What actually moves landed cost",
+        paragraphs: [
+          "Massage devices are volumetric. A foot massager at roughly 46 x 40 x 47 cm ships two units per carton, so a container fills on volume long before it reaches a weight limit. Freight, not duty, usually dominates the delta between two quotations.",
+          "This is where carton data earns its place in a quotation. If you cannot calculate cartons per container, you cannot compare two suppliers honestly, and a lower unit price can easily lose to a better-packed competitor.",
+        ],
+        table: {
+          head: ["Cost line", "Typical driver", "What to request from the factory"],
+          rows: [
+            ["Unit price", "Specification, motor type, MOQ tier", "Price at your actual order quantity, not a headline MOQ"],
+            ["Duty", "HS line plus origin-specific layers", "Material construction and power type for exact classification"],
+            ["Ocean freight", "Carton volume, not unit weight", "Carton dimensions, units per carton, cartons per 20ft and 40ft"],
+            ["Battery handling", "Lithium cell classification", "UN38.3 test summary and state-of-charge at packing"],
+            ["Compliance", "Destination market requirements", "Test reports in your importing entity's name"],
+            ["Packaging artwork", "Market language requirements", "Dieline files and print lead time"],
+          ],
+        },
+      },
+      {
+        heading: "The lithium battery line most quotations omit",
+        paragraphs: [
+          "Most cordless massagers carry a lithium-ion cell, which makes them dangerous goods for air transport and brings documentation obligations that a first-time importer rarely budgets for.",
+          "UN38.3 covers a series of transport-safety tests, and the test summary must be available. Separately, IATA's 67th edition of the Dangerous Goods Regulations, applying from January 2026, requires lithium-ion cells shipped packed with equipment under PI 966 to be at a state of charge not exceeding 30 percent. That is a production and packing instruction, not a paperwork item: a factory that ships fully charged units can have an air consignment refused.",
+          "Confirm both points in writing before the first air shipment, and confirm that the test summary covers the exact cell in your build rather than a superseded one.",
+        ],
+      },
+      {
+        heading: "How we quote",
+        paragraphs: [
+          "We publish carton dimensions, units per carton and carton weight for each model on its product page, because those are the numbers that let you model freight before committing. Our quotations are valid for one month, which reflects component and freight volatility rather than reluctance to commit.",
+          "Payment terms are 30 percent on confirmation of the pro-forma invoice with the 70 percent balance before shipment for bulk orders, and 100 percent on confirmation for small orders. Production runs 20 to 30 working days below 5,000 pieces and is negotiated above that volume.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is the HS code for a massage gun or electric massager?",
+        a: "Electro-mechanical massage apparatus normally falls under HS heading 9019.10. In the United States the relevant subheading is usually HTS 9019.10.20, with a ten-digit statistical line that depends on construction, for example 9019.10.2020 for handheld devices and 9019.10.2035 for AC-adapter-powered apparatus. Your customs broker makes the final determination.",
+      },
+      {
+        q: "Is the US duty on massagers really zero?",
+        a: "The column 1 general rate for HTS 9019.10.20 is Free, but additional measures apply by origin. As of 7 October 2026 goods of China origin owe 12.5 percent in total because of a Section 301 forced-labour tariff effective 24 July 2026. Many other origins are at 12.5 or 10 percent, and the United Kingdom is Free. Verify your own origin before each shipment.",
+      },
+      {
+        q: "Would moving production out of China remove the tariff?",
+        a: "Not under the current measure. The 12.5 percent layer applies to a wide list of origins including Vietnam, Thailand and the Philippines, with 10 percent applying to the EU, Canada, Mexico, India and Taiwan. Origin shifting now changes the rate by a few percentage points at best, so it rarely justifies losing a qualified supplier.",
+      },
+      {
+        q: "Why do you publish carton dimensions instead of just unit price?",
+        a: "Because massage devices fill a container on volume rather than weight. Without carton size and units per carton you cannot calculate freight per unit, which means you cannot compare two quotations. A foot massager that ships two per carton behaves very differently from a handheld unit that ships twelve.",
+      },
+      {
+        q: "What do you need from us to quote accurately?",
+        a: "Destination market, target order quantity, whether you need custom branding or a custom colour, and your preferred shipping mode. Branding starts at 1,000 pieces per item and a custom colour at 2,000 pieces, so those two answers change the quotation materially.",
+      },
+    ],
+    cta: {
+      text: "We manufacture massage and recovery devices in Wenzhou and Anlu for distributors, importers and private-label brands, and we publish packing data so you can model landed cost before you commit.",
+      primary: { label: "Request a quotation", href: "/contact" },
+      secondary: { label: "Browse all products", href: "/products" },
+    },
+    internalLinks: [
+      { label: "Sourcing compliance checklist", href: "/blog/sourcing-massage-devices-compliance-checklist" },
+      { label: "Factory audit checklist", href: "/blog/massager-factory-audit-checklist" },
+      { label: "QC inspection and AQL", href: "/blog/massager-qc-inspection-aql" },
+      { label: "OEM and ODM programmes", href: "/oem-odm" },
+      { label: "Leg massagers", href: "/products/category/leg-massagers" },
+    ],
+    sources: [
+      { label: "HTSLookup — HTS 9019.10.20 duty by country of origin", url: "https://htslookup.com/hts/9019-10-20/", date: "Rates as of 7 October 2026" },
+      { label: "USITC Harmonized Tariff Schedule, Revision 20 (2026)", url: "https://hts.usitc.gov/", date: "2026" },
+      { label: "IATA Dangerous Goods Regulations, 67th edition (state-of-charge requirement)", url: "https://www.iata.org/en/publications/dgr/", date: "Applies from January 2026" },
+      { label: "UN Manual of Tests and Criteria, Part III sub-section 38.3", url: "https://unece.org/transport/dangerous-goods/un-manual-tests-and-criteria-rev8-amend1", date: "Revision 8" },
+    ],
+  },
+
+  {
+    slug: "massager-factory-audit-checklist",
+    title: "Massager Factory Audit: What to Verify Before You Place the First Order",
+    metaTitle: "Massager Factory Audit Checklist | Supplier Verification",
+    metaDescription:
+      "A practical verification sequence for massage device suppliers: trading company versus maker, tooling ownership, motor sourcing, test reports in your name, and the documents to ask for.",
+    market: "United States / United Kingdom / European Union",
+    locale: "en-GB",
+    lang: "en",
+    intent: "Commercial investigation",
+    primaryKeyword: "massager factory audit",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    readingMinutes: 10,
+    excerpt:
+      "Most sourcing failures are not quality failures. They are verification failures: the buyer never confirmed who actually builds the product, who owns the tooling, or whose name is on the test report.",
+    cover: cover(21),
+    coverAlt: "Neck and shoulder massager assembly for OEM programmes",
+    relatedCategory: "neck-shoulder-massagers",
+    relatedPosts: ["massager-qc-inspection-aql", "massager-import-duty-and-landed-cost", "sourcing-massage-devices-compliance-checklist"],
+    sections: [
+      {
+        heading: "Short answer",
+        paragraphs: [
+          "Four questions separate a qualified massage device supplier from a reseller: do they own the injection tooling, do they assemble the motor and PCB in-house, can they issue test reports in your importing entity's name, and will they show you the bill of materials for the specific model you are buying.",
+          "A supplier who answers all four without hesitation is a manufacturer. One who deflects on tooling and motor sourcing is usually buying finished units and relabelling them, which is a legitimate business model but changes what you can expect on consistency, engineering changes and warranty response.",
+        ],
+      },
+      {
+        heading: "Separating the maker from the middle",
+        paragraphs: [
+          "There is nothing wrong with buying through a trading company. The problem is buying through one while believing you are buying direct, because every engineering change then travels through a party with no authority to approve it.",
+          "The fastest test is specificity. Ask for the carton dimensions, units per carton and net and gross weight for one model. A manufacturer has these to hand because they pack the goods. A reseller frequently has to go and ask, and the answer sometimes arrives rounded.",
+        ],
+        bullets: [
+          "Ask who owns the injection moulds for the housing, and whether you can buy the tooling",
+          "Ask whether the motor and PCB are assembled in-house or bought finished",
+          "Ask for the business licence and confirm the registered scope covers manufacturing",
+          "Ask for a model-specific bill of materials, not a generic capability statement",
+          "Ask which plant builds your model if the supplier operates more than one site",
+        ],
+      },
+      {
+        heading: "The motor question, and why it decides your return rate",
+        paragraphs: [
+          "In percussion and kneading devices the motor determines noise, torque and service life, and it is the component most often downgraded between a sample and a production run. A buyer who approves a sample without pinning down the motor has approved nothing enforceable.",
+          "Specify it. Record the motor type in the pro-forma invoice and treat substitution as a contract matter rather than a production detail. We use pure copper motors across the massager range for longer service life, lower noise and higher torque, and we are willing to have that written into the order rather than merely stated in a brochure.",
+        ],
+      },
+      {
+        heading: "Test reports: the detail that voids them",
+        paragraphs: [
+          "A supplier holding FDA, UL, CE, RoHS, UKCA, KC and ISO 9001 certification tells you the factory can produce to those standards. It does not automatically give you the right to place the resulting goods on your market under your own brand.",
+          "Two things matter. The report must cover the model and configuration you are buying, not a sibling model with a different heating element or battery. And for private label, the documentation must be issued in a way that supports your importing entity, because a report in the factory's name under the factory's model number can leave your brand unsupported at a border inspection.",
+          "Ask for the certificate number and verify it with the issuing body. Our EMS facial device, for example, carries CE certificate 00460AX0533CE, and a number you can check is worth more than a logo you cannot.",
+        ],
+        table: {
+          head: ["Document", "What it proves", "What to check"],
+          rows: [
+            ["Business licence", "Legal entity and registered scope", "Scope includes manufacturing, not only trade"],
+            ["ISO 9001 certificate", "A documented quality system exists", "Validity date and the sites it covers"],
+            ["Product test report", "The model met a standard on test", "Model number and configuration match your build"],
+            ["UN38.3 test summary", "Battery is cleared for transport", "Covers the exact cell in your build"],
+            ["Bill of materials", "What is actually inside the unit", "Motor type, cell capacity, heating element"],
+            ["Tooling agreement", "Who owns the moulds", "Transfer terms if you later move production"],
+          ],
+        },
+      },
+      {
+        heading: "Capacity questions worth more than a floor tour",
+        paragraphs: [
+          "Photographs of a production line prove very little. What tells you whether a supplier can hold your season is the relationship between lead time and volume, and whether they will state the threshold where that relationship breaks.",
+          "We quote 20 to 30 working days below 5,000 pieces and negotiate above that, which is a more useful answer than a single number that holds at every volume. Ask any supplier where their stated lead time stops applying. A supplier who claims one lead time at all volumes has either enormous spare capacity or has not thought about it.",
+        ],
+        bullets: [
+          "Ask for the lead time at your actual volume, and the volume where it changes",
+          "Ask what the MOQ is for branding versus for a custom colour, since these differ",
+          "Ask how engineering change requests are handled mid-production",
+          "Ask who holds the warranty and for how long",
+          "Ask for two references in your destination market, then contact them",
+        ],
+      },
+      {
+        heading: "How we answer these questions",
+        paragraphs: [
+          "We manufacture in Wenzhou, Zhejiang, with a second plant in Anlu, Hubei. Branding starts at 1,000 pieces per item covering logo, manual and packaging, and a custom colour starts at 2,000 pieces per item because it requires a dedicated material run.",
+          "Every set ships with a certified adapter, car plug where applicable, user manual and colour box. Massage heads and inner modules use eco-friendly ABS. Warranty is twelve months. None of that is unusual for a serious supplier, which is precisely why you should ask every supplier to state it in writing.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "How do I tell a manufacturer from a trading company?",
+        a: "Ask for packing data and a model-specific bill of materials for one product. A manufacturer has carton dimensions, units per carton and net and gross weight immediately because they pack the goods. Then ask who owns the injection tooling and whether the motor and PCB are assembled in-house. Deflection on those two points usually indicates a reseller.",
+      },
+      {
+        q: "Do I need to audit the factory in person?",
+        a: "Not always, but you do need documentary verification and a pre-shipment inspection. A remote document review covering business licence, model-specific test reports, bill of materials and tooling ownership catches most structural risks. A third-party inspection at production catches the rest. In-person audits matter most for long programmes and custom tooling.",
+      },
+      {
+        q: "Why does it matter whose name is on the test report?",
+        a: "A report in the factory's name under the factory's model number proves the factory tested that model. For private label you need documentation that supports your importing entity and your model designation, otherwise your brand can be left unsupported during a market surveillance check. Agree this before tooling, not after.",
+      },
+      {
+        q: "What certifications should a massage device factory hold?",
+        a: "Expect ISO 9001 for the quality system and product-level marks appropriate to your destination: UL for North America, CE and UKCA for Europe and Great Britain, RoHS for restricted substances, plus UN38.3 for any lithium cell. Confirm each certificate number with the issuing body and confirm it covers your model.",
+      },
+      {
+        q: "Can we buy the tooling for our custom model?",
+        a: "Discuss it before development starts. Tooling ownership determines whether you can move production later, and the commercial terms differ considerably depending on whether the buyer or the factory funds the mould. Settle it in writing at the development stage rather than when the relationship is under strain.",
+      },
+    ],
+    cta: {
+      text: "We are a massage device manufacturer with plants in Wenzhou and Anlu, and we answer tooling, motor sourcing and documentation questions directly rather than by brochure.",
+      primary: { label: "Start a supplier conversation", href: "/contact" },
+      secondary: { label: "See OEM and ODM scope", href: "/oem-odm" },
+    },
+    internalLinks: [
+      { label: "QC inspection and AQL sampling", href: "/blog/massager-qc-inspection-aql" },
+      { label: "Import duty and landed cost", href: "/blog/massager-import-duty-and-landed-cost" },
+      { label: "Sourcing compliance checklist", href: "/blog/sourcing-massage-devices-compliance-checklist" },
+      { label: "OEM and ODM programmes", href: "/oem-odm" },
+      { label: "Neck and shoulder massagers", href: "/products/category/neck-shoulder-massagers" },
+    ],
+    sources: [
+      { label: "ISO 9001 quality management systems", url: "https://www.iso.org/standard/62085.html", date: "ISO 9001:2015" },
+      { label: "UN Manual of Tests and Criteria, sub-section 38.3 (lithium batteries)", url: "https://unece.org/transport/dangerous-goods/un-manual-tests-and-criteria-rev8-amend1", date: "Revision 8" },
+      { label: "European Commission — manufacturers and CE marking obligations", url: "https://single-market-economy.ec.europa.eu/single-market/goods/ce-marking/manufacturers_en", date: "Accessed 7 October 2026" },
+    ],
+  },
+
+  {
+    slug: "massager-qc-inspection-aql",
+    title: "Massager QC Inspection: Setting AQL Levels That Actually Protect You",
+    metaTitle: "Massager QC Inspection & AQL Sampling | Buyer Guide",
+    metaDescription:
+      "How ANSI/ASQ Z1.4 sampling works in practice for massage devices, which defects belong in which class, and the function tests a general inspector will skip unless you specify them.",
+    market: "United States / United Kingdom / European Union",
+    locale: "en-GB",
+    lang: "en",
+    intent: "Commercial investigation",
+    primaryKeyword: "AQL inspection massage device",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    readingMinutes: 10,
+    excerpt:
+      "An inspection report that says 'AQL 2.5 passed' tells you almost nothing unless you set the defect classification yourself. For heated and battery-powered devices, the default checklist misses the failures that generate returns.",
+    cover: cover(5),
+    coverAlt: "Massage pillow production units prepared for inspection",
+    relatedCategory: "massage-pillows-cushions",
+    relatedPosts: ["massager-factory-audit-checklist", "massager-import-duty-and-landed-cost", "sourcing-massage-devices-compliance-checklist"],
+    sections: [
+      {
+        heading: "Short answer",
+        paragraphs: [
+          "AQL is not a quality level. It is an acceptance threshold applied to a sample, and it only protects you if you define which defects count as critical, major and minor for your product.",
+          "Under ANSI/ASQ Z1.4 at general inspection level II, a lot of 1,201 to 3,200 units draws code letter K, which is a 125-piece sample. At AQL 2.5 that plan accepts the lot with up to 7 defects and rejects at 8. Those numbers come from the standard's master table, not from the inspection company, so you can verify any report against them.",
+          "For massage devices the decisive choice is not the AQL number. It is whether the checklist includes a powered function test on every sampled unit, and a temperature measurement on every heated unit.",
+        ],
+      },
+      {
+        heading: "How the sampling plan is actually derived",
+        paragraphs: [
+          "Two tables produce the plan. The first maps lot size and inspection level to a sample size code letter. The second maps that letter and your AQL to a sample size with accept and reject numbers.",
+          "Level II is the normal default. Level I uses smaller samples and is cheaper but weaker; level III uses larger samples for tighter control. If your supplier or inspector proposes level I without saying so, your effective protection drops while the AQL number on the report stays the same.",
+        ],
+        table: {
+          head: ["Lot size", "Code letter (level II)", "Sample size", "Accept / reject at AQL 2.5"],
+          rows: [
+            ["151 to 280", "G", "32", "2 / 3"],
+            ["281 to 500", "H", "50", "3 / 4"],
+            ["501 to 1,200", "J", "80", "5 / 6"],
+            ["1,201 to 3,200", "K", "125", "7 / 8"],
+            ["3,201 to 10,000", "L", "200", "10 / 11"],
+            ["10,001 to 35,000", "M", "315", "14 / 15"],
+          ],
+        },
+      },
+      {
+        heading: "Defect classification for massage devices",
+        paragraphs: [
+          "This is the part buyers delegate and then regret. A general consumer-goods checklist treats defects cosmetically, which is appropriate for a handbag and inadequate for a heated device with a lithium cell.",
+          "Classify by consequence. Anything that can injure a user or cause a fire is critical and should carry a zero-tolerance position regardless of the AQL applied to cosmetic defects. Anything that stops the product performing its advertised function is major. Finish issues that a customer would notice but that do not affect function or safety are minor.",
+        ],
+        bullets: [
+          "Critical: exposed live conductor, battery swelling or leakage, overheating beyond the specified maximum, missing or incorrect safety marking",
+          "Critical: heating element reaching a temperature above the declared limit, or temperature control failing to cut off",
+          "Major: motor fails to start, a mode or speed level inoperative, heat function inoperative, charging failure, auto-off timer not working",
+          "Major: accessory missing from the set, wrong adapter or wrong plug type for the destination market",
+          "Minor: surface scratch within an agreed size limit, slight colour variation against the approved sample, minor printing misalignment on the colour box",
+        ],
+      },
+      {
+        heading: "Function tests to specify explicitly",
+        paragraphs: [
+          "An inspector will only perform the tests on your checklist. For our product range the following are worth naming individually, because each one maps to a genuine return cause rather than to a theoretical risk.",
+          "Where a product declares a temperature, require a measurement rather than a touch test. A heated lumbar belt with five temperature levels and a heated ankle unit adjustable from 40 to 60 degrees Celsius both need the top level verified against the specification with an instrument.",
+        ],
+        bullets: [
+          "Power on every sampled unit and cycle through every mode and speed level",
+          "Measure the maximum surface temperature on heated models against the declared limit",
+          "Charge and discharge a subset to confirm stated runtime, not merely that charging begins",
+          "Verify the auto-off timer actually cuts power at the stated interval",
+          "Confirm the adapter plug type and voltage range match the destination market",
+          "Confirm manual language and warning text match what you approved",
+          "Check carton count, gross weight and shipping marks against the packing list",
+          "Confirm battery state of charge at packing if the consignment moves by air",
+        ],
+      },
+      {
+        heading: "Where buyers lose money on inspection",
+        paragraphs: [
+          "The common failure is timing. A pre-shipment inspection on a finished, packed lot leaves you with two choices if it fails: accept with a concession, or delay the shipment. Neither is good when a retail window is fixed.",
+          "During-production inspection at roughly 20 to 30 percent completion costs the same and preserves the option to correct. For a first order with a new supplier, or any order with new tooling, that timing is worth more than a tighter AQL on a finished lot.",
+        ],
+      },
+      {
+        heading: "How we work with your inspector",
+        paragraphs: [
+          "We expect third-party inspection and we would rather align the checklist before production than argue about interpretation afterwards. Send us your defect classification and function test list with the order, and we will confirm what is measurable on our line.",
+          "Our range is covered by FDA, UL, CE, RoHS, UKCA, KC and ISO 9001 certification, and each model's declared electrical and dimensional data is published on its product page so your inspector has a specification to measure against rather than an impression to form.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What AQL should I use for massage devices?",
+        a: "A common commercial position is AQL 2.5 for major defects and 4.0 for minor, with zero tolerance for critical defects. What matters more than the number is your defect classification: for a heated or battery-powered device, electrical and thermal failures belong in the critical class rather than being counted against a 2.5 threshold.",
+      },
+      {
+        q: "How many units will be inspected?",
+        a: "It depends on lot size and inspection level. At general inspection level II under ANSI/ASQ Z1.4, a lot of 1,201 to 3,200 units draws code letter K and a 125-piece sample, accepting at 7 defects and rejecting at 8 under AQL 2.5. A 3,201 to 10,000 lot draws letter L and a 200-piece sample. Confirm the level, because level I uses smaller samples.",
+      },
+      {
+        q: "Does a passed AQL inspection mean there are no defects?",
+        a: "No. Sampling accepts a lot when defects in the sample stay at or below the acceptance number, so a passed lot can still contain defects. That is why critical safety defects should be handled on a zero-tolerance basis rather than being folded into a statistical threshold.",
+      },
+      {
+        q: "Should I inspect during production or before shipment?",
+        a: "During production, at roughly 20 to 30 percent completion, for a first order or any order with new tooling. It costs the same as a pre-shipment inspection but leaves time to correct a systematic fault. Pre-shipment inspection is appropriate for repeat orders on a stable line.",
+      },
+      {
+        q: "Can we send our own inspector or inspection company?",
+        a: "Yes, and we recommend it. Send the defect classification and function test checklist with the order so we can confirm in advance what is measurable on our line. Aligning the checklist before production prevents disputes over interpretation at the end.",
+      },
+    ],
+    cta: {
+      text: "We publish model-level electrical, dimensional and packing data so your inspector measures against a specification rather than an impression, and we align checklists before production starts.",
+      primary: { label: "Discuss your QC requirements", href: "/contact" },
+      secondary: { label: "See product specifications", href: "/products" },
+    },
+    internalLinks: [
+      { label: "Factory audit checklist", href: "/blog/massager-factory-audit-checklist" },
+      { label: "Import duty and landed cost", href: "/blog/massager-import-duty-and-landed-cost" },
+      { label: "Heated lumbar belt safety", href: "/blog/heated-lumbar-massager-belt-safety-and-sourcing" },
+      { label: "OEM and ODM programmes", href: "/oem-odm" },
+      { label: "Massage pillows and cushions", href: "/products/category/massage-pillows-cushions" },
+    ],
+    sources: [
+      { label: "ANSI/ASQ Z1.4 single sampling plan for normal inspection (AQL chart)", url: "https://www.intouch-quality.com/hubfs/pdf/AQLChart.pdf", date: "Z1.4-2003 tables" },
+      { label: "ASQ — guidance on Z1.4 inspection levels", url: "https://asqasktheexperts.org/2012/05/24/guidance-on-z1-4-levels/", date: "24 May 2012" },
+      { label: "IATA Dangerous Goods Regulations, 67th edition (state of charge)", url: "https://www.iata.org/en/publications/dgr/", date: "Applies from January 2026" },
+    ],
+  },
+
+  {
+    slug: "gpsr-compliance-for-massage-device-importers",
+    title: "GPSR for Massage Device Importers: What Changed and Who Carries It",
+    metaTitle: "GPSR Compliance for Massage Devices | EU Importer Guide",
+    metaDescription:
+      "Regulation (EU) 2023/988 has applied since 13 December 2024. What the responsible person actually does, what the technical file must contain, and what to request from your factory.",
+    market: "European Union / United Kingdom",
+    locale: "en-GB",
+    lang: "en",
+    intent: "Commercial investigation",
+    primaryKeyword: "GPSR compliance massage device",
+    published: "2026-10-07",
+    updated: "2026-10-07",
+    readingMinutes: 11,
+    excerpt:
+      "GPSR did not make massage devices harder to build. It made it much clearer who answers when an authority asks a question, and that person is usually the importer rather than the factory.",
+    cover: cover(14),
+    coverAlt: "EMS facial massager prepared for European distribution",
+    relatedCategory: "targeted-body-massagers",
+    relatedPosts: ["sourcing-massage-devices-compliance-checklist", "massager-factory-audit-checklist", "ems-facial-massager-claims-and-compliance"],
+    sections: [
+      {
+        heading: "Short answer",
+        paragraphs: [
+          "Regulation (EU) 2023/988, the General Product Safety Regulation, entered into force on 30 May 2023 and has applied to products placed on the EU market since 13 December 2024. It replaced Directive 2001/95/EC.",
+          "The practical shift for anyone importing massage devices is accountability. A non-EU manufacturer must have an EU-based economic operator, and if none is designated, the importer or distributor assumes legal responsibility for compliance. That is the sentence worth reading twice before you place an order.",
+          "A separate point that is widely misunderstood: the responsible person is a regulatory contact and documentation holder, not the party liable for consumer compensation. Liability for a defective product still rests with the manufacturer under Directive 85/374/EEC — unless you brand the product, in which case you may meet the definition of producer yourself.",
+        ],
+      },
+      {
+        heading: "Why private label changes your position",
+        paragraphs: [
+          "If you buy a factory-branded unit and distribute it, you are a distributor with documentation duties. If you put your own brand on the same unit, you can meet the definition of producer under EU law, and the liability analysis changes accordingly.",
+          "This is not an argument against private label. It is an argument for making sure the technical documentation is genuinely in order before your logo goes on the housing, because at that point the brand on the product is the name a consumer and an authority will both look for.",
+        ],
+      },
+      {
+        heading: "What the technical file must contain",
+        paragraphs: [
+          "Article 5 requires an internal risk analysis and technical documentation demonstrating conformity. The documentation is not a certificate; it is a file you must be able to produce on request.",
+          "For a massage device the hazard categories that matter are mechanical, thermal and electrical, plus chemical via the materials in contact with skin. A heated product needs the thermal analysis to address the maximum surface temperature and the behaviour of the temperature control if it fails.",
+        ],
+        table: {
+          head: ["File element", "What it must cover", "Who normally supplies it"],
+          rows: [
+            ["Economic operator identification", "Manufacturer, authorised representative, importer, responsible person", "Importer and factory jointly"],
+            ["Product description", "Function, essential safety characteristics, composition, intended user age", "Factory"],
+            ["Applicable standards list", "Harmonised standards used, plus REACH and sector legislation", "Factory with importer review"],
+            ["Hazard assessment", "Mechanical, chemical, thermal, electrical, hygiene, radiation", "Factory, validated by importer"],
+            ["Risk categorisation", "Severity ranking and mitigation measures taken", "Importer with factory input"],
+            ["Labelling and instruction review", "Adequacy of warnings in each market language", "Importer"],
+            ["Test reports", "Evidence against the standards claimed", "Factory or third-party laboratory"],
+          ],
+        },
+      },
+      {
+        heading: "Labelling obligations under Article 9",
+        paragraphs: [
+          "Article 9 requires a type, batch or serial number or other identifier that is clearly visible and legible on the product, and the manufacturer's name, registered trade name or trademark with a postal and email address.",
+          "Instructions and safety information must be in a language understood by consumers in each member state where the product is made available. That is a per-market requirement, not a single English manual, and it drives packaging artwork and print lead time.",
+          "QR codes and digital labels may complement these requirements but cannot replace the physical labelling. Several buyers have planned a digital-only approach and had to reprint.",
+        ],
+        bullets: [
+          "Product carries a visible type, batch or serial identifier",
+          "Manufacturer name and postal plus email address present",
+          "Instructions in the language of each destination member state",
+          "Warnings and safety information on the product or packaging, not only online",
+          "Article 19 also requires manufacturer details, product identification and warnings in the online listing",
+        ],
+      },
+      {
+        heading: "Incident reporting and the two-day clock",
+        paragraphs: [
+          "GPSR strengthened market surveillance through the EU Safety Gate, and it set a reporting expectation measured in working days rather than weeks: serious product safety risks must be notified within two working days.",
+          "That timescale only works if your supplier can trace a unit to a production batch quickly. Ask how batch traceability is implemented before you need it. A supplier who cannot tell you which batch a serial number belongs to cannot help you meet a two-day clock.",
+        ],
+      },
+      {
+        heading: "Great Britain is a separate exercise",
+        paragraphs: [
+          "GPSR applies to the EU market and Northern Ireland. Great Britain operates its own regime with UKCA marking, so a buyer serving both needs to confirm which marks and documentation each destination requires.",
+          "Treat them as two compliance files that share most of their technical content rather than as one file with two logos. The underlying test evidence is usually common; the conformity route and labelling are not.",
+        ],
+      },
+      {
+        heading: "What to request from us",
+        paragraphs: [
+          "We manufacture in Wenzhou and Anlu and hold FDA, UL, CE, RoHS, UKCA, KC and ISO 9001 certification across the massager range. For an EU programme, ask us for the model-specific test report, the material declarations, the UN38.3 test summary for the cell in your build, and the batch identification scheme we will apply to your order.",
+          "Where a certificate number exists, we give it to you so you can verify it independently — our EMS facial device carries CE certificate 00460AX0533CE, for example. We would rather you check than take a logo on trust.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "When did GPSR start applying?",
+        a: "Regulation (EU) 2023/988 entered into force on 30 May 2023 and has applied to products placed on the EU market since 13 December 2024, replacing Directive 2001/95/EC. Products compliant with the old directive and placed on the market before that date may continue to be made available.",
+      },
+      {
+        q: "Do we need an EU responsible person if we import directly?",
+        a: "A non-EU manufacturer must have an EU-based economic operator. If no authorised representative is designated, the importer or distributor automatically assumes legal responsibility for compliance. If you are the EU importer, that role can be yours, which means you hold the technical documentation and act as the contact point for authorities.",
+      },
+      {
+        q: "Is the responsible person liable if a consumer is injured?",
+        a: "Generally no. The responsible person or authorised representative is a regulatory contact and documentation holder. Liability for damage caused by a defective product rests with the manufacturer under Directive 85/374/EEC, unless another operator meets the definition of producer — which can happen if you brand the product as your own.",
+      },
+      {
+        q: "Does a CE mark mean the product is GPSR compliant?",
+        a: "Not by itself. A CE mark relates to the specific directives or regulations it was applied under. GPSR requires an internal risk analysis and a technical file covering foreseeable hazards and mitigation. Conformity with harmonised standards gives a presumption of conformity for the risks those standards cover, but you still need the documentation.",
+      },
+      {
+        q: "Does GPSR apply in the United Kingdom?",
+        a: "GPSR applies to the EU market and Northern Ireland. Great Britain has its own product safety regime using UKCA marking. If you serve both, plan two compliance routes that share technical test evidence but differ in conformity marking and labelling.",
+      },
+      {
+        q: "What do you supply for an EU compliance file?",
+        a: "Model-specific test reports, material declarations, the UN38.3 test summary for the lithium cell in your build, declared electrical and thermal parameters, and the batch identification scheme applied to your order. Request these at the quotation stage so artwork and documentation run in parallel with production.",
+      },
+    ],
+    cta: {
+      text: "We supply model-level documentation for EU and UK programmes, including verifiable certificate numbers, so your technical file is assembled before goods reach a border rather than after.",
+      primary: { label: "Request compliance documentation", href: "/contact" },
+      secondary: { label: "See OEM and ODM scope", href: "/oem-odm" },
+    },
+    internalLinks: [
+      { label: "Sourcing compliance checklist", href: "/blog/sourcing-massage-devices-compliance-checklist" },
+      { label: "Factory audit checklist", href: "/blog/massager-factory-audit-checklist" },
+      { label: "EMS facial device claim limits", href: "/blog/ems-facial-massager-claims-and-compliance" },
+      { label: "Import duty and landed cost", href: "/blog/massager-import-duty-and-landed-cost" },
+      { label: "Targeted body massagers", href: "/products/category/targeted-body-massagers" },
+    ],
+    sources: [
+      { label: "Regulation (EU) 2023/988 on general product safety (full text)", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0988", date: "Applies from 13 December 2024" },
+      { label: "EUR-Lex summary — General Product Safety Regulation", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=legissum:4670517", date: "Accessed 7 October 2026" },
+      { label: "European Commission — obligations for businesses (Safety Gate)", url: "https://ec.europa.eu/safety-gate/#/screen/pages/obligationsForBusinesses", date: "Accessed 7 October 2026" },
+      { label: "European Commission — liability for defective products", url: "https://single-market-economy.ec.europa.eu/single-market/goods/free-movement-sectors/liability-defective-products_en", date: "Accessed 7 October 2026" },
+      { label: "UK Government — medical devices conformity assessment and the UKCA mark", url: "https://www.gov.uk/guidance/medical-devices-conformity-assessment-and-the-ukca-mark", date: "Accessed 7 October 2026" },
+    ],
+  },
 ];
 
 export const getPost = (slug: string) => blogPosts.find((post) => post.slug === slug);

@@ -441,3 +441,21 @@ body{background:var(--tb-bg)}
   .spec-table tr+tr{border-top:1px solid var(--tb-line)}
   .terms-grid{grid-template-columns:1fr}
 }
+/* ==========================================================================
+   Mobile reading fixes for article pages
+   The fixed inquiry bar is 71px tall and sits above article content, so the
+   page reserves clearance at the end of the flow rather than letting the CTA
+   buttons fall underneath it at certain scroll positions.
+   ========================================================================== */
+@media (max-width:980px){
+  .post-cta{margin-bottom:104px}
+  .post-next{padding-bottom:88px}
+}
+
+/* Secondary text (legal disclaimer, card previews) stays readable on small
+   screens instead of dropping to 14px. */
+@media (max-width:640px){
+  .post-disclaimer{font-size:15px;line-height:1.7}
+  .post-next-card p{font-size:15px;line-height:1.62}
+  .wa-float{right:8px}
+}
