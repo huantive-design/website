@@ -22,6 +22,9 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
+  // The <source> is withheld until the hero is on screen and the page has
+  // settled, so a 3.7 MB download never competes with LCP or first input.
+  const [armed, setArmed] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -33,10 +36,43 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
       return;
     }
 
-    let observer: IntersectionObserver | undefined;
+    // Respect metered or slow connections: keep the still poster instead.
+    const connection = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    if (connection?.saveData || (connection?.effectiveType && /(^|-)2g$/.test(connection.effectiveType))) {
+      setFailed(true);
+      return;
+    }
 
-    const start = () => {
-      video.play().catch(() => setFailed(true));
+    let observer: IntersectionObserver | undefined;
+    let cancelArm: (() => void) | undefined;
+    let onVisible: (() => void) | undefined;
+
+    const arm = () => {
+      if (cancelArm) return;
+      // requestIdleCallback never fires in a backgrounded tab, which would leave
+      // the video permanently unloaded. Wait for visibility first, then idle.
+      if (document.visibilityState !== "visible") {
+        onVisible = () => {
+          document.removeEventListener("visibilitychange", onVisible!);
+          onVisible = undefined;
+          arm();
+        };
+        document.addEventListener("visibilitychange", onVisible);
+        cancelArm = () => {
+          if (onVisible) document.removeEventListener("visibilitychange", onVisible);
+        };
+        return;
+      }
+      if (typeof window.requestIdleCallback === "function") {
+        // The timeout guarantees the callback runs even on a busy main thread.
+        const handle = window.requestIdleCallback(() => setArmed(true), { timeout: 2000 });
+        cancelArm = () => window.cancelIdleCallback?.(handle);
+      } else {
+        const handle = window.setTimeout(() => setArmed(true), 300);
+        cancelArm = () => window.clearTimeout(handle);
+      }
     };
 
     if ("IntersectionObserver" in window) {
@@ -44,7 +80,8 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
         (entries) => {
           for (const entry of entries) {
             if (entry.isIntersecting) {
-              start();
+              arm();
+              if (video.readyState >= 2) video.play().catch(() => setFailed(true));
             } else {
               video.pause();
             }
@@ -54,11 +91,20 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
       );
       observer.observe(video);
     } else {
-      start();
+      arm();
     }
 
-    return () => observer?.disconnect();
+    return () => {
+      observer?.disconnect();
+      cancelArm?.();
+    };
   }, []);
+
+  // Adding a <source> to a live <video> does not trigger a fetch on its own.
+  useEffect(() => {
+    if (!armed) return;
+    videoRef.current?.load();
+  }, [armed]);
 
   return (
     <div className="tb-hero-media">
@@ -68,7 +114,10 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
         alt={posterAlt}
         fill
         priority
-        sizes="100vw"
+        fetchPriority="high"
+        /* Source is 1620px wide; capping the candidate list here stops the
+           preload scanner requesting an upscaled 3840w variant as the LCP image. */
+        sizes="(max-width: 980px) 100vw, 1620px"
       />
       <video
         ref={videoRef}
@@ -76,13 +125,16 @@ export function HeroVideo({ src, poster, posterAlt }: HeroVideoProps) {
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
         tabIndex={-1}
-        onCanPlay={() => setReady(true)}
+        onCanPlay={(event) => {
+          setReady(true);
+          event.currentTarget.play().catch(() => setFailed(true));
+        }}
         onError={() => setFailed(true)}
       >
-        <source src={src} type="video/mp4" />
+        {armed ? <source src={src} type="video/mp4" /> : null}
       </video>
     </div>
   );
