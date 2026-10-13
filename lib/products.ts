@@ -156,8 +156,26 @@ export const categories: Category[] = [
 export const getCategory = (slug: string) => categories.find((category) => category.slug === slug);
 export const productsByCategory = (slug: string) => products.filter((product) => product.categorySlug === slug);
 
+const imageExtensions: Record<number, Record<number, "jpg" | "png" | "webp">> = {
+  1: { 1: "webp" },
+  2: { 1: "png", 2: "webp", 3: "png", 4: "png", 5: "png" },
+  5: { 2: "webp" },
+  7: { 1: "png", 2: "png", 3: "png", 4: "png", 5: "png", 6: "png" },
+  8: { 1: "webp", 2: "webp", 3: "webp", 4: "webp", 5: "webp" },
+  9: { 1: "png", 2: "png", 3: "png", 4: "png" },
+  12: { 1: "webp", 2: "webp", 3: "webp", 4: "webp", 5: "webp", 6: "webp" },
+  14: { 1: "webp", 2: "webp", 3: "webp", 4: "webp", 5: "webp", 6: "webp" },
+  15: { 1: "jpg", 5: "jpg", 6: "jpg" },
+  17: { 1: "webp" },
+  19: { 5: "png", 6: "png" },
+};
+
 const gallery = (folder: number, count: number, pngPositions: number[] = []) =>
-  Array.from({ length: count }, (_, index) => `/products/${folder}/image-${index + 1}.${pngPositions.includes(index + 1) ? "png" : "jpg"}`);
+  Array.from({ length: count }, (_, index) => {
+    const position = index + 1;
+    const extension = imageExtensions[folder]?.[position] ?? (pngPositions.includes(position) ? "png" : "jpg");
+    return `/products/${folder}/image-${position}.${extension}`;
+  });
 
 export const products: Product[] = [
   {
