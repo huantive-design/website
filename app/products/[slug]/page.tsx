@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
 import { getProduct, getCategory, products, productsByCategory, tradeTerms } from "@/lib/products";
 import { site } from "@/lib/site";
-import { breadcrumbSchema, productSchema } from "@/lib/schema";
+import { breadcrumbSchema, categoryFaqSchema, productSchema } from "@/lib/schema";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
@@ -27,10 +27,40 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) notFound();
   const category = getCategory(product.categorySlug);
   const related = productsByCategory(product.categorySlug).filter((item) => item.slug !== product.slug).slice(0, 3);
+  const sourcingChannels = product.applications.join(", ").toLowerCase();
+  const specificationFocus = product.specs
+    ? `Model ${product.specs.model} is presented with verified electrical, dimensional and packing data from the supplied product file.`
+    : "The supplied product file does not contain a complete model-level specification set for this page, so unsupported technical values are not displayed.";
+  const procurementNotes = product.procurementNotes ?? [
+    `${product.name} is positioned for ${sourcingChannels} where buyers compare function set, packing data, OEM scope and sample availability before purchase orders.`,
+    specificationFocus,
+    "For Europe and North America, compliance documents, plug or voltage requirements, manual language and packaging artwork should be confirmed against the exact destination market before production.",
+  ];
+  const faqs = product.faqs ?? [
+    {
+      q: `Can HUANTIVE manufacture ${product.name.toLowerCase()} for private-label programs?`,
+      a: `Yes. HUANTIVE supports OEM, ODM and private-label sourcing for this ${product.category.toLowerCase()} platform. Logo, colour, packaging, manual language and market configuration are confirmed against order volume and the selected model.`,
+    },
+    {
+      q: `Which verified specifications are available for ${product.name}?`,
+      a: product.specs
+        ? `The page displays the verified model number${product.specs.battery ? ", battery" : ""}${product.specs.power ? ", power or voltage" : ""}${product.specs.productSize ? ", product size" : ""}${product.specs.packageSize ? ", package size" : ""}${product.specs.cartonSize ? " and carton data" : ""} from the supplied product file.`
+        : "The supplied product file does not include a complete specification set for this page, so unsupported values are omitted rather than estimated.",
+    },
+    {
+      q: "What should a buyer include in the RFQ?",
+      a: "Send target quantity, destination market, required plug or voltage, logo and packaging needs, sample request, launch timeline and any retailer compliance checklist.",
+    },
+    {
+      q: "Are certifications shown as universal approvals?",
+      a: "No. Certificates and test reports are treated as model-specific documents. Applicability is checked by model, certificate holder, standard, issue date and destination market before quotation.",
+    },
+  ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product.name, product.summary, { model: product.specs?.model, colors: product.specs?.colors, weight: product.specs?.netGrossWeight, images: product.images.slice(0, 3), category: product.category, url: `/products/${product.slug}` })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product.name, product.summary, { model: product.specs?.model, colors: product.specs?.colors, battery: product.specs?.battery, power: product.specs?.power, productSize: product.specs?.productSize, weight: product.specs?.netGrossWeight, packageSize: product.specs?.packageSize, cartonSize: product.specs?.cartonSize, cartonWeight: product.specs?.cartonWeight, images: product.images.slice(0, 3), category: product.category, url: `/products/${product.slug}` })) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryFaqSchema(faqs)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: "Home", path: "/" },
         { name: "Products", path: "/products" },
@@ -40,16 +70,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="product-hero section"><div className="shell product-hero-grid">
         <div className="gallery">
-          <div className="gallery-main"><Image src={product.images[0]} alt={`${product.name} manufactured for OEM and private-label programs`} fill priority sizes="(max-width: 980px) 100vw, 54vw" /></div>
-          <div className="gallery-thumbs">{product.images.slice(1, 4).map((image, index) => <span key={image}><Image src={image} alt={`${product.name} detail view ${index + 1}`} fill sizes="120px" /></span>)}</div>
+          <div className="gallery-main"><Image src={product.images[0]} alt={product.imageAlts?.[0] ?? `${product.specs?.model ?? product.name} ${product.name} for OEM and wholesale buyers`} fill priority sizes="(max-width: 980px) 100vw, 54vw" /></div>
+          <div className="gallery-thumbs">{product.images.slice(1, 4).map((image, index) => <span key={image}><Image src={image} alt={product.imageAlts?.[index + 1] ?? `${product.name} verified product detail ${index + 1}`} fill sizes="120px" /></span>)}</div>
         </div>
         <div className="product-info">
           <nav className="crumbs" aria-label="Breadcrumb">
             <Link href="/products">Products</Link><span aria-hidden="true">/</span>
             <Link href={`/products/category/${product.categorySlug}`}>{product.category}</Link>
           </nav>
-          <h1>{product.name}</h1>
-          <p className="hero-lede">{product.summary}</p>
+          <h1>{product.name} Manufacturer for OEM & Wholesale Buyers</h1>
+          <p className="hero-lede">{product.buyerSummary ?? product.summary}</p>
           <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           <dl className="quick-specs">
             {product.specs?.model ? <div><dt>Model</dt><dd>{product.specs.model}</dd></div> : null}
@@ -65,7 +95,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div></section>
 
       <section className="section section-muted"><div className="shell">
-        <div className="section-heading"><div><p className="eyebrow">Product overview</p><h2>Built for procurement review.</h2></div><p>Technical values, claims and compliance scope are confirmed against the selected model before quotation.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">Product overview</p><h2>{product.name} sourcing overview.</h2></div><p>Technical values, claims and compliance scope are confirmed against the selected model before quotation.</p></div>
+        <div className="procurement-copy">
+          {procurementNotes.map((note) => <p key={note}>{note}</p>)}
+        </div>
         <div className="due-grid">{product.features.map((feature) => <div key={feature}><span>✓</span>{feature}</div>)}</div>
       </div></section>
 
@@ -107,8 +140,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div></section>
 
       <section className="section shell">
-        <div className="section-heading"><div><p className="eyebrow">Target channels</p><h2>Where this platform sells.</h2></div><p>Positioning guidance based on the product format. Final market and channel strategy remain your commercial decision.</p></div>
-        <div className="application-grid">{product.applications.map((item) => <article key={item}><strong>{item}</strong></article>)}</div>
+        <div className="section-heading"><div><p className="eyebrow">Target channels</p><h2>Best-fit B2B applications.</h2></div><p>Positioning guidance based on the product format. Final market and channel strategy remain your commercial decision.</p></div>
+        <div className="application-grid">{product.applications.map((item) => <article key={item}><strong>{item}</strong><p>{product.name} can be reviewed for {item.toLowerCase()} when its verified functions, package size, carton data and customization scope match your channel plan.</p></article>)}</div>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading"><div><p className="eyebrow">Buyer FAQ</p><h2>{product.name} OEM sourcing questions.</h2></div><p>Answers are limited to the supplied product file and general factory quotation workflow.</p></div>
+        <div className="faq-list">
+          {faqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
+        </div>
       </section>
 
       <section className="section dark-section"><div className="shell split-grid">

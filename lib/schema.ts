@@ -40,7 +40,12 @@ export function productSchema(
     model?: string;
     colors?: string;
     weight?: string;
-    width?: string;
+    battery?: string;
+    power?: string;
+    productSize?: string;
+    packageSize?: string;
+    cartonSize?: string;
+    cartonWeight?: string;
     images?: string[];
     category?: string;
     url?: string;
@@ -48,7 +53,13 @@ export function productSchema(
 ) {
   const properties: { "@type": "PropertyValue"; name: string; value: string }[] = [];
   if (options?.colors) properties.push({ "@type": "PropertyValue", name: "Available colours", value: options.colors });
+  if (options?.battery) properties.push({ "@type": "PropertyValue", name: "Battery", value: options.battery });
+  if (options?.power) properties.push({ "@type": "PropertyValue", name: "Rated power / voltage", value: options.power });
+  if (options?.productSize) properties.push({ "@type": "PropertyValue", name: "Product size", value: options.productSize });
   if (options?.weight) properties.push({ "@type": "PropertyValue", name: "Net / gross weight", value: options.weight });
+  if (options?.packageSize) properties.push({ "@type": "PropertyValue", name: "Package size", value: options.packageSize });
+  if (options?.cartonSize) properties.push({ "@type": "PropertyValue", name: "Carton size and quantity", value: options.cartonSize });
+  if (options?.cartonWeight) properties.push({ "@type": "PropertyValue", name: "Carton weight", value: options.cartonWeight });
 
   return {
     "@context": "https://schema.org",
