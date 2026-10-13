@@ -80,18 +80,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tb-section shell">
-        <div className="tb-head">
-          <h2>Factory platforms for procurement review</h2>
-          <Link href="/products">View all 22 products →</Link>
-        </div>
-        <ProductRail products={bestSellers} idPrefix="best" />
-      </section>
-
       <section className="featured-category-banner" aria-label="Featured product categories">
-        {featuredCategories.map((category) => (
+        {featuredCategories.map((category, index) => (
           <Link className="featured-category-card" href={category.href} key={category.label}>
-            <Image src={category.image} alt={`${category.label} category`} fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <img src={category.image} alt={`${category.label} category`} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
             <span className="featured-category-overlay" />
             <span className="featured-category-copy">
               <strong>{category.label}</strong>
@@ -100,6 +92,14 @@ export default function Home() {
             </span>
           </Link>
         ))}
+      </section>
+
+      <section className="tb-section shell">
+        <div className="tb-head">
+          <h2>Factory platforms for procurement review</h2>
+          <Link href="/products">View all 22 products →</Link>
+        </div>
+        <ProductRail products={bestSellers} idPrefix="best" />
       </section>
 
       <section className="tb-claim">
