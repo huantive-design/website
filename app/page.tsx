@@ -94,7 +94,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="tb-section shell">
+      <section className="tb-section shell tb-wide-shell">
         <div className="tb-head">
           <h2>Factory platforms for procurement review</h2>
           <Link href="/products">View all 22 products →</Link>
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       <section className="tb-claim">
-        <div className="shell tb-claim-grid">
+        <div className="shell tb-wide-shell tb-claim-grid">
           <article>
             <div className="tb-claim-media"><Image src="/company/factory-campus.png" alt="Massage device manufacturing campus" fill sizes="(max-width: 980px) 100vw, 50vw" /></div>
             <div className="tb-claim-body">
@@ -125,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tb-section shell">
+      <section className="tb-section shell tb-wide-shell">
           <div className="tb-head tb-head-center">
           <h2>Commercial product directions for B2B buyers</h2>
         </div>
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
 
       <section className="tb-section tb-section-soft">
-        <div className="shell">
+        <div className="shell tb-wide-shell">
           <div className="tb-head">
             <h2>Platforms ready for your next range</h2>
             <Link href="/products">Browse catalog →</Link>
