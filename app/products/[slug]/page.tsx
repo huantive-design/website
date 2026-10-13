@@ -5,7 +5,8 @@ import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
 import { ProductGallery } from "@/components/ProductGallery";
 import { getProduct, getCategory, products, productsByCategory, tradeTerms } from "@/lib/products";
-import { site } from "@/lib/site";
+import { site, whatsappLink } from "@/lib/site";
+import { TrackedLink } from "@/components/TrackedLink";
 import { breadcrumbSchema, categoryFaqSchema, productSchema } from "@/lib/schema";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
@@ -85,9 +86,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <div><dt>Business model</dt><dd>OEM / ODM / private label</dd></div>
             <div><dt>Sales enquiries</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
           </dl>
-          <div className="button-row">
-            <Link className="button button-primary" href={`/contact?product=${product.slug}`}>Request a Quote</Link>
-            <Link className="button button-secondary" href={`/contact?intent=sample&product=${product.slug}`}>Request a Sample</Link>
+          <div className="button-row product-cta-row">
+            <TrackedLink className="button button-primary" href={`/contact?intent=quotation&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_hero", label: product.slug }}>Get MOQ &amp; Lead Time</TrackedLink>
+            <TrackedLink className="button button-secondary" href={`/contact?intent=oem&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_hero", label: `${product.slug}:oem` }}>Ask OEM Options</TrackedLink>
+            <TrackedLink className="button button-secondary" href={whatsappLink} target="_blank" rel="noopener noreferrer" tracking={{ event: "whatsapp_click", category: "product_hero", label: product.slug }}>WhatsApp Supplier</TrackedLink>
+          </div>
+          <p className="quote-promise">Send the model and target quantity. We reply with MOQ, lead time, packaging options and available compliance documents.</p>
+          <div className="buyer-summary-card" aria-label="B2B sourcing summary">
+            <div><span>Best-fit buyers</span><strong>{product.applications.slice(0, 3).join(" / ")}</strong></div>
+            <div><span>Factory program</span><strong>OEM / ODM / private label</strong></div>
+            <div><span>Quotation scope</span><strong>MOQ, sample, packaging, lead time</strong></div>
+            <div><span>Document review</span><strong>By model and destination market</strong></div>
           </div>
         </div>
       </div></section>
@@ -188,7 +197,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       )}
 
       <section className="section final-rfq"><div className="shell rfq-layout">
-        <div><p className="eyebrow eyebrow-light">Product inquiry</p><h2>Evaluate this platform.</h2><p>Send target quantity, market, and customization requirements.</p></div>
+        <div><p className="eyebrow eyebrow-light">Factory quote</p><h2>Get MOQ, lead time and OEM options.</h2><p>Tell us the product and your approximate quantity. We will reply with the available specification, MOQ, sample option, packaging route, lead time and applicable compliance documents.</p></div>
         <InquiryForm compact defaultProduct={product.name} defaultMessage={`Please send MOQ, sample cost, lead time, packaging options and applicable compliance documents for ${product.name}.`} />
       </div></section>
     </>

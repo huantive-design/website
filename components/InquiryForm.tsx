@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { site, whatsappLink } from "@/lib/site";
+import { trackConversion } from "@/components/TrackedLink";
 
 export function InquiryForm({
   compact = false,
@@ -27,6 +28,12 @@ export function InquiryForm({
       const response = await fetch("/api/inquiry", { method: "POST", body: new FormData(form) });
       const data = await response.json().catch(() => ({}));
       if (response.ok) {
+        const submitted = new FormData(form);
+        trackConversion({
+          event: "inquiry_submit",
+          category: "rfq_form",
+          label: String(submitted.get("product") || submitted.get("intent") || "general"),
+        });
         form.reset();
         setState("success");
         return;
@@ -52,7 +59,7 @@ export function InquiryForm({
       <label>Message<textarea name="message" rows={compact ? 3 : 4} defaultValue={defaultMessage} placeholder="Which product are you interested in? Quantity or customization can be added if available." /></label>
       <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
       <button className="button button-primary" disabled={state === "sending"}>
-        {state === "sending" ? "Sending..." : "Submit inquiry"}
+        {state === "sending" ? "Sending..." : "Get MOQ & Lead Time"}
       </button>
       {state === "success" && (
         <p className="form-status success">
@@ -62,13 +69,13 @@ export function InquiryForm({
       {state === "error" && (
         <p className="form-status error">
           {message}{" "}
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion({ event: "whatsapp_click", category: "rfq_form", label: defaultProduct || defaultIntent || "general" })}>Open WhatsApp</a>
         </p>
       )}
       <p className="form-note">
         Your details are used only to answer this enquiry. Direct contact:{" "}
-        <a href={`mailto:${site.email}`}>{site.email}</a> · WhatsApp{" "}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer">{site.whatsapp}</a>
+        <a href={`mailto:${site.email}`} onClick={() => trackConversion({ event: "email_click", category: "rfq_form", label: defaultProduct || defaultIntent || "general" })}>{site.email}</a> · WhatsApp{" "}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={() => trackConversion({ event: "whatsapp_click", category: "rfq_form", label: defaultProduct || defaultIntent || "general" })}>{site.whatsapp}</a>
       </p>
     </form>
   );

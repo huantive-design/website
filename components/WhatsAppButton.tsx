@@ -1,4 +1,7 @@
+"use client";
+
 import { site, whatsappLink } from "@/lib/site";
+import { trackConversion } from "@/components/TrackedLink";
 
 /**
  * Fixed WhatsApp entry point on the right edge, vertically centred.
@@ -13,6 +16,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Contact HUANTIVE on WhatsApp at ${site.whatsapp}`}
+      onClick={() => trackConversion({ event: "whatsapp_click", category: "floating_cta", label: "sitewide" })}
     >
       <span className="wa-float-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="26" height="26" focusable="false">
