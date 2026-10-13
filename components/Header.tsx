@@ -71,15 +71,16 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
-            <div className="header-contact" aria-label="Sales contact">
-              <a href={`mailto:${site.email}`}><span>Email</span>{site.email}</a>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><span>WhatsApp</span>{site.whatsapp}</a>
-            </div>
+            <Link className="header-quote" href="/contact?intent=quotation">Request a Quote</Link>
             <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
               <span /> <span />
               <span className="sr-only">Toggle navigation</span>
             </button>
           </div>
+        </div>
+        <div className="header-contact-strip" aria-label="Sales contact">
+          <a href={`mailto:${site.email}`}><span aria-hidden="true">✉</span>{site.email}</a>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span><strong>WhatsApp:</strong> {site.whatsapp}</a>
         </div>
       </header>
     </>
