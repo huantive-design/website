@@ -1,3 +1,5 @@
+import { priorityBlogPosts } from "./priorityBlogPosts";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -2530,6 +2532,8 @@ export const blogPosts: BlogPost[] = [
     ],
   },
 ];
+
+blogPosts.unshift(...priorityBlogPosts);
 
 export const getPost = (slug: string) => blogPosts.find((post) => post.slug === slug);
 export const otherPosts = (slug: string, limit = 3) => blogPosts.filter((post) => post.slug !== slug).slice(0, limit);
