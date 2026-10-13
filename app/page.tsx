@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { InquiryForm } from "@/components/InquiryForm";
 import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
 import { categories, products } from "@/lib/products";
@@ -169,17 +168,6 @@ export default function Home() {
         <div className="faq-list">{homeFaqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}</div>
       </section>
 
-      <section className="final-rfq editorial-rfq">
-        <div className="shell rfq-layout">
-          <div>
-            <p className="eyebrow eyebrow-light">Build your next range</p>
-            <h2>Tell us what your market needs.</h2>
-            <p>Share the product direction, estimated quantity, destination market and customization scope. Sales inquiries are delivered to huantive@huantive.com, with WhatsApp available for urgent discussions.</p>
-            <div className="rfq-badges"><span>Sample support</span><span>OEM &amp; ODM</span><span>Europe &amp; North America</span></div>
-          </div>
-          <InquiryForm compact />
-        </div>
-      </section>
     </>
   );
 }

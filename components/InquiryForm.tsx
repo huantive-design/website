@@ -41,27 +41,15 @@ export function InquiryForm({
 
   return (
     <form className={compact ? "rfq-form compact" : "rfq-form"} onSubmit={submit}>
-      <div className="field-grid">
+      <div className="field-grid simplified-field-grid">
         <label>Name<input name="name" required autoComplete="name" /></label>
-        <label>Company<input name="company" required autoComplete="organization" /></label>
         <label>Business email<input name="email" type="email" required autoComplete="email" /></label>
+        <label>Company<input name="company" autoComplete="organization" placeholder="Optional" /></label>
         <label>Phone / WhatsApp<input name="phone" autoComplete="tel" placeholder="Optional" /></label>
-        <label>Country<input name="country" required autoComplete="country-name" /></label>
-        <label>
-          Enquiry type
-          <select name="intent" defaultValue={defaultIntent || "quotation"}>
-            <option value="quotation">Quotation</option>
-            <option value="sample">Sample request</option>
-            <option value="oem">OEM / private label</option>
-            <option value="wholesale">Wholesale / distribution</option>
-            <option value="other">Other</option>
-          </select>
-        </label>
-        <label>Product<input name="product" required defaultValue={defaultProduct} placeholder="Product or category" /></label>
-        <label>Estimated quantity<input name="quantity" required placeholder="e.g. 1,000 units" /></label>
       </div>
-      <label>Project details<textarea name="message" rows={compact ? 3 : 5} defaultValue={defaultMessage} placeholder="Target market, customization, timeline..." /></label>
-      <label className="file-field">Requirement file (optional)<input type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg" /></label>
+      <input type="hidden" name="intent" value={defaultIntent || "quotation"} />
+      <input type="hidden" name="product" value={defaultProduct} />
+      <label>Message<textarea name="message" rows={compact ? 3 : 4} defaultValue={defaultMessage} placeholder="Which product are you interested in? Quantity or customization can be added if available." /></label>
       <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
       <button className="button button-primary" disabled={state === "sending"}>
         {state === "sending" ? "Sending..." : "Submit inquiry"}

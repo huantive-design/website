@@ -5,7 +5,6 @@ import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/url";
 import { MotionEffects } from "@/components/MotionEffects";
-import { MobileActions } from "@/components/MobileActions";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
@@ -24,7 +23,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
-        <MobileActions />
       </body>
     </html>
   );

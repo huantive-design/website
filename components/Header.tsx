@@ -45,7 +45,6 @@ export function Header() {
                 <Link key={item.label} href={item.href} onClick={close}>{item.label}</Link>
               ),
             )}
-            <Link className="nav-mobile-cta button button-primary" href="/contact" onClick={close}>Request a Quote</Link>
 
             <div id="product-mega" className={mega ? "mega open" : "mega"}>
               <div className="shell mega-inner">
@@ -72,7 +71,6 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
-            <Link className="header-quote" href="/contact" onClick={close}>Request a Quote</Link>
             <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
               <span /> <span />
               <span className="sr-only">Toggle navigation</span>

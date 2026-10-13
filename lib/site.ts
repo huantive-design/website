@@ -25,6 +25,7 @@ export const navigation = [
   { label: "Quality", href: "/#quality" },
   { label: "Our Story", href: "/our-story" },
   { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const megaMenuSolutions = [

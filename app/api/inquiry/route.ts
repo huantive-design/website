@@ -19,14 +19,12 @@ type Field = { key: string; label: string; required: boolean };
 
 const fields: Field[] = [
   { key: "name", label: "Contact name", required: true },
-  { key: "company", label: "Company", required: true },
   { key: "email", label: "Email", required: true },
+  { key: "company", label: "Company", required: false },
   { key: "phone", label: "Phone / WhatsApp", required: false },
-  { key: "country", label: "Country / market", required: true },
   { key: "intent", label: "Enquiry type", required: false },
-  { key: "product", label: "Product or category", required: true },
-  { key: "quantity", label: "Target quantity", required: true },
-  { key: "message", label: "Project details", required: false },
+  { key: "product", label: "Product or category", required: false },
+  { key: "message", label: "Message", required: false },
 ];
 
 export async function POST(request: Request) {
@@ -99,7 +97,8 @@ export async function POST(request: Request) {
     .map((field) => `${field.label}: ${values[field.key]}`)
     .join("\n");
 
-  const subject = `New inquiry — ${values.company} (${values.country}) — ${values.product}`;
+  const subjectParts = [values.company || values.name, values.product].filter(Boolean);
+  const subject = `New inquiry — ${subjectParts.join(" — ")}`;
 
   try {
     const info = await transporter.sendMail({
