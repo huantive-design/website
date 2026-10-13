@@ -22,18 +22,6 @@ export function Footer() {
             <span className="connect-label">WhatsApp</span>
             <span className="connect-value">{site.whatsapp}</span>
           </a>
-          <a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`}>
-            <span className="connect-label">Phone</span>
-            <span className="connect-value">{site.phone}</span>
-          </a>
-          <span className="connect-block">
-            <span className="connect-label">Address</span>
-            <span className="connect-value">{site.address}</span>
-          </span>
-          <span className="connect-block">
-            <span className="connect-label">Business hours</span>
-            <span className="connect-value">Mon–Sat, 09:00–18:00 (GMT+8)</span>
-          </span>
           <Link className="connect-cta" href="/contact">Request a quote →</Link>
         </div>
       </div>

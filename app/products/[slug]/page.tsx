@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
+import { ProductGallery } from "@/components/ProductGallery";
 import { getProduct, getCategory, products, productsByCategory, tradeTerms } from "@/lib/products";
 import { site } from "@/lib/site";
 import { breadcrumbSchema, categoryFaqSchema, productSchema } from "@/lib/schema";
@@ -69,10 +70,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       ])) }} />
 
       <section className="product-hero section"><div className="shell product-hero-grid">
-        <div className="gallery">
-          <div className="gallery-main"><Image src={product.images[0]} alt={product.imageAlts?.[0] ?? `${product.specs?.model ?? product.name} ${product.name} for OEM and wholesale buyers`} fill priority sizes="(max-width: 980px) 100vw, 54vw" /></div>
-          <div className="gallery-thumbs">{product.images.slice(1, 4).map((image, index) => <span key={image}><Image src={image} alt={product.imageAlts?.[index + 1] ?? `${product.name} verified product detail ${index + 1}`} fill sizes="120px" /></span>)}</div>
-        </div>
+        <ProductGallery images={product.images} alts={product.imageAlts} productName={product.name} />
         <div className="product-info">
           <nav className="crumbs" aria-label="Breadcrumb">
             <Link href="/products">Products</Link><span aria-hidden="true">/</span>
@@ -172,13 +170,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div></section>
 
       {related.length > 0 && (
-        <section className="section section-muted"><div className="shell">
+        <section className="section section-muted related-products"><div className="shell">
           <div className="section-heading"><div><p className="eyebrow">Same category</p><h2>Related {category?.name.toLowerCase()}.</h2></div><Link href={`/products/category/${product.categorySlug}`}>View all in category →</Link></div>
-          <div className="category-link-grid">
+          <div className="related-product-grid">
             {related.map((item) => (
-              <Link key={item.slug} href={`/products/${item.slug}`}>
-                <span className="category-link-thumb"><Image src={item.images[0]} alt="" fill sizes="120px" /></span>
-                <strong>{item.name}</strong><small>{item.summary}</small>
+              <Link className="related-product-card" key={item.slug} href={`/products/${item.slug}`}>
+                <span className="related-product-thumb"><Image src={item.images[0]} alt={`${item.name} product image`} fill sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 33vw" /></span>
+                <span className="related-product-copy">
+                  <strong>{item.name}</strong>
+                  <small>{item.summary}</small>
+                  <b>View details →</b>
+                </span>
               </Link>
             ))}
           </div>

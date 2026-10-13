@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { categories } from "@/lib/products";
-import { megaMenuSolutions, navigation, site } from "@/lib/site";
+import { megaMenuSolutions, navigation, site, whatsappLink } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -71,6 +71,10 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
+            <div className="header-contact" aria-label="Sales contact">
+              <a href={`mailto:${site.email}`}><span>Email</span>{site.email}</a>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><span>WhatsApp</span>{site.whatsapp}</a>
+            </div>
             <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
               <span /> <span />
               <span className="sr-only">Toggle navigation</span>

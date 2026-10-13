@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { CertificateCarousel } from "@/components/CertificateCarousel";
 import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
 import { categories, products } from "@/lib/products";
@@ -20,6 +21,17 @@ const solutions = [
   { label: "Heated massage guns", href: "/products/category/massage-guns", image: "/products/11/image-1.jpg" },
   { label: "Compression leg recovery", href: "/products/category/leg-massagers", image: "/products/8/image-1.jpg" },
   { label: "Full-back seat cushions", href: "/products/category/massage-pillows-cushions", image: "/products/19/image-1.jpg" },
+];
+const certificates = [
+  { src: "https://sc04.alicdn.com/kf/Af336e50e1c9d431a932a4e764588e8673.jpg", alt: "Factory ISO 9001 quality management system certificate image" },
+  { src: "https://sc04.alicdn.com/kf/A7e7c2b9d35a14550950a725fa44b6b20l.jpg", alt: "UK electrical equipment safety certificate image" },
+  { src: "https://sc04.alicdn.com/kf/A58e5ae3b4d6a4f41bc665c0e1b101737Z.jpg", alt: "REACH test report certificate image" },
+  { src: "https://sc04.alicdn.com/kf/Ac514a3dd8c354465bd7af6f394fc0defy.jpg", alt: "EU low voltage directive certificate image" },
+  { src: "https://sc04.alicdn.com/kf/A7c049f219f604aa5a10f111e1dfd9b2dn.jpg", alt: "amfori BSCI monitoring summary report image" },
+  { src: "https://sc04.alicdn.com/kf/A5030cc751f824ca1adebacb767c43511y.jpg", alt: "CE certificate image" },
+  { src: "https://sc04.alicdn.com/kf/Acc5c113e5bc543b9b3d63f0828e3318aO.jpg", alt: "UKCA certificate image" },
+  { src: "https://sc04.alicdn.com/kf/Afa27abaec4c8451098f42ae308b7fc83p.jpg", alt: "RoHS certificate image" },
+  { src: "https://sc04.alicdn.com/kf/A9e50d1089be84ae48a84e2aff59730c3H.jpg", alt: "FCC supplier declaration of conformity image" },
 ];
 const homeFaqs = [
   { q: "Are you a manufacturer or a trading company?", a: "We are a manufacturer. Development, production and quality control run across three production bases with more than 34,000 m² of combined factory space." },
@@ -133,6 +145,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <CertificateCarousel certificates={certificates} />
 
       <section id="quality" className="tb-research">
         <div className="shell">
