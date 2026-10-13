@@ -82,10 +82,22 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
       <section className="section section-muted">
         <div className="shell">
-          <div className="section-heading"><div><p className="eyebrow">Buyer questions</p><h2>{category.name} sourcing FAQ</h2></div></div>
-          <div className="faq-list">
-            {faqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
+          <div className="section-heading">
+            <div><p className="eyebrow">Buyer guide</p><h2>How to evaluate {category.name.toLowerCase()} for sourcing.</h2></div>
+            <p>Use this category page to shortlist models before asking for samples, quotations or private-label changes.</p>
           </div>
+          <div className="scope-grid">
+            <article><strong>Manufacturer fit</strong><p>Confirm the exact platform, function set, target market and channel before comparing pricing.</p></article>
+            <article><strong>OEM / private label</strong><p>Review logo, colour, packaging, manual language and accessory options against your order volume.</p></article>
+            <article><strong>Wholesale checks</strong><p>Ask for model-level specifications, carton data, sample policy, lead time and applicable compliance documents.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading"><div><p className="eyebrow">Buyer questions</p><h2>{category.name} sourcing FAQ</h2></div></div>
+        <div className="faq-list">
+          {faqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
         </div>
       </section>
 
@@ -106,7 +118,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div>
             <p className="eyebrow eyebrow-light">Category inquiry</p>
             <h2>Source {category.name.toLowerCase()} directly.</h2>
-            <p>Share the target model, estimated quantity, destination market and customization scope. Until the sales mailbox is connected, urgent requests can use the published factory phone.</p>
+            <p>Share the target model, estimated quantity, destination market and customization scope. Sales inquiries are delivered to huantive@huantive.com, with WhatsApp available for urgent discussions.</p>
             <div className="rfq-badges"><span>Sample support</span><span>OEM & ODM</span><span>Europe & North America</span></div>
           </div>
           <InquiryForm compact />

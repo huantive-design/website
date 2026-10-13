@@ -41,7 +41,7 @@ export const tradeTerms = {
   included: "Certified adapter, car plug, user manual and colour box in every set",
   motor: "Pure copper motor for longer service life, lower noise and higher torque",
   materials: "Eco-friendly ABS for massage heads and inner modules",
-  certifications: ["FDA", "UL", "CE", "RoHS", "UKCA", "KC", "ISO 9001"],
+  complianceScope: "Applicable test reports and conformity documents are confirmed by exact model, certificate holder, standard, date and destination market before quotation",
   warranty: "12-month quality warranty",
   leadTime: "20-30 working days for orders below 5,000 pcs; negotiated above that volume",
   paymentBulk: "Bulk orders: 30% T/T on PI confirmation, 70% balance before shipment",

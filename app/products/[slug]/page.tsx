@@ -100,7 +100,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <div><dt>In every set</dt><dd>{tradeTerms.included}</dd></div>
           <div><dt>Motor</dt><dd>{tradeTerms.motor}</dd></div>
           <div><dt>Materials</dt><dd>{tradeTerms.materials}</dd></div>
-          <div><dt>Certifications held</dt><dd>{tradeTerms.certifications.join(", ")}</dd></div>
+          <div><dt>Compliance scope</dt><dd>{tradeTerms.complianceScope}</dd></div>
           <div><dt>Payment — bulk</dt><dd>{tradeTerms.paymentBulk}</dd></div>
           <div><dt>Payment — small order</dt><dd>{tradeTerms.paymentSmall}</dd></div>
         </dl>
@@ -117,10 +117,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div></section>
 
       <section className="section shell">
-        <div className="section-heading"><div><p className="eyebrow">Buyer due diligence</p><h2>Information supplied with your quotation.</h2></div></div>
+        <div className="section-heading"><div><p className="eyebrow">Buyer due diligence</p><h2>Information supplied with your quotation.</h2></div><p>Designed for importers, distributors, retail buyers and private-label teams comparing factory partners.</p></div>
         <div className="due-grid">{["Selected-model technical specification", "Applicable test and conformity documentation", "Packaging, carton and loading data", "MOQ, sample policy and lead time", "Warranty and quality-control scope", "Branding and market configuration options"].map((item) => <div key={item}><span>✓</span>{item}</div>)}</div>
         <p className="compliance-notice">Certificates and test reports apply only to the companies, models, samples, materials, standards and dates identified in each document. Applicability and current validity are confirmed for every order and destination market.</p>
       </section>
+
+      <section className="section section-muted"><div className="shell">
+        <div className="section-heading"><div><p className="eyebrow">RFQ checklist</p><h2>Send the details buyers usually compare.</h2></div><p>Including these items helps us answer with a model-specific quotation instead of a generic catalogue reply.</p></div>
+        <div className="scope-grid">
+          <article><strong>Product and quantity</strong><p>Target model, estimated first order quantity, sample requirement and expected launch window.</p></article>
+          <article><strong>Market and compliance</strong><p>Destination country, voltage or plug needs, document requirements and retailer onboarding checks.</p></article>
+          <article><strong>Branding scope</strong><p>Logo, colour, manual language, packaging artwork, accessory set and any private-label changes.</p></article>
+        </div>
+      </div></section>
 
       {related.length > 0 && (
         <section className="section section-muted"><div className="shell">
@@ -138,7 +147,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="section final-rfq"><div className="shell rfq-layout">
         <div><p className="eyebrow eyebrow-light">Product inquiry</p><h2>Evaluate this platform.</h2><p>Send target quantity, market, and customization requirements.</p></div>
-        <InquiryForm compact defaultProduct={product.name} />
+        <InquiryForm compact defaultProduct={product.name} defaultMessage={`Please send MOQ, sample cost, lead time, packaging options and applicable compliance documents for ${product.name}.`} />
       </div></section>
     </>
   );

@@ -45,11 +45,11 @@ export default function Home() {
         <div className="shell tb-hero-inner">
           <div className="tb-hero-copy">
             <p className="tb-tag">OEM &amp; ODM manufacturing</p>
-            <h1>Recovery devices,<br />built for your brand</h1>
-            <p>Massage guns, neck and shoulder massagers, foot and leg recovery, pillows and targeted devices — manufactured in China for international retail and distribution programs.</p>
+            <h1>Massage device manufacturer for OEM &amp; wholesale buyers</h1>
+            <p>Source massage guns, neck and shoulder massagers, foot and leg recovery devices, pillows and targeted massagers from a China factory serving private-label, retail and distribution programs.</p>
             <div className="tb-hero-actions">
-              <Link className="button button-dark" href="/contact">Request a quote</Link>
-              <Link className="button button-outline" href="/products">Explore products</Link>
+              <Link className="button button-dark" href="/contact?intent=quotation">Request factory quote</Link>
+              <Link className="button button-outline" href="/oem-odm">Review OEM process</Link>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function Home() {
 
       <section className="tb-section shell">
         <div className="tb-head">
-          <h2>Science-backed devices for recovery and wellness</h2>
+          <h2>Factory platforms for procurement review</h2>
           <Link href="/products">View all 22 products →</Link>
         </div>
         <ProductRail products={bestSellers} idPrefix="best" />
@@ -87,8 +87,8 @@ export default function Home() {
       </section>
 
       <section className="tb-section shell">
-        <div className="tb-head tb-head-center">
-          <h2>Therapeutic solutions for <em>every</em> body</h2>
+          <div className="tb-head tb-head-center">
+          <h2>Commercial product directions for B2B buyers</h2>
         </div>
         <div className="tb-solution-grid">
           {solutions.map((item) => (
@@ -174,7 +174,7 @@ export default function Home() {
           <div>
             <p className="eyebrow eyebrow-light">Build your next range</p>
             <h2>Tell us what your market needs.</h2>
-            <p>Share the product direction, estimated quantity, destination market and customization scope. Until the sales mailbox is connected, urgent requests can use the published factory phone.</p>
+            <p>Share the product direction, estimated quantity, destination market and customization scope. Sales inquiries are delivered to huantive@huantive.com, with WhatsApp available for urgent discussions.</p>
             <div className="rfq-badges"><span>Sample support</span><span>OEM &amp; ODM</span><span>Europe &amp; North America</span></div>
           </div>
           <InquiryForm compact />

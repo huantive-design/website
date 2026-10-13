@@ -97,7 +97,7 @@ export default function OemOdmPage() {
           <div>
             <p className="eyebrow eyebrow-light">Start a program</p>
             <h2>Tell us what your market needs.</h2>
-            <p>Share the product direction, estimated quantity, destination market and customization scope. Until the sales mailbox is connected, urgent requests can use the published factory phone.</p>
+            <p>Share the product direction, estimated quantity, destination market and customization scope. Sales inquiries are delivered to huantive@huantive.com, with WhatsApp available for urgent discussions.</p>
             <div className="rfq-badges"><span>Sample support</span><span>OEM & ODM</span><span>Europe & North America</span></div>
           </div>
           <InquiryForm compact />
