@@ -121,7 +121,7 @@ export const categories: Category[] = [
     intro:
       "Pneumatic compression platforms from calf sleeves to full lower-leg boots. Specified by chamber count, pressure range and controller type to suit your programme.",
     buyerNote: "Two compression platforms for calf-only and full lower-leg recovery.",
-    image: "/products/8/image-1.jpg",
+    image: "/products/8/image-1.webp",
   },
   {
     slug: "massage-pillows-cushions",
