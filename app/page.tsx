@@ -17,6 +17,20 @@ export const metadata: Metadata = {
 const pick = (...slugs: string[]) => slugs.map((slug) => products.find((product) => product.slug === slug)).filter((product): product is (typeof products)[number] => Boolean(product));
 const bestSellers = pick("hot-cold-massage-gun", "deep-tissue-massage-gun", "compression-leg-massager-boots", "shiatsu-foot-massager-machine", "shiatsu-massage-pillow", "full-back-massage-seat-cushion");
 const newPlatforms = pick("mini-massage-gun", "cooling-massage-gun", "wearable-neck-massager", "heated-lumbar-massager-belt", "ems-facial-massager", "air-compression-leg-massager");
+const featuredCategories = [
+  {
+    label: "Massage Guns",
+    note: "Percussion recovery platforms for wholesale and private-label programs",
+    href: "/products/category/massage-guns",
+    image: "https://sc04.alicdn.com/kf/A817bdb24cda44c46ae1f5517f3b871c76.jpg",
+  },
+  {
+    label: "Neck & Shoulder Massagers",
+    note: "Wearable and structured formats for neck, shoulder and upper-back ranges",
+    href: "/products/category/neck-shoulder-massagers",
+    image: "https://sc04.alicdn.com/kf/A65748abe6fa9432cb8662b1dd877762dp.jpg",
+  },
+];
 const solutions = [
   { label: "Heated massage guns", href: "/products/category/massage-guns", image: "/products/11/image-1.jpg" },
   { label: "Compression leg recovery", href: "/products/category/leg-massagers", image: "/products/8/image-1.jpg" },
@@ -72,6 +86,20 @@ export default function Home() {
           <Link href="/products">View all 22 products →</Link>
         </div>
         <ProductRail products={bestSellers} idPrefix="best" />
+      </section>
+
+      <section className="featured-category-banner" aria-label="Featured product categories">
+        {featuredCategories.map((category) => (
+          <Link className="featured-category-card" href={category.href} key={category.label}>
+            <Image src={category.image} alt={`${category.label} category`} fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <span className="featured-category-overlay" />
+            <span className="featured-category-copy">
+              <strong>{category.label}</strong>
+              <small>{category.note}</small>
+              <b>View category →</b>
+            </span>
+          </Link>
+        ))}
       </section>
 
       <section className="tb-claim">
