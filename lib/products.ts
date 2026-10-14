@@ -93,7 +93,7 @@ export const categories: Category[] = [
     intro:
       "Wearable and wrap-style neck platforms for retail, gifting and e-commerce ranges. Available with kneading mechanisms, optional heat and a choice of power configurations.",
     buyerNote: "Six neck and shoulder platforms across wearable, wrap and structured formats.",
-    image: "/products/3/image-1.jpg",
+    image: "/images/neck-massager-home-reading-hero.jpg",
   },
   {
     slug: "foot-massagers",
