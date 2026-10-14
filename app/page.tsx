@@ -33,7 +33,7 @@ const featuredCategories = [
 ];
 const solutions = [
   { label: "Heated massage guns", href: "/products/category/massage-guns", image: "/products/11/image-1.jpg" },
-  { label: "Compression leg recovery", href: "/products/category/leg-massagers", image: "/products/8/image-1.jpg" },
+  { label: "Compression leg recovery", href: "/products/category/leg-massagers", image: "/products/8/image-1.webp" },
   { label: "Full-back seat cushions", href: "/products/category/massage-pillows-cushions", image: "/products/19/image-1.jpg" },
 ];
 const certificates = [

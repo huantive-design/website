@@ -1893,7 +1893,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     excerpt:
       "A large share of this category's buyers have neuropathy or diabetes. That changes which build you should specify and what your listing must say.",
-    cover: "/products/2/image-2.jpg",
+    cover: "/products/2/image-2.webp",
     coverAlt: "Shiatsu foot massager machine manufactured for home wellness retail",
     relatedCategory: "foot-massagers",
     relatedPosts: ["sourcing-massage-devices-compliance-checklist", "air-compression-leg-massager-buying-guide"],
