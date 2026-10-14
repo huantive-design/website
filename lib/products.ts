@@ -79,7 +79,7 @@ export const categories: Category[] = [
     intro:
       "Percussion massage platforms covering full-size, compact and thermal-attachment formats. Each model is quoted with its own motor, stroke, battery and attachment configuration.",
     buyerNote: "Four percussion platforms, including hot-and-cold and cooling-design concepts.",
-    image: "/products/11/image-1.jpg",
+    image: "/images/massage-gun-gym-hero.jpg",
   },
   {
     slug: "neck-shoulder-massagers",
