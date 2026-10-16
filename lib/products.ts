@@ -558,9 +558,9 @@ export const products: Product[] = [
     primaryKeyword: "hot and cold massage gun manufacturer",
     secondaryKeywords: ["heated massage gun supplier", "thermal percussion gun OEM", "hot cold therapy gun factory"],
     intent: "transactional",
-    metaTitle: "Hot & Cold Massage Gun Manufacturer | OEM Factory China",
+    metaTitle: "Hot & Cold Massage Gun Manufacturer | OEM & Wholesale | HUANTIVE",
     metaDescription:
-      "Hot and cold massage gun manufacturer producing percussion platforms with thermal attachments for recovery brands, sports retail and private-label ranges.",
+      "Source hot and cold massage guns from HUANTIVE. Explore OEM branding, customizable accessories, bulk production and model-specific specifications. Request a factory quote.",
     summary: "A percussion massage gun with hot and cold therapy attachments for recovery ranges.",
     images: gallery(11, 6),
     tags: ["Hot and cold head", "Percussion format", "OEM / ODM"],

@@ -33,10 +33,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const specificationFocus = product.specs
     ? `Model ${product.specs.model} is presented with verified electrical, dimensional and packing data from the supplied product file.`
     : "The supplied product file does not contain a complete model-level specification set for this page, so unsupported technical values are not displayed.";
+  const isHotColdMassageGun = product.slug === "hot-cold-massage-gun";
+  const productH1 = isHotColdMassageGun
+    ? "Hot and Cold Massage Gun Manufacturer for Private Label Brands"
+    : `${product.name} Manufacturer for OEM & Wholesale Buyers`;
   const procurementNotes = product.procurementNotes ?? [
     `${product.name} is positioned for ${sourcingChannels} where buyers compare function set, packing data, OEM scope and sample availability before purchase orders.`,
     specificationFocus,
     "For Europe and North America, compliance documents, plug or voltage requirements, manual language and packaging artwork should be confirmed against the exact destination market before production.",
+  ];
+  const specificationItems = [
+    product.specs?.model ? "verified model number" : "model number to confirm",
+    product.specs?.power ? "power or voltage data" : "power and plug requirements",
+    product.specs?.battery ? "battery and runtime data" : "battery, charging and runtime data",
+    product.specs?.packageSize || product.specs?.cartonSize ? "package and carton data" : "package size, carton quantity and loading data",
   ];
   const faqs = product.faqs ?? [
     {
@@ -77,7 +87,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <Link href="/products">Products</Link><span aria-hidden="true">/</span>
             <Link href={`/products/category/${product.categorySlug}`}>{product.category}</Link>
           </nav>
-          <h1>{product.name} Manufacturer for OEM & Wholesale Buyers</h1>
+          <p className="product-seo-kicker">{product.primaryKeyword}</p>
+          <h1>{productH1}</h1>
           <p className="hero-lede">{product.buyerSummary ?? product.summary}</p>
           <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
           <dl className="quick-specs">
@@ -105,6 +116,28 @@ export default async function ProductPage({ params }: ProductPageProps) {
         <div className="section-heading"><div><p className="eyebrow">Product overview</p><h2>{product.name} sourcing overview.</h2></div><p>Technical values, claims and compliance scope are confirmed against the selected model before quotation.</p></div>
         <div className="procurement-copy">
           {procurementNotes.map((note) => <p key={note}>{note}</p>)}
+        </div>
+        <div className="seo-asset-grid" aria-label="Procurement decision details">
+          <article>
+            <span>01</span>
+            <strong>Model and specifications</strong>
+            <p>Buyers should compare {specificationItems.join(", ")} before confirming samples or bulk production.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>Accessories and packaging</strong>
+            <p>Confirm included accessories, manual language, retail box artwork, carton data and any private-label packaging requirement.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>OEM / ODM scope</strong>
+            <p>{product.customization.join(", ")} can be reviewed against order volume, tooling needs, lead time and destination market requirements.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <strong>Compliance documents</strong>
+            <p>Certification and test-report applicability must be checked by exact model, certificate holder, standard, issue date and destination market.</p>
+          </article>
         </div>
         <div className="due-grid">{product.features.map((feature) => <div key={feature}><span>✓</span>{feature}</div>)}</div>
       </div></section>
@@ -175,6 +208,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <article><strong>Product and quantity</strong><p>Target model, estimated first order quantity, sample requirement and expected launch window.</p></article>
           <article><strong>Market and compliance</strong><p>Destination country, voltage or plug needs, document requirements and retailer onboarding checks.</p></article>
           <article><strong>Branding scope</strong><p>Logo, colour, manual language, packaging artwork, accessory set and any private-label changes.</p></article>
+        </div>
+        <div className="product-seo-links" aria-label="Product sourcing links">
+          <Link href={`/products/category/${product.categorySlug}`}>Compare OEM models</Link>
+          <Link href="/oem-odm">Review OEM / ODM process</Link>
+          <Link href={`/contact?intent=specifications&product=${product.slug}`}>Request specifications</Link>
+          <Link href={`/contact?intent=quotation&product=${product.slug}`}>Get MOQ &amp; lead time</Link>
         </div>
       </div></section>
 
