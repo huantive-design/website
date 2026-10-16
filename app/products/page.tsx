@@ -3,6 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { categories, products } from "@/lib/products";
+
+const buyerPaths = [
+  { label: "Need OEM / ODM development", href: "/oem-odm", note: "Review private-label process, packaging scope, MOQ and lead time." },
+  { label: "Source massage guns", href: "/products/category/massage-guns", note: "Compare hot-cold, mini, deep-tissue and cooling massage gun platforms." },
+  { label: "Source neck massagers", href: "/products/category/neck-shoulder-massagers", note: "Review wearable, shiatsu, heated and wrap-style neck massager formats." },
+  { label: "Source compression recovery", href: "/products/category/leg-massagers", note: "Compare air compression leg massagers and recovery boot platforms." },
+];
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -27,6 +34,22 @@ export default function ProductsPage() {
           <p className="eyebrow">Massage device manufacturer</p>
           <h1>Massage and recovery<br />device manufacturing.</h1>
           <p>Six product categories and 22 manufacturing platforms for distributors, retail chains, private-label brands and e-commerce operators across Europe and North America.</p>
+        </div>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading">
+          <div><p className="eyebrow">Buyer paths</p><h2>Choose the sourcing route<br />that matches your search intent.</h2></div>
+          <p>These core commercial pages are prioritized for buyers comparing manufacturers, OEM scope, wholesale product lines and quotation requirements.</p>
+        </div>
+        <div className="buyer-path-grid">
+          {buyerPaths.map((path) => (
+            <Link className="buyer-path-card" href={path.href} key={path.href}>
+              <strong>{path.label}</strong>
+              <span>{path.note}</span>
+              <b>Open page →</b>
+            </Link>
+          ))}
         </div>
       </section>
 

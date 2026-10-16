@@ -36,6 +36,13 @@ const solutions = [
   { label: "Compression leg recovery", href: "/products/category/leg-massagers", image: "/products/8/image-1.webp" },
   { label: "Full-back seat cushions", href: "/products/category/massage-pillows-cushions", image: "/products/19/image-1.jpg" },
 ];
+const coreSourcingPages = [
+  { label: "Massage device manufacturer", href: "/products", note: "Browse all 22 OEM product platforms for B2B sourcing." },
+  { label: "OEM / ODM massage devices", href: "/oem-odm", note: "Review private-label development, packaging and production flow." },
+  { label: "Massage gun manufacturer", href: "/products/category/massage-guns", note: "Compare hot-cold, mini, deep-tissue and cooling massage gun platforms." },
+  { label: "Neck massager manufacturer", href: "/products/category/neck-shoulder-massagers", note: "Source wearable, shiatsu and wrap-style neck and shoulder massagers." },
+  { label: "Air compression leg massagers", href: "/products/category/leg-massagers", note: "Review calf sleeves and recovery boot platforms for wholesale programs." },
+];
 const certificates = [
   { src: "https://sc04.alicdn.com/kf/Af336e50e1c9d431a932a4e764588e8673.jpg", alt: "Factory ISO 9001 quality management system certificate image" },
   { src: "https://sc04.alicdn.com/kf/A7e7c2b9d35a14550950a725fa44b6b20l.jpg", alt: "UK electrical equipment safety certificate image" },
@@ -92,6 +99,21 @@ export default function Home() {
             </span>
           </Link>
         ))}
+      </section>
+
+      <section className="seo-hub shell" aria-labelledby="core-sourcing-pages">
+        <div>
+          <p className="tb-tag">Core sourcing pages</p>
+          <h2 id="core-sourcing-pages">Start with the pages Google and buyers should understand first.</h2>
+        </div>
+        <div className="seo-hub-grid">
+          {coreSourcingPages.map((page) => (
+            <Link href={page.href} key={page.href}>
+              <strong>{page.label}</strong>
+              <span>{page.note}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="tb-section shell tb-wide-shell">
