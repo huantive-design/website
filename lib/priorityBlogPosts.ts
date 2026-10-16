@@ -35,9 +35,11 @@ export const priorityBlogPosts = [
     ],
     cta: { text: "Planning a neck and shoulder massager program? Send HUANTIVE your target market and estimated quantity to receive MOQ, lead time, packaging options and available documents.", primary: { label: "Get MOQ & Lead Time", href: "/contact?intent=quotation&product=shiatsu-neck-shoulder-massager" }, secondary: { label: "View neck massagers", href: "/products/category/neck-shoulder-massagers" } },
     internalLinks: [
-      { label: "Neck & Shoulder Massagers", href: "/products/category/neck-shoulder-massagers" },
-      { label: "OEM & ODM process", href: "/oem-odm" },
-      { label: "Contact HUANTIVE", href: "/contact" },
+      { label: "Neck & shoulder massager manufacturing", href: "/products/category/neck-shoulder-massagers" },
+      { label: "Shiatsu Neck & Shoulder Massager", href: "/products/shiatsu-neck-shoulder-massager" },
+      { label: "Wearable Neck Massager", href: "/products/wearable-neck-massager" },
+      { label: "OEM & ODM massage device process", href: "/oem-odm" },
+      { label: "Request MOQ, lead time and packaging options", href: "/contact?intent=quotation&product=shiatsu-neck-shoulder-massager" },
     ],
     sources: [
       { label: "Google Search Central — helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", date: "Accessed 2026-10-13" },
@@ -76,9 +78,12 @@ export const priorityBlogPosts = [
     ],
     cta: { text: "Developing a mini or hot-cold massage gun range? HUANTIVE can review your quantity, market and customization plan and reply with MOQ, lead time and packaging options.", primary: { label: "Request massage gun quote", href: "/contact?intent=quotation&product=mini-massage-gun" }, secondary: { label: "View massage guns", href: "/products/category/massage-guns" } },
     internalLinks: [
-      { label: "Massage Guns", href: "/products/category/massage-guns" },
+      { label: "Massage gun manufacturing platforms", href: "/products/category/massage-guns" },
       { label: "Mini Massage Gun", href: "/products/mini-massage-gun" },
       { label: "Hot and Cold Massage Gun", href: "/products/hot-cold-massage-gun" },
+      { label: "Deep Tissue Massage Gun", href: "/products/deep-tissue-massage-gun" },
+      { label: "OEM & ODM private-label process", href: "/oem-odm" },
+      { label: "Request massage gun MOQ and specifications", href: "/contact?intent=quotation&product=mini-massage-gun" },
     ],
     sources: [
       { label: "Google Search Central — helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", date: "Accessed 2026-10-13" },
@@ -117,9 +122,11 @@ export const priorityBlogPosts = [
     ],
     cta: { text: "Sourcing compression leg massagers or recovery boots? Send HUANTIVE your target market and quantity to receive model-specific quotation details.", primary: { label: "Request leg massager quote", href: "/contact?intent=quotation&product=air-compression-leg-massager" }, secondary: { label: "View leg massagers", href: "/products/category/leg-massagers" } },
     internalLinks: [
-      { label: "Leg Massagers", href: "/products/category/leg-massagers" },
+      { label: "Air compression leg massager manufacturing", href: "/products/category/leg-massagers" },
       { label: "Air Compression Leg Massager", href: "/products/air-compression-leg-massager" },
       { label: "Compression Leg Massager Boots", href: "/products/compression-leg-massager-boots" },
+      { label: "OEM & ODM recovery-device process", href: "/oem-odm" },
+      { label: "Request leg massager quotation", href: "/contact?intent=quotation&product=air-compression-leg-massager" },
     ],
     sources: [
       { label: "Google Search Central — helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", date: "Accessed 2026-10-13" },
@@ -188,7 +195,13 @@ export const priorityBlogPosts = [
       { q: "Why choose HUANTIVE for massage guns?", a: "HUANTIVE offers 20 years of massage device manufacturing experience and supports OEM, ODM, wholesale and private-label programs." },
     ],
     cta: { text: "Looking for a massage gun OEM manufacturer? Send HUANTIVE your model direction, quantity and market.", primary: { label: "Request OEM quote", href: "/contact?intent=oem&product=mini-massage-gun" }, secondary: { label: "View massage guns", href: "/products/category/massage-guns" } },
-    internalLinks: [{ label: "Mini Massage Gun", href: "/products/mini-massage-gun" }, { label: "Massage Guns", href: "/products/category/massage-guns" }],
+    internalLinks: [
+      { label: "Massage gun manufacturing platforms", href: "/products/category/massage-guns" },
+      { label: "Mini Massage Gun", href: "/products/mini-massage-gun" },
+      { label: "Hot and Cold Massage Gun", href: "/products/hot-cold-massage-gun" },
+      { label: "OEM & ODM process", href: "/oem-odm" },
+      { label: "Request OEM massage gun quote", href: "/contact?intent=oem&product=mini-massage-gun" },
+    ],
     sources: [{ label: "Google Search Central — helpful, reliable, people-first content", url: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", date: "Accessed 2026-10-13" }],
   },
   {

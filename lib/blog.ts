@@ -965,6 +965,13 @@ export const blogPosts: BlogPost[] = [
       primary: { label: "OEM & ODM development", href: "/oem-odm" },
       secondary: { label: "Request documentation", href: "/contact" },
     },
+    internalLinks: [
+      { label: "OEM & ODM development process", href: "/oem-odm" },
+      { label: "All massage device manufacturing platforms", href: "/products" },
+      { label: "Massage gun manufacturing platforms", href: "/products/category/massage-guns" },
+      { label: "Hot and Cold Massage Gun", href: "/products/hot-cold-massage-gun" },
+      { label: "Request model-specific compliance documents", href: "/contact?intent=documentation" },
+    ],
     sources: [
       { label: "21 CFR 890.5660 — Therapeutic massager", url: "https://www.ecfr.gov/current/title-21/chapter-I/subchapter-H/part-890/subpart-F/section-890.5660", date: "accessed 2 October 2026" },
       { label: "gov.uk — Medical devices: conformity assessment and the UKCA mark", url: "https://www.gov.uk/guidance/medical-devices-conformity-assessment-and-the-ukca-mark", date: "accessed 2 October 2026" },
