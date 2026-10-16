@@ -118,7 +118,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           <div>
             <p className="eyebrow eyebrow-light">Category inquiry</p>
             <h2>Source {category.name.toLowerCase()} directly.</h2>
-            <p>Share the target model, estimated quantity, destination market and customization scope. Sales inquiries are delivered to huantive@huantive.com, with WhatsApp available for urgent discussions.</p>
+            <p>Share the target model, estimated quantity, destination market and customization scope.</p>
             <div className="rfq-badges"><span>Sample support</span><span>OEM & ODM</span><span>Europe & North America</span></div>
           </div>
           <InquiryForm compact />
