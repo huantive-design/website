@@ -11,7 +11,7 @@ export function Footer() {
           <p>{site.tagline} for global B2B programs.</p>
         </div>
         <div><h3>Product categories</h3>{categories.map((category) => <Link key={category.slug} href={`/products/category/${category.slug}`}>{category.name}</Link>)}</div>
-        <div><h3>Company</h3><Link href="/products">All Products</Link><Link href="/oem-odm">OEM & ODM</Link><Link href="/blog">Blog</Link><Link href="/our-story">Our Story</Link><Link href="/#manufacturing">Manufacturing</Link><Link href="/#quality">Quality</Link></div>
+        <div><h3>Company</h3><Link href="/products">All Products</Link><Link href="/oem-odm">OEM & ODM</Link><Link href="/sourcing">Sourcing</Link><Link href="/private-label">Private Label</Link><Link href="/wholesale">Wholesale</Link><Link href="/compliance">Compliance</Link><Link href="/blog">Blog</Link><Link href="/our-story">Our Story</Link><Link href="/manufacturing">Manufacturing</Link><Link href="/quality">Quality</Link></div>
         <div className="footer-connect">
           <h3>Contact us</h3>
           <a href={`mailto:${site.email}`}>

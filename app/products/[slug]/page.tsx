@@ -11,6 +11,72 @@ import { breadcrumbSchema, categoryFaqSchema, productSchema } from "@/lib/schema
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
+type ProductForApplicationCopy = NonNullable<ReturnType<typeof getProduct>>;
+
+const channelValueCopy: Record<string, Record<string, string>> = {
+  "wearable-neck-massager": {
+    "Wellness retail": "Use this open-neck, cordless format for wellness shelves where buyers need a light device that feels approachable for first-time neck-massager customers.",
+    "E-commerce brands": "The TENS pulse, voice prompt and remote-control feature set gives online listings several concrete comparison points beyond a generic neck massager photo.",
+    "Corporate gifting": "Cordless use, compact size and customizable voice broadcast make the model easier to position for branded wellness gifts and employee-care campaigns.",
+  },
+  "shiatsu-neck-shoulder-massager": {
+    "Home wellness retail": "The wrap-style body coverage and home or vehicle power options support retail positioning as a multi-area household massager rather than a single neck device.",
+    "Automotive accessory channels": "Car lighter support gives automotive and travel channels a concrete reason to compare this model against ordinary plug-in shoulder massagers.",
+    "Distributor programs": "Gift-box packing, reversible kneading and documented carton data help distributors evaluate shelf readiness, logistics and repeat replenishment.",
+  },
+  "hot-cold-massage-gun": {
+    "Sports recovery brands": "The thermal-head concept helps recovery brands create a more differentiated line extension than a standard percussion gun, provided the final temperature data is confirmed.",
+    "Physiotherapy channels": "Clinics and therapy distributors should use this page to request exact thermal range, attachments and runtime before sample evaluation.",
+    "Premium retail": "Hot/cold positioning can support a higher-value retail story when packaging, accessory set and model-specific claims are controlled carefully.",
+  },
+  "mini-massage-gun": {
+    "E-commerce marketplaces": "The compact body, multiple colourways and hot/cold head options provide listing-friendly differentiation for marketplace bundles and private-label storefronts.",
+    "Travel retail": "Small size, USB charging and bag packing make the model better suited to travel and portable recovery ranges than full-size massage guns.",
+    "Promotional gifting": "Colour selection, accessory set and gift packaging give promotional buyers more room to build tiered branded gift programs.",
+  },
+  "deep-tissue-massage-gun": {
+    "Fitness and gym channels": "The full-size body, 1300-3200 RPM range and eight-head set suit gym and fitness buyers comparing performance feel during sample testing.",
+    "Sports retail": "A 2500 mAh battery, LCD control and carry-case style packing give sports retailers concrete specification points for shelf comparison.",
+    "Distributor programs": "Carton data, attachment set and established HT-HN026 model information make the page useful for distributors building repeatable wholesale assortments.",
+  },
+  "air-compression-leg-massager": {
+    "Recovery and wellness retail": "The calf-wrap format is easier to position for home recovery shelves than full boot systems when buyers want a softer, more compact wearable device.",
+    "Senior mobility channels": "Adjustable straps, heat settings and cordless use give senior mobility buyers practical fit and comfort points to confirm during sampling.",
+    "Online health brands": "Single-leg and pair packing options help online brands test different price points and bundle strategies before committing to bulk production.",
+  },
+  "shiatsu-foot-massager-machine": {
+    "Home wellness retail": "The enclosed dual-foot format, rolling, scraping, air compression and heat create a premium home-wellness proposition for retailers.",
+    "Senior care channels": "Simple program selection and seated-use positioning make this model relevant for senior-care buyers evaluating comfort and ease of operation.",
+    "Department store ranges": "The larger appliance-like form and multi-function specification suit department-store buyers comparing perceived value and packaging presentation.",
+  },
+  "compression-leg-massager-boots": {
+    "Sports recovery brands": "Full-leg boot RFQs should focus on chamber layout, controller logic and pressure range so sports recovery brands can compare against established recovery-boot expectations.",
+    "Training facilities": "Facility buyers should confirm sleeve size range, cleaning requirements and controller durability before sample approval.",
+    "Physiotherapy distribution": "Therapy distributors need exact pressure, program and documentation data before positioning the product for professional or home recovery channels.",
+  },
+  "heated-massage-pillow": {
+    "Home comfort retail": "The heated pillow concept fits home-comfort shelves where buyers need a compact product story around sofa, bed or desk relaxation routines.",
+    "Vehicle accessory channels": "Before quoting vehicle accessory programs, buyers should confirm adapter route, fixing method and heat specification for the selected model.",
+    "Seasonal gifting": "Compact size and heat positioning make the product suitable for seasonal wellness gifts once packaging, manual language and claims are approved.",
+  },
+  "kneading-hand-massager": {
+    "Wellness retail": "This RFQ page should be used to confirm whether the final model supports the kneading feel and enclosed hand-chamber experience expected by wellness retailers.",
+    "Office and desk-worker channels": "Desk-worker positioning depends on final size, noise, heat and session logic, so buyers should request the approved configuration before listing.",
+    "Health distribution": "Health distributors need exact mode, charging and carton data before evaluating whether the product fits hand-care assortments.",
+  },
+};
+
+function productApplicationCopy(product: ProductForApplicationCopy, application: string) {
+  const explicit = channelValueCopy[product.slug]?.[application];
+  if (explicit) return explicit;
+  if (product.categorySlug === "massage-guns") return `${application} buyers should compare motor feel, speed range, battery runtime, attachment set and case or gift-box configuration before adding this massage gun to a recovery range.`;
+  if (product.categorySlug === "neck-shoulder-massagers") return `${application} buyers should evaluate wearing style, kneading comfort, heat feel, power route and fabric finish because these details shape return risk and repeat purchase potential.`;
+  if (product.categorySlug === "foot-massagers") return `${application} buyers should review massage coverage, heat position, user controls, appliance size and carton data because foot massagers affect shelf space and freight planning more than handheld devices.`;
+  if (product.categorySlug === "leg-massagers") return `${application} buyers should confirm compression coverage, sleeve fit, controller logic, heat function and packing route so the product matches the intended recovery or mobility use case.`;
+  if (product.categorySlug === "massage-pillows-cushions") return `${application} buyers should compare body coverage, mounting method, heat option, power route and upholstery finish to decide whether the item fits home, office or vehicle use.`;
+  return `${application} buyers should confirm contact area, comfort level, heat or vibration logic, charging method and packaging format before positioning this targeted massager in a retail range.`;
+}
+
 export function generateStaticParams() { return products.map(({ slug }) => ({ slug })); }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
@@ -31,19 +97,20 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const related = productsByCategory(product.categorySlug).filter((item) => item.slug !== product.slug).slice(0, 3);
   const sourcingChannels = product.applications.join(", ").toLowerCase();
   const specificationFocus = product.specs
-    ? `Model ${product.specs.model} is presented with verified electrical, dimensional and packing data from the supplied product file.`
-    : "The supplied product file does not contain a complete model-level specification set for this page, so unsupported technical values are not displayed.";
-  const isHotColdMassageGun = product.slug === "hot-cold-massage-gun";
-  const productH1 = isHotColdMassageGun
-    ? "Hot and Cold Massage Gun Manufacturer for Private Label Brands"
-    : `${product.name} Manufacturer for OEM & Wholesale Buyers`;
+    ? `Model ${product.specs.model} is presented with model-specific electrical, dimensional and packing data for quotation review.`
+    : "A quotation specialist can confirm the selected model, electrical data, dimensional data and packing route for your target market.";
+  const productH1 = product.specs?.model
+    ? `${product.specs.model} ${product.name} for OEM & Wholesale`
+    : product.slug === "hot-cold-massage-gun"
+      ? "Hot and Cold Massage Gun Manufacturer for Private Label Brands"
+      : `${product.name} Manufacturer for OEM & Private Label Programs`;
   const procurementNotes = product.procurementNotes ?? [
     `${product.name} is positioned for ${sourcingChannels} where buyers compare function set, packing data, OEM scope and sample availability before purchase orders.`,
     specificationFocus,
     "For Europe and North America, compliance documents, plug or voltage requirements, manual language and packaging artwork should be confirmed against the exact destination market before production.",
   ];
   const specificationItems = [
-    product.specs?.model ? "verified model number" : "model number to confirm",
+    product.specs?.model ? "model number" : "model number to confirm",
     product.specs?.power ? "power or voltage data" : "power and plug requirements",
     product.specs?.battery ? "battery and runtime data" : "battery, charging and runtime data",
     product.specs?.packageSize || product.specs?.cartonSize ? "package and carton data" : "package size, carton quantity and loading data",
@@ -54,10 +121,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       a: `Yes. HUANTIVE supports OEM, ODM and private-label sourcing for this ${product.category.toLowerCase()} platform. Logo, colour, packaging, manual language and market configuration are confirmed against order volume and the selected model.`,
     },
     {
-      q: `Which verified specifications are available for ${product.name}?`,
+      q: `Which specifications are available for ${product.name}?`,
       a: product.specs
-        ? `The page displays the verified model number${product.specs.battery ? ", battery" : ""}${product.specs.power ? ", power or voltage" : ""}${product.specs.productSize ? ", product size" : ""}${product.specs.packageSize ? ", package size" : ""}${product.specs.cartonSize ? " and carton data" : ""} from the supplied product file.`
-        : "The supplied product file does not include a complete specification set for this page, so unsupported values are omitted rather than estimated.",
+        ? `The page displays the model number${product.specs.battery ? ", battery" : ""}${product.specs.power ? ", power or voltage" : ""}${product.specs.productSize ? ", product size" : ""}${product.specs.packageSize ? ", package size" : ""}${product.specs.cartonSize ? " and carton data" : ""} needed for quotation review.`
+        : "Buyers can request the selected-model specification, electrical data, packaging data and documentation scope with the quotation.",
     },
     {
       q: "What should a buyer include in the RFQ?",
@@ -164,15 +231,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
       ) : null}
 
       <section className="section section-muted"><div className="shell">
-        <div className="section-heading"><div><p className="eyebrow">Ordering terms</p><h2>Factory terms for this range.</h2></div><p>We manufacture in Wenzhou, Zhejiang with a second plant in Anlu, Hubei. These terms apply across the massager range.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">Ordering terms</p><h2>Factory terms for this product range.</h2></div><p>Commercial terms are confirmed by selected model, customization scope, destination market and approved quotation.</p></div>
         <dl className="terms-grid">
           <div><dt>Branding MOQ</dt><dd>{tradeTerms.moqBranding}</dd></div>
           <div><dt>Custom colour MOQ</dt><dd>{tradeTerms.moqColor}</dd></div>
           <div><dt>Production lead time</dt><dd>{tradeTerms.leadTime}</dd></div>
           <div><dt>Warranty</dt><dd>{tradeTerms.warranty}</dd></div>
-          <div><dt>In every set</dt><dd>{tradeTerms.included}</dd></div>
-          <div><dt>Motor</dt><dd>{tradeTerms.motor}</dd></div>
-          <div><dt>Materials</dt><dd>{tradeTerms.materials}</dd></div>
+          <div><dt>Accessory set</dt><dd>{tradeTerms.accessoryScope}</dd></div>
+          <div><dt>Packaging scope</dt><dd>{tradeTerms.packagingScope}</dd></div>
           <div><dt>Compliance scope</dt><dd>{tradeTerms.complianceScope}</dd></div>
           <div><dt>Payment — bulk</dt><dd>{tradeTerms.paymentBulk}</dd></div>
           <div><dt>Payment — small order</dt><dd>{tradeTerms.paymentSmall}</dd></div>
@@ -181,11 +247,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
       <section className="section shell">
         <div className="section-heading"><div><p className="eyebrow">Target channels</p><h2>Best-fit B2B applications.</h2></div><p>Positioning guidance based on the product format. Final market and channel strategy remain your commercial decision.</p></div>
-        <div className="application-grid">{product.applications.map((item) => <article key={item}><strong>{item}</strong><p>{product.name} can be reviewed for {item.toLowerCase()} when its verified functions, package size, carton data and customization scope match your channel plan.</p></article>)}</div>
+        <div className="application-grid">{product.applications.map((item) => <article key={item}><strong>{item}</strong><p>{productApplicationCopy(product, item)}</p></article>)}</div>
       </section>
 
       <section className="section shell">
-        <div className="section-heading"><div><p className="eyebrow">Buyer FAQ</p><h2>{product.name} OEM sourcing questions.</h2></div><p>Answers are limited to the supplied product file and general factory quotation workflow.</p></div>
+        <div className="section-heading"><div><p className="eyebrow">Buyer FAQ</p><h2>{product.name} OEM sourcing questions.</h2></div><p>Answers focus on model-specific quotation details and the factory sourcing workflow.</p></div>
         <div className="faq-list">
           {faqs.map((faq) => <details key={faq.q}><summary>{faq.q}</summary><p>{faq.a}</p></details>)}
         </div>

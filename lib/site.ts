@@ -21,15 +21,17 @@ export const whatsappLink = `https://wa.me/${site.whatsappNumber}?text=${encodeU
 export const navigation = [
   { label: "Products", href: "/products", hasMega: true },
   { label: "OEM & ODM", href: "/oem-odm" },
-  { label: "Manufacturing", href: "/#manufacturing" },
-  { label: "Quality", href: "/#quality" },
+  { label: "Sourcing", href: "/sourcing" },
+  { label: "Manufacturing", href: "/manufacturing" },
+  { label: "Quality", href: "/quality" },
   { label: "Our Story", href: "/our-story" },
   { label: "Blog", href: "/blog" },
   { label: "Contact Us", href: "/contact" },
 ];
 
 export const megaMenuSolutions = [
-  { label: "Private label programs", href: "/oem-odm", note: "Launch under your own brand" },
-  { label: "Wholesale & distribution", href: "/contact?intent=wholesale", note: "Volume supply by market" },
-  { label: "Sample evaluation", href: "/contact?intent=sample", note: "Test before committing" },
+  { label: "Private label programs", href: "/private-label", note: "Launch under your own brand" },
+  { label: "Wholesale & distribution", href: "/wholesale", note: "Volume supply by market" },
+  { label: "Supplier evaluation", href: "/sourcing", note: "Compare factories before sampling" },
+  { label: "Compliance documents", href: "/compliance", note: "Review model-specific evidence" },
 ];

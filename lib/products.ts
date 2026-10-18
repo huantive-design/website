@@ -22,7 +22,7 @@ export type Product = {
   imageAlts?: string[];
 };
 
-/** Verified factory data for a specific model, used on the product detail page. */
+/** Listed factory data for a specific model, used on the product detail page. */
 export type ProductSpecs = {
   model: string;
   colors?: string;
@@ -41,10 +41,9 @@ export type ProductSpecs = {
  */
 export const tradeTerms = {
   moqBranding: "1,000 pcs per item for custom logo, manual or packaging",
-  moqColor: "2,000 pcs per item for a custom colour",
-  included: "Certified adapter, car plug, user manual and colour box in every set",
-  motor: "Pure copper motor for longer service life, lower noise and higher torque",
-  materials: "Eco-friendly ABS for massage heads and inner modules",
+  moqColor: "2,000 pcs per item for a custom color",
+  accessoryScope: "Included accessories are confirmed by selected model, bill of materials and approved quotation",
+  packagingScope: "Retail box, manual language, carton data and private-label artwork are confirmed by model and order scope",
   complianceScope: "Applicable test reports and conformity documents are confirmed by exact model, certificate holder, standard, date and destination market before quotation",
   warranty: "12-month quality warranty",
   leadTime: "20-30 working days for orders below 5,000 pcs; negotiated above that volume",
@@ -123,7 +122,7 @@ export const categories: Category[] = [
       "Source leg massagers from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
     heading: "Compression leg massager manufacturing",
     intro:
-      "Pneumatic compression platforms from calf sleeves to full lower-leg boots. Specified by chamber count, pressure range and controller type to suit your programme.",
+      "Pneumatic compression platforms from calf sleeves to full lower-leg boots. Specified by chamber count, pressure range and controller type to suit your program.",
     buyerNote: "Two compression platforms for calf-only and full lower-leg recovery.",
     image: "/products/8/image-1.webp",
   },
@@ -189,14 +188,16 @@ export const products: Product[] = [
     name: "Wearable Neck Massager",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "wearable neck massager manufacturer",
-    secondaryKeywords: ["cordless neck massager supplier", "private label neck massager", "OEM wearable massager China"],
+    primaryKeyword:
+      "wearable neck massager manufacturer",
+    secondaryKeywords: ["cordless neck massager OEM", "TENS neck massager supplier", "private label neck massager manufacturer"],
     intent: "transactional",
     metaTitle:
-      "Wearable Neck Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Wearable Neck Massager OEM Supplier | HUANTIVE",
     metaDescription:
-      "Source wearable neck massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "An open-neck wearable format for private-label wellness and personal-care programs.",
+      "Source NM22 / ST-304 wearable TENS neck massager with heat, voice prompts, remote control and 1200mAh battery. Review private-label packaging and request factory pricing.",
+    summary:
+      "A cordless NM22 / ST-304 wearable TENS neck massager platform for wellness retail, gifting and e-commerce ranges.",
     images: gallery(1, 4),
     tags: ["OEM / ODM", "Private label", "Sample inquiry"],
     specs: {
@@ -211,32 +212,33 @@ export const products: Product[] = [
       cartonWeight: "9 kg",
     },
     features: [
-      "Six modes with 15 freely adjustable intensity levels",
-      "TENS pulse output modelled on traditional massage techniques",
-      "Constant-temperature heat with intelligent temperature control",
-      "Voice prompts and smart remote control",
-      "Customisable voice-broadcast version available for your brand",
+      "Six massage modes with 15 adjustable intensity levels",
+      "TENS pulse output for a compact, wearable neck-care experience",
+      "Constant-temperature heat with smart temperature control",
+      "Voice prompts plus remote-control operation",
+      "Customizable voice-prompt version available for private-label programs",
       "1200 mAh battery: 120-minute charge for 300 minutes of use",
     ],
     customization: ["Logo", "Color", "Packaging", "Market configuration"],
     applications: ["Wellness retail", "E-commerce brands", "Corporate gifting"],
-    buyerSummary: "Model NM22 / ST-304 is a cordless wearable neck massager with TENS pulse output, heat, voice prompts and remote control for OEM wellness ranges.",
+    buyerSummary:
+      "NM22 / ST-304 is a cordless wearable neck massager for OEM buyers comparing TENS pulse modes, heat, remote control, battery runtime and retail packaging.",
     procurementNotes: [
-          "Use this open-neck platform when your range needs a lightweight cordless neck device with six modes and 15 intensity levels.",
-          "The supplied file verifies a 1200 mAh battery, 120-minute charging time, 300-minute working time, 5W / DC 5V 1A power and 24 pcs per carton packing.",
-          "Voice broadcast can be customized, making the model suitable for private-label wellness retail and gifting programs."
+          "Use this open-neck platform when your range needs a lightweight cordless neck device with TENS pulse, heat and remote-control positioning.",
+          "Specifications include a 1200 mAh battery, 120-minute charging time, 300-minute working time, 5W / DC 5V 1A power and 24 pcs per carton packing.",
+          "Voice prompts can be customized, making the model suitable for private-label wellness retail and gifting programs."
     ],
     faqs: [
           {
-                "q": "What makes model NM22 / ST-304 suitable for private-label neck massager programs?",
-                "a": "The supplied file verifies six modes, 15 intensity levels, TENS pulse, constant-temperature heat, voice broadcast, remote control and a customizable voice-broadcast version."
+                "q": "What makes NM22 / ST-304 suitable for private-label neck massager programs?",
+                "a": "The model combines six massage modes, 15 intensity levels, TENS pulse, constant-temperature heat, voice prompts, remote control and a customizable voice-prompt option."
           },
           {
-                "q": "Which battery and runtime values are verified for this model?",
-                "a": "The product file lists a 1200 mAh battery, 120-minute charging time and 300-minute working time."
+                "q": "Which battery and runtime values are available for this model?",
+                "a": "Specifications include a 1200 mAh battery, 120-minute charging time and 300-minute working time."
           },
           {
-                "q": "What packing data should buyers use for quotation review?",
+                "q": "What packaging data should buyers use for quotation review?",
                 "a": "The listed product size is 16 x 16 x 5 cm, package size is 18 x 16 x 6 cm, and carton size is 51.5 x 35 x 24.5 cm with 24 pcs per carton."
           }
     ],
@@ -249,17 +251,19 @@ export const products: Product[] = [
   },
   {
     slug: "shiatsu-neck-shoulder-massager",
-    name: "Shiatsu Neck and Shoulder Massager",
+    name: "Shiatsu Neck & Shoulder Massager",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "shiatsu neck and shoulder massager manufacturer",
-    secondaryKeywords: ["shiatsu massager supplier China", "car and home neck massager OEM", "wholesale shiatsu massager"],
+    primaryKeyword:
+      "shiatsu neck and shoulder massager manufacturer",
+    secondaryKeywords: ["shiatsu shoulder massager OEM", "heated neck massager supplier", "private label neck and shoulder massager"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Neck and Shoulder Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Shiatsu Neck & Shoulder Massager Manufacturer | OEM",
     metaDescription:
-      "Source shiatsu neck and shoulder massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A plug-in wrap-style massage platform supplied with home and vehicle power options.",
+      "Source OY-S003 Shiatsu Neck & Shoulder Massager with reversible kneading nodes, heat, speed control, home power and car adapter support. Request OEM quotation.",
+    summary:
+      "A retail-ready OY-S003 shiatsu neck and shoulder massager for wholesale, distributor and private-label wellness programs.",
     images: gallery(2, 5, [1, 3, 4, 5]),
     tags: ["Home and car use", "OEM / ODM", "B2B supply"],
     specs: {
@@ -273,31 +277,32 @@ export const products: Product[] = [
       cartonWeight: "9.3 / 12.6 kg",
     },
     features: [
-      "Shiatsu kneading heads that reverse in two directions",
-      "Infrared heating with two selectable intensities",
-      "Three speeds adjustable from weak to strong",
-      "Controller lights indicate remaining battery charge",
+      "Reversible shiatsu kneading nodes for multi-direction massage",
+      "Infrared heat with two selectable intensity levels",
+      "Three adjustable speed levels from gentle to strong",
+      "Controller indicator lights show remaining battery status",
       "15-minute auto-off timer",
       "Covers neck, shoulder, back, waist, abdomen, arm, leg and foot",
-      "Lithium battery plus mains adapter and car plug for home, office or vehicle use",
+      "Lithium battery, mains adapter and car plug for home, office or vehicle use",
       "Gift-box packed for retail and corporate gifting",
     ],
     customization: ["Upholstery", "Control layout", "Logo", "Retail box"],
     applications: ["Home wellness retail", "Automotive accessory channels", "Distributor programs"],
-    buyerSummary: "Model OY-S003 is a wrap-style shiatsu neck and shoulder massager with reversible kneading heads, heat, speed control and home or vehicle power options.",
+    buyerSummary:
+      "OY-S003 is a wrap-style shiatsu neck and shoulder massager for buyers comparing kneading nodes, heat settings, power options, gift-box packaging and OEM scope.",
     procurementNotes: [
-          "This platform fits buyers sourcing a retail-ready wrap massager for neck, shoulder, back, waist, abdomen, arm, leg and foot positioning.",
-          "The supplied file verifies 24W rated power, 50 x 40 cm product size, 40 x 21 x 17 cm package size and 6 pcs per carton.",
-          "Lithium battery, adapter, car lighter and gift-box packing support distributor, automotive accessory and corporate gifting channels."
+          "This platform fits buyers sourcing a retail-ready wrap massager that can be positioned for neck, shoulder, back, waist, arm, leg and foot use.",
+          "Specifications include 24W rated power, 50 x 40 cm product size, 40 x 21 x 17 cm package size and 6 pcs per carton.",
+          "Lithium battery, adapter, car plug and gift-box packaging support distributor, automotive accessory and corporate gifting channels."
     ],
     faqs: [
           {
-                "q": "Which functions are verified for model OY-S003?",
-                "a": "The supplied file lists reversible shiatsu kneading heads, two-intensity infrared heat, three speeds, controller battery lights, 15-minute auto-off and use across multiple body areas."
+                "q": "Which functions are available for model OY-S003?",
+                "a": "Specifications include reversible shiatsu kneading heads, two-intensity infrared heat, three speeds, controller indicator lights, 15-minute auto-off and use across multiple body areas."
           },
           {
                 "q": "Is this model supplied for both home and vehicle use?",
-                "a": "Yes. The product file lists lithium battery, adapter and car lighter support for home, office or car use."
+                "a": "Yes. Specifications include lithium battery, adapter and car plug support for home, office or car use."
           },
           {
                 "q": "What is the carton configuration for OY-S003?",
@@ -313,17 +318,19 @@ export const products: Product[] = [
   },
   {
     slug: "kneading-neck-shoulder-massager",
-    name: "Kneading Neck and Shoulder Massager",
+    name: "Kneading Neck & Shoulder Massager",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "kneading neck and shoulder massager supplier",
-    secondaryKeywords: ["shoulder massager wholesale China", "pull strap massager manufacturer", "private label shoulder wrap"],
+    primaryKeyword:
+      "kneading neck shoulder massager supplier",
+    secondaryKeywords: ["pull strap shoulder massager wholesale", "heated kneading neck massager OEM", "private label shoulder wrap"],
     intent: "transactional",
     metaTitle:
-      "Kneading Neck and Shoulder Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Kneading Neck Shoulder Massager Supplier | HUANTIVE",
     metaDescription:
-      "Source kneading neck and shoulder massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A pull-strap shoulder wrap designed for wholesale and private-label massage ranges.",
+      "Source WY-NM19 kneading neck and shoulder massager with infrared heat, three speeds, pull-strap design and gift-box packaging. Review OEM options.",
+    summary:
+      "A WY-NM19 pull-strap kneading neck and shoulder massager for wholesale, retail and private-label programs.",
     images: gallery(3, 6),
     tags: ["Pull-strap design", "Private label", "Wholesale"],
     specs: {
@@ -339,7 +346,7 @@ export const products: Product[] = [
     features: [
       "Kneading massage combined with infrared heating",
       "Soft shiatsu heads that reverse in two directions",
-      "Three speeds adjustable from weak to strong",
+      "Three adjustable speed levels from gentle to strong",
       "15-minute auto-off timer",
       "Covers neck, shoulder, back, waist, abdomen, arm, leg and foot",
       "Mains adapter and car plug supplied for home, office or vehicle use",
@@ -347,24 +354,24 @@ export const products: Product[] = [
     ],
     customization: ["Fabric", "Color", "Controls", "Packaging"],
     applications: ["Wholesale distribution", "Pharmacy and wellness retail", "Promotional programs"],
-    buyerSummary: "Model WY-NM19 is a pull-strap kneading neck and shoulder massager with infrared heat, three speeds and adapter plus car lighter support.",
+    buyerSummary: "Model WY-NM19 is a pull-strap kneading neck and shoulder massager with infrared heat, three speeds and adapter plus car plug support.",
     procurementNotes: [
           "Use WY-NM19 when your B2B program needs a pull-strap shoulder wrap with kneading and heat rather than a cordless wearable format.",
-          "Verified data includes 24W rated power, 50 x 40 cm product size, 40 x 17 x 20 cm package size and 6 pcs per carton.",
-          "The model is suited to wholesale distribution, pharmacy and wellness retail, and promotional programs that need gift-box packing."
+          "Specifications include 24W rated power, 50 x 40 cm product size, 40 x 17 x 20 cm package size and 6 pcs per carton.",
+          "The model is suited to wholesale distribution, pharmacy and wellness retail, and promotional programs that need gift-box packaging."
     ],
     faqs: [
           {
-                "q": "What is verified for model WY-NM19?",
-                "a": "The file lists kneading massage, infrared heat, soft shiatsu heads that reverse in two directions, three speeds, 15-minute auto-off and multi-area use."
+                "q": "What is available for model WY-NM19?",
+                "a": "Specifications include kneading massage, infrared heat, soft shiatsu heads that reverse in two directions, three speeds, 15-minute auto-off and multi-area use."
           },
           {
                 "q": "Does WY-NM19 include vehicle-use support?",
-                "a": "Yes. The supplied file lists adapter and car lighter support for home, office or car use."
+                "a": "Yes. Specifications include adapter and car plug support for home, office or car use."
           },
           {
                 "q": "Which package size is listed for this model?",
-                "a": "The supplied package size is 40 x 17 x 20 cm, with a 53.5 x 41.5 x 42 cm carton containing 6 pcs."
+                "a": "The listed package size is 40 x 17 x 20 cm, with a 53.5 x 41.5 x 42 cm carton containing 6 pcs."
           }
     ],
     imageAlts: [
@@ -376,17 +383,19 @@ export const products: Product[] = [
   },
   {
     slug: "heated-neck-shoulder-massager",
-    name: "Heated Neck and Shoulder Massager",
+    name: "Heated Neck & Shoulder Massager",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "heated neck and shoulder massager manufacturer",
-    secondaryKeywords: ["heat therapy neck massager supplier", "U shape shoulder massager OEM", "heated massager factory China"],
+    primaryKeyword:
+      "heated neck shoulder massager OEM",
+    secondaryKeywords: ["heated neck massager manufacturer", "infrared shoulder massager supplier", "private label heated shoulder massager"],
     intent: "transactional",
     metaTitle:
-      "Heated Neck and Shoulder Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Heated Neck Shoulder Massager OEM | HUANTIVE",
     metaDescription:
-      "Source heated neck and shoulder massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A U-shaped shoulder massage platform with an integrated control area for branded programs.",
+      "Source OY18NM17 heated neck and shoulder massager with shiatsu kneading, infrared heat, PU leather finish and retail gift-box options. Request OEM pricing.",
+    summary:
+      "An OY18NM17 heated neck and shoulder massager platform for OEM retail, gifting and wellness programs.",
     images: gallery(4, 6),
     tags: ["Heat option", "OEM / ODM", "Retail-ready format"],
     specs: {
@@ -401,9 +410,9 @@ export const products: Product[] = [
     },
     features: [
       "Infrared heating reaching approximately 45 C",
-      "Shiatsu kneading heads that reverse in two directions",
+      "Reversible shiatsu kneading nodes for multi-direction massage",
       "Branded pure copper motor for durability, quiet running and torque",
-      "Three speeds adjustable from weak to strong",
+      "Three adjustable speed levels from gentle to strong",
       "15-minute auto-off timer",
       "Eco-friendly ABS massage heads and inner module",
       "PU leather finish with a matching carry bag",
@@ -414,21 +423,21 @@ export const products: Product[] = [
     buyerSummary: "Model OY18NM17 is a heated neck and shoulder massager with reversible shiatsu kneading heads, approximately 45 C infrared heat and PU leather finish.",
     procurementNotes: [
           "This model is appropriate when buyers need a heat-focused neck and shoulder massager with carry bag and retail gift-box presentation.",
-          "The supplied file verifies input 110-240V, DC 12V 2A output, 24W rated power, 50 x 40 cm product size and 6 pcs per carton.",
-          "Verified materials include ABS for massage heads and inner module, PU leather, pure copper motor and matching carry bag."
+          "Specifications include input 110-240V, DC 12V 2A output, 24W rated power, 50 x 40 cm product size and 6 pcs per carton.",
+          "Model materials include ABS for massage heads and inner module, PU leather, pure copper motor and matching carry bag."
     ],
     faqs: [
           {
-                "q": "What heat value is verified for OY18NM17?",
-                "a": "The product file states that the infrared heating function can reach around 45 C."
+                "q": "What heat value is available for OY18NM17?",
+                "a": "Specifications state that the infrared heating function can reach around 45 C."
           },
           {
                 "q": "Which materials are listed for this heated neck and shoulder massager?",
-                "a": "The file lists eco-friendly ABS materials for massage heads and inner module, a PU leather finish and a matching carry bag."
+                "a": "Specifications include eco-friendly ABS materials for massage heads and inner module, a PU leather finish and a matching carry bag."
           },
           {
                 "q": "What power data is shown for this model?",
-                "a": "The file lists input 110-240V, output DC 12V 2A and rated power 24W."
+                "a": "Specifications include input 110-240V, output DC 12V 2A and rated power 24W."
           }
     ],
     imageAlts: [
@@ -443,14 +452,16 @@ export const products: Product[] = [
     name: "Wraparound Shoulder Massager",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "wraparound shoulder massager supplier",
-    secondaryKeywords: ["padded shoulder massager manufacturer", "upper body massager wholesale", "OEM massage wrap China"],
+    primaryKeyword:
+      "wraparound shoulder massager wholesale",
+    secondaryKeywords: ["padded shoulder massager supplier", "upper body massager OEM", "private label massage wrap"],
     intent: "transactional",
     metaTitle:
-      "Wraparound Shoulder Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Wraparound Shoulder Massager Wholesale | HUANTIVE",
     metaDescription:
-      "Source wraparound shoulder massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A padded wraparound massage format for shoulder and upper-body product collections.",
+      "Source WY-NM15 wraparound shoulder massager with kneading, infrared heat, three speeds and padded arm straps. Review wholesale and OEM options.",
+    summary:
+      "A WY-NM15 padded wraparound shoulder massager for distributor, home comfort and private-label collections.",
     images: gallery(5, 4),
     tags: ["Padded wrap", "OEM available", "B2B quotation"],
     specs: {
@@ -466,27 +477,27 @@ export const products: Product[] = [
     features: [
       "Kneading massage combined with infrared heating",
       "Soft shiatsu heads that reverse in two directions",
-      "Three speeds adjustable from weak to strong",
+      "Three adjustable speed levels from gentle to strong",
       "15-minute auto-off timer",
       "Mains adapter and car plug supplied for home, office or vehicle use",
       "Wrap-over arm straps for hands-free positioning",
     ],
     customization: ["Surface material", "Color", "Control panel", "Branding"],
     applications: ["Distributor ranges", "Home comfort retail", "Private-label collections"],
-    buyerSummary: "Model WY-NM15 is a black wraparound shoulder massager with kneading, infrared heat, three speeds and adapter plus car lighter support.",
+    buyerSummary: "Model WY-NM15 is a black wraparound shoulder massager with kneading, infrared heat, three speeds and adapter plus car plug support.",
     procurementNotes: [
           "WY-NM15 is a padded wraparound option for buyers comparing shoulder and upper-body massage formats for retail collections.",
-          "Verified data includes 24W rated power, 50 x 40 cm product size, 40 x 21 x 17 cm package size and 6 pcs per carton.",
+          "Specifications include 24W rated power, 50 x 40 cm product size, 40 x 21 x 17 cm package size and 6 pcs per carton.",
           "The function set is based on kneading massage, infrared heat, soft reversible shiatsu heads, three speeds and 15-minute auto-off."
     ],
     faqs: [
           {
-                "q": "What functions are verified for WY-NM15?",
-                "a": "The product file lists kneading massage, infrared heat, soft shiatsu heads reversing in two directions, three speeds and 15-minute auto-off."
+                "q": "What functions are available for WY-NM15?",
+                "a": "Specifications include kneading massage, infrared heat, soft shiatsu heads reversing in two directions, three speeds and 15-minute auto-off."
           },
           {
-                "q": "Which colour is listed for this model?",
-                "a": "The supplied colour is black."
+                "q": "Which color is listed for this model?",
+                "a": "The supplied color is black."
           },
           {
                 "q": "What carton data is available?",
@@ -502,17 +513,19 @@ export const products: Product[] = [
   },
   {
     slug: "u-shaped-neck-massager",
-    name: "U-Shaped Neck Massager",
+    name: "U-Shaped Neck Massager with Heat",
     category: "Neck & Shoulder Massagers",
     categorySlug: "neck-shoulder-massagers",
-    primaryKeyword: "U shaped neck massager manufacturer",
-    secondaryKeywords: ["travel neck massager supplier", "neck massage pillow OEM", "gift neck massager wholesale"],
+    primaryKeyword:
+      "u shaped neck massager manufacturer",
+    secondaryKeywords: ["structured neck massager supplier", "travel neck massager OEM", "gift neck massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "U-Shaped Neck Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "U Shaped Neck Massager Manufacturer | HUANTIVE",
     metaDescription:
-      "Source u-shaped neck massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A structured U-shaped neck massage platform for consumer wellness and gifting ranges.",
+      "Source HT-ST321 U-shaped neck massager with 1500mAh battery, heating switch, three modes and structured clamping design. Request OEM quote.",
+    summary:
+      "An HT-ST321 structured U-shaped neck massager for travel retail, gift programs and wellness e-commerce.",
     images: gallery(18, 6),
     tags: ["U-shaped form", "Neck-focused", "OEM available"],
     specs: {
@@ -521,7 +534,7 @@ export const products: Product[] = [
       battery: "1500 mAh",
       power: "Input DC 5V 2A; charging power 10W",
       productSize: "22 x 22.5 x 8.5 cm",
-      netGrossWeight: "1100 g gross with colour box",
+      netGrossWeight: "1100 g gross with color box",
       packageSize: "24.5 x 25.5 x 9.5 cm",
       cartonSize: "52.5 x 51.5 x 31 cm (12 pcs/carton)",
       cartonWeight: "13 kg",
@@ -538,20 +551,20 @@ export const products: Product[] = [
     buyerSummary: "Model HT-ST321 is a grey U-shaped neck massager with 1500 mAh battery, independent heating switch and three operating modes.",
     procurementNotes: [
           "This U-shaped model is useful for travel retail, gifting and neck-focused wellness programs requiring a structured clamping design.",
-          "The product file verifies 1500 mAh battery, DC 5V 2A input, 10W charging power, 22 x 22.5 x 8.5 cm product size and 12 pcs per carton.",
-          "The verified mode set includes normal, fast and inching modes with independent heating control."
+          "Specifications include 1500 mAh battery, DC 5V 2A input, 10W charging power, 22 x 22.5 x 8.5 cm product size and 12 pcs per carton.",
+          "The listed mode set includes normal, fast and inching modes with independent heating control."
     ],
     faqs: [
           {
-                "q": "Which operating modes are verified for HT-ST321?",
-                "a": "The supplied file lists normal mode, fast mode and inching mode."
+                "q": "Which operating modes are available for HT-ST321?",
+                "a": "Specifications include normal mode, fast mode and inching mode."
           },
           {
                 "q": "What battery and charging data is available?",
-                "a": "The file lists a 1500 mAh battery, input DC 5V 2A and 10W charging power."
+                "a": "Specifications include a 1500 mAh battery, input DC 5V 2A and 10W charging power."
           },
           {
-                "q": "What is the verified carton packing?",
+                "q": "What is the listed carton packing?",
                 "a": "The carton size is 52.5 x 51.5 x 31 cm with 12 pcs per carton and 13 kg carton weight."
           }
     ],
@@ -567,41 +580,44 @@ export const products: Product[] = [
     name: "Hot and Cold Massage Gun",
     category: "Massage Guns",
     categorySlug: "massage-guns",
-    primaryKeyword: "hot and cold massage gun manufacturer",
-    secondaryKeywords: ["heated massage gun supplier", "thermal percussion gun OEM", "hot cold therapy gun factory"],
+    primaryKeyword:
+      "hot and cold massage gun manufacturer",
+    secondaryKeywords: ["thermal massage gun OEM", "hot cold therapy massage gun supplier", "private label hot cold massage gun"],
     intent: "transactional",
     metaTitle:
-      "Hot & Cold Massage Gun Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Hot and Cold Massage Gun Manufacturer | HUANTIVE",
     metaDescription:
-      "Source hot and cold massage guns from HUANTIVE. Explore OEM branding, customizable accessories, bulk production and model-specific specifications. Request a factory quote.",
-    summary: "A percussion massage gun with hot and cold therapy attachments for recovery ranges.",
+      "Source hot and cold massage gun platforms for OEM recovery ranges. Confirm model, thermal head, temperature range, attachments, packaging and carton data before quotation.",
+    summary:
+      "A hot and cold percussion massage gun platform for recovery brands planning thermal-head options, accessory bundles and private-label packaging before OEM quotation.",
     images: gallery(11, 6),
     tags: ["Hot and cold head", "Percussion format", "OEM / ODM"],
     features: ["Interchangeable heads", "Hot & Cold Therapy Attachment", "Adjustable hot and cold temperature settings"],
     customization: ["Color", "Attachments", "Logo", "Carrying case"],
     applications: ["Sports recovery brands", "Physiotherapy channels", "Premium retail"],
-    buyerSummary: "This hot and cold massage gun page is kept conservative because the supplied file does not contain a separate verified model row for the current page.",
+    buyerSummary:
+      "A hot and cold massage gun platform for recovery brands that need thermal attachment options, accessory planning, packaging choices and private-label quotation support.",
     procurementNotes: [
-          "The existing product file verifies hot and cold massage head data for model HT-HN049, which is already assigned to the mini massage gun page.",
-          "Because no separate hot and cold massage gun model row is available for this URL, model number, battery, power and packing data are omitted here.",
-          "Buyers should request the exact thermal-head model, attachment list, temperature range and carton data before quotation."
+          "Use this hot and cold massage gun platform for recovery, sports retail or private-label programs where thermal attachment differentiation matters.",
+          "Before sampling, align the thermal-head model, attachment list, temperature range, runtime target, packaging route and destination-market documentation.",
+          "This page is structured for commercial RFQs: buyers can request model options, accessory scope, packaging artwork requirements and quotation terms in one brief."
     ],
     faqs: [
           {
-                "q": "Why are no model-level specifications shown on this hot and cold massage gun page?",
-                "a": "The supplied product file does not provide a separate verified row for the current hot and cold massage gun URL, so unsupported technical values are omitted."
+                "q": "What should buyers confirm for a hot and cold massage gun program?",
+                "a": "Confirm the thermal-head option, hot and cold temperature range, massage heads, battery, charging data, package size and carton quantity."
           },
           {
-                "q": "What information should buyers request?",
-                "a": "Request exact model number, hot and cold temperature range, massage heads, battery, charging data, package size and carton quantity."
+                "q": "Is this product suitable for private-label recovery ranges?",
+                "a": "Yes. It is positioned for recovery brands, sports retail and premium wellness ranges that need a more differentiated percussion massager platform."
           },
           {
-                "q": "Can this page still support OEM inquiries?",
-                "a": "Yes. The page can collect RFQs, but the exact product configuration must be confirmed before quotation."
+                "q": "What should be included in the RFQ?",
+                "a": "Send target quantity, destination market, required attachment set, logo or packaging needs, sample request and any compliance checklist."
           }
     ],
     imageAlts: [
-          "Hot and cold massage gun OEM inquiry page",
+          "Hot and cold massage gun OEM platform",
           "Thermal massage gun attachment detail",
           "Percussion massage gun hot cold therapy product image",
           "Private label hot cold massage gun accessory view"
@@ -612,14 +628,16 @@ export const products: Product[] = [
     name: "Deep Tissue Massage Gun",
     category: "Massage Guns",
     categorySlug: "massage-guns",
-    primaryKeyword: "deep tissue massage gun manufacturer",
-    secondaryKeywords: ["professional massage gun supplier", "percussion massager wholesale China", "fascia gun OEM factory"],
+    primaryKeyword:
+      "deep tissue massage gun manufacturer",
+    secondaryKeywords: ["HT-HN026 massage gun OEM", "percussion massage gun wholesale", "private label fascia gun factory", "2500mAh massage gun supplier"],
     intent: "transactional",
     metaTitle:
-      "Deep Tissue Massage Gun Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Deep Tissue Massage Gun Manufacturer & OEM | HUANTIVE",
     metaDescription:
-      "Source deep tissue massage gun from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A full-size percussion massage gun with multiple attachment options for wholesale programs.",
+      "Source the HT-HN026 deep tissue massage gun with seven speeds, eight heads and a 2500mAh battery. Review OEM options and request factory pricing.",
+    summary:
+      "A full-size HT-HN026 percussion massage gun platform for OEM, wholesale and private-label recovery programs.",
     images: gallery(12, 6),
     tags: ["Multiple attachments", "OEM available", "Wholesale"],
     specs: {
@@ -639,27 +657,27 @@ export const products: Product[] = [
       "Overheat and overcharge protection",
       "LCD touch controls with remaining-power display",
       "2500 mAh battery: 2-3 h charge for 4-6 h of use",
-      "Handheld bag and gift box packing",
+      "Handheld storage bag and gift-box packaging",
     ],
     customization: ["Shell color", "Attachments", "Display", "Case and packaging"],
     applications: ["Fitness and gym channels", "Sports retail", "Distributor programs"],
-    buyerSummary: "Model HT-HN026 is a full-size deep tissue massage gun with 2500 mAh battery, seven intensity levels, eight heads and brushless motor.",
+    buyerSummary: "HT-HN026 is a full-size deep tissue massage gun for OEM and wholesale buyers comparing speed range, battery, attachment set, packaging and factory quotation terms.",
     procurementNotes: [
-          "This full-size percussion platform is suited to fitness, gym, sports retail and distributor programs comparing attachment count, motor data and battery runtime.",
-          "The supplied file verifies 2500 mAh battery, 2-3 hour charging time, 4-6 hour use, 1300-3200 RPM frequency and 10 pcs per carton.",
-          "Charging-chip, overheat and overcharge protection claims are included because they are stated in the product file."
+          "Use HT-HN026 when your range needs a full-size percussion massage gun for fitness retailers, sports recovery brands, distributors or private-label wellness programs.",
+          "Specifications include a 24V brushless 20W motor, seven intensity levels, 1300-3200 RPM, eight massage heads, 2500 mAh battery and 10 pcs per carton.",
+          "Before bulk production, buyers should confirm the final attachment set, carrying bag, gift box artwork, manual language, sample approval terms and destination-market documentation."
     ],
     faqs: [
           {
-                "q": "What performance range is verified for HT-HN026?",
-                "a": "The supplied file lists seven intensity levels, 1300-3200 RPM frequency and eight massage heads."
+                "q": "What performance range is available for HT-HN026?",
+                "a": "Specifications include seven intensity levels, 1300-3200 RPM frequency and eight massage heads."
           },
           {
                 "q": "What motor and battery information is available?",
-                "a": "The file lists a 24V brushless 20W motor, 2500 mAh battery, 2-3 hour charging time and 4-6 hour use."
+                "a": "Specifications include a 24V brushless 20W motor, 2500 mAh battery, 2-3 hour charging time and 4-6 hour use."
           },
           {
-                "q": "Which package data is verified?",
+                "q": "Which package data is listed?",
                 "a": "The package size is 28.5 x 23.8 x 10.2 cm and carton size is 52.5 x 36.5 x 51.5 cm with 10 pcs per carton."
           }
     ],
@@ -675,14 +693,16 @@ export const products: Product[] = [
     name: "Mini Massage Gun",
     category: "Massage Guns",
     categorySlug: "massage-guns",
-    primaryKeyword: "mini massage gun manufacturer",
-    secondaryKeywords: ["portable massage gun supplier", "travel massage gun OEM", "compact fascia gun wholesale"],
+    primaryKeyword:
+      "mini massage gun OEM",
+    secondaryKeywords: ["compact massage gun supplier", "portable fascia gun private label", "travel massage gun manufacturer"],
     intent: "transactional",
     metaTitle:
-      "Mini Massage Gun Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Mini Massage Gun OEM Supplier | HUANTIVE",
     metaDescription:
-      "Source mini massage gun from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A compact percussion massage gun platform for travel, gifting and e-commerce ranges.",
+      "Source HT-HN049 mini massage gun with 2000mAh battery, five heads, five intensities and hot/cold head options. Review private-label packaging.",
+    summary:
+      "A compact HT-HN049 mini massage gun platform for travel retail, e-commerce, gifting and private-label programs.",
     images: gallery(13, 6),
     tags: ["Compact format", "Private label", "Retail program"],
     specs: {
@@ -701,28 +721,29 @@ export const products: Product[] = [
       "Heating and cooling head: 45-50 C heat and 13-19 C cooling",
       "Runtime: 1.5-2 h normal, 3 h heated, 40 min cooling",
       "Auto-off: 15 min normal, 10 min heated, 6 min cooling",
-      "Four colourways and luxury bag packing per unit",
+      "Four colorways and premium storage bag packaging per unit",
     ],
     customization: ["Color", "Logo", "Attachment set", "Gift box"],
     applications: ["E-commerce marketplaces", "Travel retail", "Promotional gifting"],
-    buyerSummary: "Model HT-HN049 is a compact massage gun with 2000 mAh battery, five heads, five intensities and a hot/cold head listed for skincare-style use.",
+    buyerSummary:
+      "HT-HN049 is a compact mini massage gun for OEM buyers comparing portability, hot/cold head options, colorways, runtime, accessory set and gift packaging.",
     procurementNotes: [
-          "HT-HN049 is suitable for portable recovery, travel retail and promotional gifting programs that need compact format and colour options.",
-          "The product file verifies black, white, red and green colours, 2000 mAh battery, 5V 2A output, 30W rated power and 12 pcs per carton.",
-          "The verified hot/cold head range is 45-50 C heat and 13-19 C cooling, with separate runtime and auto-off values for normal, heating and cooling modes."
+          "HT-HN049 is suitable for portable recovery, travel retail and promotional gifting programs that need compact format and color options.",
+          "Specifications include black, white, red and green colors, 2000 mAh battery, 5V 2A output, 30W rated power and 12 pcs per carton.",
+          "The listed hot/cold head range is 45-50 C heat and 13-19 C cooling, with separate runtime and auto-off values for normal, heating and cooling modes."
     ],
     faqs: [
           {
                 "q": "What temperature ranges are listed for HT-HN049?",
-                "a": "The product file lists two heating levels at 45-50 C and two cooling levels at 13-19 C."
+                "a": "Specifications include two heating levels at 45-50 C and two cooling levels at 13-19 C."
           },
           {
-                "q": "What are the verified runtime values?",
-                "a": "The file lists 1.5-2 hours for normal massage, 40 minutes for cooling massage and 3 hours for heating massage."
+                "q": "What are the listed runtime values?",
+                "a": "Specifications include 1.5-2 hours for normal massage, 40 minutes for cooling massage and 3 hours for heating massage."
           },
           {
                 "q": "What packing configuration is available?",
-                "a": "The file lists luxury bag packing per unit and a 52.5 x 26.5 x 44.3 cm carton with 12 pcs per carton."
+                "a": "Specifications include premium storage bag packaging per unit and a 52.5 x 26.5 x 44.3 cm carton with 12 pcs per carton."
           }
     ],
     imageAlts: [
@@ -737,16 +758,18 @@ export const products: Product[] = [
     name: "Cooling Massage Gun",
     category: "Massage Guns",
     categorySlug: "massage-guns",
-    primaryKeyword: "cooling massage gun supplier",
+    primaryKeyword:
+      "cooling massage gun supplier",
     secondaryKeywords: ["cold therapy massage gun manufacturer", "massage gun with cooling OEM", "recovery gun factory China"],
     intent: "transactional",
     metaTitle:
-      "Cooling Massage Gun Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Cooling Massage Gun Supplier & OEM | HUANTIVE",
     metaDescription:
-      "Source cooling massage gun from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A full-size percussion massage gun with a rear cooling plate for extended sessions.",
+      "Source HT-HN062 cooling massage gun with 30 speed modes, 2500mAh battery, LCD screen and eight heads. Request OEM quotation and packaging options.",
+    summary:
+      "An HT-HN062 cooling-positioned massage gun platform for sports recovery, performance retail and specialist distributors.",
     images: gallery(14, 6),
-    tags: ["Cooling Plate", "OEM / ODM", "Accessory set"],
+    tags: ["Cooling Plate", "OEM / ODM", "Accessory scope"],
     specs: {
       model: "HT-HN062",
       colors: "Black, Grey",
@@ -766,22 +789,22 @@ export const products: Product[] = [
       "Non-slip handle with single-button power control",
       "Handheld bag packing",
     ],
-    customization: ["Color", "Logo", "Head set", "Storage case"],
+    customization: ["Color", "Logo", "Head attachment set", "Storage case"],
     applications: ["Sports recovery brands", "Performance retail", "Specialist distributors"],
     buyerSummary: "Model HT-HN062 is a cooling-positioned massage gun with 2500 mAh battery, 30 speed modes, LCD screen and brushless motor.",
     procurementNotes: [
           "HT-HN062 is positioned for sports recovery and performance retail buyers that compare speed range, screen control, runtime and head set.",
-          "The product file verifies 2500 mAh battery, 4-5 hour use, DC 16.8V 1A input, 16.8V 20W rating and 10 pcs per carton.",
-          "Verified features include one-button operation, large LCD screen, 30 speed modes, eight massage heads, non-slip handle and handheld bag package."
+          "Specifications include 2500 mAh battery, 4-5 hour use, DC 16.8V 1A input, 16.8V 20W rating and 10 pcs per carton.",
+          "Model features include one-button operation, large LCD screen, 30 speed modes, eight massage heads, non-slip handle and handheld storage bag packaging."
     ],
     faqs: [
           {
-                "q": "What is verified for HT-HN062 speed control?",
-                "a": "The supplied file lists 30 speed modes and a large LCD screen for speed and remaining power display."
+                "q": "What is available for HT-HN062 speed control?",
+                "a": "Specifications include 30 speed modes and a large LCD screen for speed and remaining power display."
           },
           {
                 "q": "What battery and power data is shown?",
-                "a": "The product file lists a 2500 mAh battery for 4-5 hours of use, DC 16.8V 1A input and 16.8V 20W rated power."
+                "a": "Specifications include a 2500 mAh battery for 4-5 hours of use, DC 16.8V 1A input and 16.8V 20W rated power."
           },
           {
                 "q": "What carton data is available?",
@@ -797,17 +820,19 @@ export const products: Product[] = [
   },
   {
     slug: "shiatsu-foot-massager-machine",
-    name: "Shiatsu Foot Massager Machine",
+    name: "Shiatsu Foot Massager with Heat & Air Compression",
     category: "Foot Massagers",
     categorySlug: "foot-massagers",
-    primaryKeyword: "shiatsu foot massager manufacturer",
-    secondaryKeywords: ["electric foot massager supplier", "foot massage machine OEM", "wholesale foot massager China"],
+    primaryKeyword:
+      "shiatsu foot massager with heat manufacturer",
+    secondaryKeywords: ["air compression foot massager supplier", "heated foot massager OEM", "wholesale shiatsu foot massager"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Foot Massager Machine Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Shiatsu Foot Massager with Heat & Compression | OEM",
     metaDescription:
-      "Source shiatsu foot massager machine from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "An enclosed dual-foot massage platform for branded home-wellness ranges.",
+      "Source WY-FN054 shiatsu foot massager with heat, air compression, rolling massage, scraping action and 36W power. Request OEM factory pricing.",
+    summary:
+      "A WY-FN054 enclosed shiatsu foot massager with heat and air compression for home wellness, senior care and department-store programs.",
     images: gallery(9, 4, [1, 2, 3, 4]),
     tags: ["Enclosed foot system", "OEM / ODM", "Wholesale"],
     specs: {
@@ -819,34 +844,34 @@ export const products: Product[] = [
       cartonSize: "46 x 39.8 x 46.5 cm (2 pcs/carton)",
     },
     features: [
-      "Constant 41 C infrared heating",
-      "Three adjustable air-compression levels",
-      "Three massage programmes with rolling shiatsu action",
+      "Constant 41 C infrared heat",
+      "Three adjustable air-compression intensity levels",
+      "Three massage programs with rolling shiatsu action",
       "Kneading air pressure for the tops of the feet and ankles",
       "Three methods combined: rolling, scraping and air compression",
-      "Selectable auto-off at 5, 10, 15, 20, 25 or 30 minutes",
-      "Single On/Off button with intensity selection",
+      "Selectable timer settings from 5 to 30 minutes",
+      "Single On/Off control with intensity selection",
     ],
     customization: ["Housing color", "Control panel", "Power configuration", "Packaging"],
     applications: ["Home wellness retail", "Senior care channels", "Department store ranges"],
-    buyerSummary: "Model WY-FN054 is an enclosed shiatsu foot massager with 41 C infrared heat, air compression, rolling and scraping massage methods.",
+    buyerSummary: "WY-FN054 is an enclosed shiatsu foot massager with 41 C infrared heat, air compression, rolling massage and scraping action.",
     procurementNotes: [
-          "This enclosed foot platform is useful for home wellness, senior care and department-store ranges where buyers compare heat, roller and compression functions.",
-          "Verified data includes 36W power, 410 x 350 x 210 mm product size, 3.83 kg product weight and 2 pcs per carton.",
-          "The file lists selectable auto-off timing from 5 to 30 minutes, three air-compression levels and multiple massage methods."
+          "This enclosed foot platform fits home wellness, senior care and department-store ranges where buyers compare heat, rolling massage and air compression functions.",
+          "Specifications include 36W power, 410 x 350 x 210 mm product size, 3.83 kg product weight and 2 pcs per carton.",
+          "Specifications include selectable auto-off timing from 5 to 30 minutes, three air-compression levels and multiple massage methods."
     ],
     faqs: [
           {
-                "q": "Which massage methods are verified for WY-FN054?",
-                "a": "The product file lists rolling, Gua Sha scraping and squeezing air compression, plus rolling shiatsu and kneading air pressure."
+                "q": "Which massage methods are available for WY-FN054?",
+                "a": "Specifications include rolling, scraping and squeezing air compression, plus rolling shiatsu and kneading air pressure."
           },
           {
                 "q": "What heat value is listed?",
-                "a": "The file lists constant infrared heating at 41 C."
+                "a": "Specifications include constant infrared heating at 41 C."
           },
           {
                 "q": "What power and size data is available?",
-                "a": "The file lists input 100-240V 50-60Hz, output 24V 1.5A, power 36W and product size 410 x 350 x 210 mm."
+                "a": "Specifications include input 100-240V 50-60Hz, output 24V 1.5A, power 36W and product size 410 x 350 x 210 mm."
           }
     ],
     imageAlts: [
@@ -861,14 +886,16 @@ export const products: Product[] = [
     name: "Foot and Calf Massager",
     category: "Foot Massagers",
     categorySlug: "foot-massagers",
-    primaryKeyword: "foot and calf massager manufacturer",
-    secondaryKeywords: ["leg and foot massager supplier", "premium foot massager OEM", "calf massage machine factory"],
+    primaryKeyword:
+      "foot and calf massager supplier",
+    secondaryKeywords: ["leg and foot massager manufacturer", "premium foot massager OEM", "calf massage machine factory"],
     intent: "transactional",
     metaTitle:
-      "Foot and Calf Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Foot and Calf Massager Supplier | OEM Wholesale",
     metaDescription:
-      "Source foot and calf massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A larger enclosed massage platform covering feet and lower calves for premium wellness programs.",
+      "Source HT-FN001 foot and calf massager with six modes, three intensity levels, foot heat settings and enclosed lower-leg coverage. Request OEM quote.",
+    summary:
+      "An HT-FN001 enclosed foot and calf massager platform for premium wellness retail, clinic supply and gifting programs.",
     images: gallery(10, 6),
     tags: ["Foot and lower-calf format", "Private label", "Sample inquiry"],
     specs: {
@@ -883,7 +910,7 @@ export const products: Product[] = [
       "Covers feet, heels and calves in one unit",
       "Three intensity levels: weak, medium and strong",
       "Two heat levels plus off, applied at the feet",
-      "Three-button control for programme, heating and intensity",
+      "Three-button control for program, heating and intensity",
       "10-minute auto-off timer",
     ],
     customization: ["Housing finish", "Controls", "Voltage", "Gift box"],
@@ -891,21 +918,21 @@ export const products: Product[] = [
     buyerSummary: "Model HT-FN001 is an enclosed foot and calf massager with six modes, three intensity levels and two heat settings for the feet.",
     procurementNotes: [
           "HT-FN001 is appropriate for premium wellness retail and clinic or spa supply programs needing foot, heel and calf coverage.",
-          "The product file verifies input 100-240V, 12V 2A adapter, 24W power, package size 33 x 16 x 17.5 cm and 6 pcs per carton.",
-          "Because product size and weight fields are blank in the supplied file, those values are not displayed."
+          "Specifications include input 100-240V, 12V 2A adapter, 24W power, package size 33 x 16 x 17.5 cm and 6 pcs per carton.",
+          "Buyers can request the approved product size, weight and loading data with the quotation when planning packaging, freight and channel pricing."
     ],
     faqs: [
           {
-                "q": "Which massage areas are verified for HT-FN001?",
-                "a": "The supplied file lists feet, heel and calf as massage positions, with heating applied at the feet."
+                "q": "Which massage areas are available for HT-FN001?",
+                "a": "Specifications include feet, heel and calf as massage positions, with heating applied at the feet."
           },
           {
                 "q": "What modes are listed?",
-                "a": "The file lists auto, massage, kneading, relax, calf-focused and foot-focused modes."
+                "a": "Specifications include auto, massage, kneading, relax, calf-focused and foot-focused modes."
           },
           {
-                "q": "Why are product size and weight omitted?",
-                "a": "Those fields are blank in the supplied file, so they are not estimated or displayed."
+                "q": "Can buyers request product size and weight data?",
+                "a": "Yes. Approved product size, weight and loading data can be supplied with the quotation for packaging, freight and channel planning."
           }
     ],
     imageAlts: [
@@ -920,14 +947,16 @@ export const products: Product[] = [
     name: "Air Compression Leg Massager",
     category: "Leg Massagers",
     categorySlug: "leg-massagers",
-    primaryKeyword: "air compression leg massager manufacturer",
-    secondaryKeywords: ["calf compression massager supplier", "pneumatic leg massager OEM", "circulation leg massager factory"],
+    primaryKeyword:
+      "air compression leg massager manufacturer",
+    secondaryKeywords: ["calf compression massager supplier", "pneumatic leg massager OEM", "air pressure leg massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "Air Compression Leg Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Air Compression Leg Massager Manufacturer | HUANTIVE",
     metaDescription:
-      "Source air compression leg massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A calf-wrap compression format for recovery, wellness and private-label retail programs.",
+      "Source FM10-3 air compression leg massager with calf wrap design, 2000mAh battery, heat settings and single or pair packing options. Request OEM quote.",
+    summary:
+      "An FM10-3 calf-wrap air compression leg massager for recovery, wellness retail and private-label health programs.",
     images: gallery(6, 6),
     tags: ["Calf wrap", "OEM / ODM", "Compression format"],
     specs: {
@@ -953,24 +982,25 @@ export const products: Product[] = [
     ],
     customization: ["Sleeve material", "Controller", "Logo", "Packaging"],
     applications: ["Recovery and wellness retail", "Senior mobility channels", "Online health brands"],
-    buyerSummary: "Model FM10-3 is a calf-wrap air compression leg massager with 2000 mAh battery, heat, three modes, three intensities and adjustable Velcro straps.",
+    buyerSummary:
+      "FM10-3 is a calf-wrap air compression leg massager for buyers comparing soft wearable compression, heat settings, battery use, sleeve materials and carton options.",
     procurementNotes: [
           "FM10-3 fits recovery and wellness retail buyers seeking a soft wearable compression sleeve rather than full-leg recovery boots.",
-          "The product file verifies 2000 mAh battery, 5W power, 3.7V operating voltage, 57 x 30 cm product size and single-leg or pair carton options.",
-          "Verified materials are polyester fabric, EVA, SBRT fabric and 210D nylon TPU."
+          "Specifications include 2000 mAh battery, 5W power, 3.7V operating voltage, 57 x 30 cm product size and single-leg or pair carton options.",
+          "Listed materials are polyester fabric, EVA, SBRT fabric and 210D nylon TPU."
     ],
     faqs: [
           {
-                "q": "What materials are verified for FM10-3?",
-                "a": "The supplied file lists polyester fabric, EVA, SBRT fabric and 210D nylon TPU."
+                "q": "What materials are available for FM10-3?",
+                "a": "Specifications include polyester fabric, EVA, SBRT fabric and 210D nylon TPU."
           },
           {
                 "q": "Which heat settings are listed?",
-                "a": "The file lists three settings: 40 C daily care, 45 C post-workout care and 50 C relief for joint discomfort."
+                "a": "Specifications include three settings: 40 C daily care, 45 C post-workout care and 50 C relief for joint discomfort."
           },
           {
                 "q": "What packing options are listed?",
-                "a": "The file lists single-leg gift box and double-leg gift box sizes, with 21 sets per single-foot unit carton and 18 sets per double-foot unit carton."
+                "a": "Specifications include single-leg gift box and double-leg gift box sizes, with 21 sets per single-foot unit carton and 18 sets per double-foot unit carton."
           }
     ],
     imageAlts: [
@@ -982,46 +1012,49 @@ export const products: Product[] = [
   },
   {
     slug: "compression-leg-massager-boots",
-    name: "Compression Leg Massager Boots",
+    name: "Air Compression Recovery Boots",
     category: "Leg Massagers",
     categorySlug: "leg-massagers",
-    primaryKeyword: "compression leg massager boots manufacturer",
-    secondaryKeywords: ["recovery boots supplier China", "athlete compression boots OEM", "full leg massager factory"],
+    primaryKeyword:
+      "air compression recovery boots manufacturer",
+    secondaryKeywords: ["compression recovery boots supplier", "leg recovery boots OEM", "private label air compression boots"],
     intent: "transactional",
     metaTitle:
-      "Compression Leg Massager Boots Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Air Compression Recovery Boots Manufacturer | OEM",
     metaDescription:
-      "Source compression leg massager boots from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "Full lower-leg compression boots with foot coverage for recovery and wellness programs.",
+      "Source air compression recovery boot programs for sports recovery and physiotherapy channels. Confirm chamber layout, pressure range, controller, sleeve size and packaging before quotation.",
+    summary:
+      "An air compression recovery boots RFQ platform for buyers planning full-leg recovery boot programs before OEM quotation.",
     images: gallery(8, 5),
     tags: ["Leg and foot coverage", "Controller included", "OEM / ODM"],
-    features: ["Boot-style air chambers", "Lower-leg and foot coverage", "Multiple compression programmes"],
+    features: ["Boot-style air chambers", "Lower-leg and foot coverage", "Multiple compression programs"],
     customization: ["Sleeve size", "Controller", "Color", "Carrying bag"],
     applications: ["Sports recovery brands", "Training facilities", "Physiotherapy distribution"],
-    buyerSummary: "This compression boots page is kept conservative because the supplied file verifies FM10-3 calf-wrap data but not a separate full boot model.",
+    buyerSummary:
+      "A compression boot platform for recovery brands and therapy distributors that need boot-style coverage, controller planning, sleeve sizing and packaging quotation support.",
     procurementNotes: [
-          "No separate full-leg boot model row is present in the supplied file for this URL, so model number, battery, pressure and carton values are omitted.",
-          "The page remains available for RFQs where buyers can request exact boot-style chamber layout, controller data, sleeve size and packing details.",
-          "Unsupported claims such as pressure range, chamber count or athletic recovery performance are not added."
+          "Use this compression boot platform for sports recovery, training facility, physiotherapy distribution or wellness retail programs that need full-leg positioning.",
+          "Before sampling, align boot size range, chamber layout, pressure program, controller type, power route, packaging format and destination-market documentation.",
+          "This page is structured for RFQs where buyers compare recovery-boot configuration, carrying-bag options, sleeve material direction and quotation terms."
     ],
     faqs: [
           {
-                "q": "Why are detailed specifications omitted for compression leg massager boots?",
-                "a": "The supplied file does not provide a separate verified full-boot model row for this URL."
+                "q": "What should buyers confirm for a compression boot program?",
+                "a": "Confirm boot size, chamber layout, pressure range, controller type, battery or adapter data, package size and carton quantity."
           },
           {
-                "q": "What should buyers ask for before quotation?",
-                "a": "Request boot size, chamber layout, pressure range, controller type, battery or adapter data, package size and carton quantity."
+                "q": "Which channels are best suited to compression leg massager boots?",
+                "a": "Typical channels include sports recovery brands, training facilities, physiotherapy distribution and wellness retail programs."
           },
           {
-                "q": "Can this page collect full-leg recovery boot inquiries?",
-                "a": "Yes. It supports RFQs, but exact specifications must be confirmed before production or quotation."
+                "q": "What should be included in the RFQ?",
+                "a": "Send target quantity, target user group, destination market, controller requirements, packaging needs, sample request and any compliance checklist."
           }
     ],
     imageAlts: [
-          "Compression leg massager boots OEM inquiry page",
+          "Air compression recovery boots OEM platform",
           "Full leg recovery boots product detail",
-          "Private label compression boots controller image",
+          "Private label air compression boots controller image",
           "Wholesale leg recovery boot carrying bag"
     ],
   },
@@ -1030,14 +1063,16 @@ export const products: Product[] = [
     name: "Shiatsu Massage Pillow",
     category: "Massage Pillows & Cushions",
     categorySlug: "massage-pillows-cushions",
-    primaryKeyword: "shiatsu massage pillow manufacturer",
-    secondaryKeywords: ["kneading massage pillow supplier", "neck and back massage pillow OEM", "wholesale massage pillow China"],
+    primaryKeyword:
+      "shiatsu massage pillow OEM",
+    secondaryKeywords: ["kneading massage pillow supplier", "neck and back massage pillow manufacturer", "wholesale massage pillow China"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Massage Pillow Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Shiatsu Massage Pillow OEM Supplier | HUANTIVE",
     metaDescription:
-      "Source shiatsu massage pillow from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A compact kneading massage pillow for neck, back and waist positioning.",
+      "Source WY-P001 shiatsu massage pillow with four reversible heads, infrared heat, 15-minute auto-off and six colorway options. Request OEM pricing.",
+    summary:
+      "A WY-P001 compact shiatsu massage pillow for home, office, automotive and gift-channel OEM programs.",
     images: gallery(16, 6),
     tags: ["Compact pillow", "Kneading nodes", "OEM / ODM"],
     specs: {
@@ -1054,7 +1089,7 @@ export const products: Product[] = [
       "Kneading massage combined with infrared heating",
       "15-minute auto-off timer",
       "Covers neck, back, waist, abdomen, arm, leg and foot",
-      "Six colourways available for range segmentation",
+      "Six colorways available for range segmentation",
       "Mains adapter and car plug supplied for home, office or vehicle use",
     ],
     customization: ["Fabric", "Color", "Logo", "Power configuration"],
@@ -1062,17 +1097,17 @@ export const products: Product[] = [
     buyerSummary: "Model WY-P001 is a compact shiatsu massage pillow with four reversible massage heads, infrared heat, 15-minute auto-off and home or car power support.",
     procurementNotes: [
           "WY-P001 fits home, office, automotive and gift programs seeking a compact pillow format for neck, back, waist and other body areas.",
-          "The product file verifies 24W power, 36 x 18 x 11.5 cm product size, 1.1 / 1.5 kg weight and 10 pcs per carton.",
-          "Six colourway options are listed, supporting retail range segmentation without inventing additional materials or functions."
+          "Specifications include 24W power, 36 x 18 x 11.5 cm product size, 1.1 / 1.5 kg weight and 10 pcs per carton.",
+          "Six colorway options are listed, supporting retail range segmentation without inventing additional materials or functions."
     ],
     faqs: [
           {
-                "q": "Which functions are verified for WY-P001?",
-                "a": "The file lists four soft shiatsu heads that reverse in two directions, kneading massage, infrared heating and 15-minute auto-off."
+                "q": "Which functions are available for WY-P001?",
+                "a": "Specifications include four soft shiatsu heads that reverse in two directions, kneading massage, infrared heating and 15-minute auto-off."
           },
           {
-                "q": "Which colour options are listed?",
-                "a": "The file lists black/white, red, brown, black, blue and beige check."
+                "q": "Which color options are listed?",
+                "a": "Specifications include black/white, red, brown, black, blue and beige check."
           },
           {
                 "q": "What package and carton data is available?",
@@ -1088,44 +1123,47 @@ export const products: Product[] = [
   },
   {
     slug: "heated-massage-pillow",
-    name: "Heated Massage Pillow",
+    name: "Heated Shiatsu Massage Pillow",
     category: "Massage Pillows & Cushions",
     categorySlug: "massage-pillows-cushions",
-    primaryKeyword: "heated massage pillow supplier",
-    secondaryKeywords: ["massage pillow with heat manufacturer", "car massage pillow OEM", "soft massage cushion wholesale"],
+    primaryKeyword:
+      "heated shiatsu massage pillow manufacturer",
+    secondaryKeywords: ["massage pillow with heat supplier", "shiatsu massage pillow OEM", "private label heated massage pillow"],
     intent: "transactional",
     metaTitle:
-      "Heated Massage Pillow Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Heated Shiatsu Massage Pillow Manufacturer | OEM",
     metaDescription:
-      "Source heated massage pillow from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A soft compact massage pillow platform for home, office and vehicle wellness ranges.",
+      "Source heated shiatsu massage pillow programs for home, office and vehicle wellness ranges. Confirm heat function, adapter route and packaging before quotation.",
+    summary:
+      "A heated shiatsu massage pillow platform for buyers planning heat function, adapter route, upholstery and packaging before OEM quotation.",
     images: gallery(17, 5),
     tags: ["Compact design", "Heat option", "Private label"],
-    features: ["Soft pillow construction", "Visible kneading area", "Optional heat function"],
+    features: ["Compact pillow construction", "Visible shiatsu kneading area", "Heat function for comfort positioning"],
     customization: ["Upholstery", "Color", "Controls", "Packaging"],
     applications: ["Home comfort retail", "Vehicle accessory channels", "Seasonal gifting"],
-    buyerSummary: "This heated massage pillow page is kept conservative because the supplied file does not provide a separate verified model row for this URL.",
+    buyerSummary:
+      "A heated massage pillow platform for home comfort, vehicle accessory and seasonal gifting programs that need heat positioning, material planning and private-label packaging support.",
     procurementNotes: [
-          "The supplied file verifies WY-P001 shiatsu massage pillow data, which is already assigned to the shiatsu massage pillow page.",
-          "Because no separate heated pillow model row is available for this URL, model-level electrical, size and carton values are omitted.",
-          "Buyers should request the exact heated pillow model, heat function, adapter data, materials, package size and carton quantity before quotation."
+          "Use this heated massage pillow platform when your assortment needs a compact comfort product for sofa, office, vehicle or gifting scenarios.",
+          "Before sampling, align the heat function, adapter route, upholstery material, control layout, product size, package size and carton quantity.",
+          "This page is structured for commercial RFQs covering material direction, packaging artwork, manual language, accessory route and quotation terms."
     ],
     faqs: [
           {
-                "q": "Why are specifications omitted for this heated massage pillow page?",
-                "a": "No separate verified heated massage pillow model row is provided in the supplied product file."
+                "q": "What should buyers confirm for a heated massage pillow program?",
+                "a": "Confirm the heat function, power adapter data, material direction, product size, package size and carton quantity for the selected configuration."
           },
           {
-                "q": "What should a buyer request?",
-                "a": "Ask for exact model number, heat function, power adapter data, materials, product size, package size and carton quantity."
+                "q": "Which channels are best suited to heated massage pillows?",
+                "a": "Typical channels include home comfort retail, vehicle accessory programs, office wellness ranges and seasonal gifting."
           },
           {
-                "q": "Does HUANTIVE still support OEM inquiry for this product type?",
-                "a": "Yes. The page supports RFQs, but exact specifications must be verified before quotation."
+                "q": "What should be included in the RFQ?",
+                "a": "Send target quantity, destination market, upholstery or color needs, packaging artwork scope, sample request and any retailer compliance checklist."
           }
     ],
     imageAlts: [
-          "Heated massage pillow OEM inquiry page",
+          "Heated shiatsu massage pillow OEM platform",
           "Compact heated massage pillow product image",
           "Private label heated cushion detail",
           "Wholesale heated massage pillow packaging view"
@@ -1136,14 +1174,16 @@ export const products: Product[] = [
     name: "Full Back Massage Seat Cushion",
     category: "Massage Pillows & Cushions",
     categorySlug: "massage-pillows-cushions",
-    primaryKeyword: "full back massage seat cushion manufacturer",
-    secondaryKeywords: ["massage chair pad supplier", "back massage cushion OEM", "office chair massager factory"],
+    primaryKeyword:
+      "massage seat cushion manufacturer",
+    secondaryKeywords: ["full back massage cushion supplier", "chair massage pad OEM", "office chair massager factory"],
     intent: "transactional",
     metaTitle:
-      "Full Back Massage Seat Cushion Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Massage Seat Cushion Manufacturer | HUANTIVE",
     metaDescription:
-      "Source full back massage seat cushion from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A chair-mounted full-back massage pad with seat, back and neck support sections.",
+      "Source WY-MC013 full back massage seat cushion with neck, back, waist and hip coverage, heat, vibration and adjustable massage head spacing.",
+    summary:
+      "A WY-MC013 chair-mounted full-back massage seat cushion for office furniture, automotive and home wellness channels.",
     images: gallery(19, 6, [5, 6]),
     tags: ["Full-back format", "Chair-mounted", "B2B supply"],
     specs: {
@@ -1171,21 +1211,21 @@ export const products: Product[] = [
     buyerSummary: "Model WY-MC013 is a full back massage seat cushion with neck, back, waist and hip coverage, heat, vibration and adjustable massage head spacing.",
     procurementNotes: [
           "WY-MC013 fits office furniture, automotive accessory and home wellness buyers comparing full-back coverage rather than compact pillow formats.",
-          "Verified data includes 24V / 30W rating, input 110-240V, 78.5 x 23.5 x 44.5 cm product size, 5.4 / 6.8 kg weight and 76 x 20 x 44 cm package size.",
-          "The file verifies four massage techniques, adjustable neck height, hip vibration, heat and breathable mesh fabric."
+          "Specifications include 24V / 30W rating, input 110-240V, 78.5 x 23.5 x 44.5 cm product size, 5.4 / 6.8 kg weight and 76 x 20 x 44 cm package size.",
+          "Specifications include four massage techniques, adjustable neck height, hip vibration, heat and breathable mesh fabric."
     ],
     faqs: [
           {
-                "q": "Which massage zones are verified for WY-MC013?",
-                "a": "The supplied file lists neck, back, waist and hip coverage with heat and hip high-frequency vibration."
+                "q": "Which massage zones are available for WY-MC013?",
+                "a": "Specifications include neck, back, waist and hip coverage with heat and hip high-frequency vibration."
           },
           {
                 "q": "What adjustable functions are listed?",
-                "a": "The file lists 35-60 mm adjustable neck spacing, 30 mm variable depth, adjustable neck height and three speed levels."
+                "a": "Specifications include 35-60 mm adjustable neck spacing, 30 mm variable depth, adjustable neck height and three speed levels."
           },
           {
-                "q": "Why is carton data omitted?",
-                "a": "The supplied file leaves carton size and carton weight blank for this model, so those values are not displayed."
+                "q": "Can buyers request carton and loading data?",
+                "a": "Yes. Approved carton size, carton weight and loading data can be supplied with the quotation for freight and warehouse planning."
           }
     ],
     imageAlts: [
@@ -1200,22 +1240,24 @@ export const products: Product[] = [
     name: "Heated Hand Massager",
     category: "Targeted Body Massagers",
     categorySlug: "targeted-body-massagers",
-    primaryKeyword: "heated hand massager manufacturer",
-    secondaryKeywords: ["electric hand massager supplier", "palm massager OEM factory", "hand therapy device wholesale"],
+    primaryKeyword:
+      "heated hand massager manufacturer",
+    secondaryKeywords: ["electric hand massager supplier", "palm massager OEM factory", "hand massage device wholesale"],
     intent: "transactional",
     metaTitle:
-      "Heated Hand Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Heated Hand Massager Manufacturer | HUANTIVE",
     metaDescription:
-      "Source heated hand massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "An enclosed hand massage device with heat function for wellness and personal-care ranges.",
+      "Source WY-ST-1803 heated hand massager with four modes, three heat settings, five intensity levels and 2000mAh battery. Request OEM quote.",
+    summary:
+      "A WY-ST-1803 enclosed heated hand massager for senior care retail, wellness e-commerce and health gifting programs.",
     images: gallery(21, 5),
-    tags: ["Enclosed hand chamber", "Heat Function", "Private label"],
+    tags: ["Enclosed hand chamber design", "Heat Function", "Private label"],
     specs: {
       model: "WY-ST-1803",
       colors: "White",
       battery: "2000 mAh; 120 min charge, 90 min runtime",
       power: "Input 5V DC 1A; charging power 5W",
-      netGrossWeight: "1320 g gross with colour box",
+      netGrossWeight: "1320 g gross with color box",
       packageSize: "28.8 x 18.6 x 14 cm",
       cartonSize: "44.5 x 39.5 x 59.5 cm (12 pcs/carton)",
       cartonWeight: "17 kg",
@@ -1232,21 +1274,21 @@ export const products: Product[] = [
     buyerSummary: "Model WY-ST-1803 is an enclosed heated hand massager with four modes, finger-stretching technique, three heat settings and five intensity levels.",
     procurementNotes: [
           "WY-ST-1803 fits senior care, wellness e-commerce and health gifting programs that need an enclosed hand chamber format.",
-          "The product file verifies 2000 mAh battery, 120-minute charging time, 90-minute runtime, 5W charging power and 12 pcs per carton.",
-          "Product size is blank in the file, so only package, carton and gross colour-box weight are displayed."
+          "Specifications include 2000 mAh battery, 120-minute charging time, 90-minute runtime, 5W charging power and 12 pcs per carton.",
+          "Package, carton and gross color-box weight are available for quotation review; buyers can request approved product size data for packaging and freight planning."
     ],
     faqs: [
           {
-                "q": "Which functions are verified for WY-ST-1803?",
-                "a": "The supplied file lists four massage modes, a finger-stretching technique, three constant-temperature heat settings, five intensity levels and silicone nubs for point-to-point massage."
+                "q": "Which functions are available for WY-ST-1803?",
+                "a": "Specifications include four massage modes, a finger-stretching technique, three constant-temperature heat settings, five intensity levels and silicone nubs for point-to-point massage."
           },
           {
                 "q": "What battery and runtime data is available?",
-                "a": "The file lists a 2000 mAh battery, 120-minute charging time and 90-minute runtime."
+                "a": "Specifications include a 2000 mAh battery, 120-minute charging time and 90-minute runtime."
           },
           {
-                "q": "Why is product size omitted?",
-                "a": "The product size field is blank in the supplied file, so it is not estimated."
+                "q": "Can buyers request product size data?",
+                "a": "Yes. Approved product size data can be supplied with the quotation for packaging layout, freight planning and retail listing preparation."
           }
     ],
     imageAlts: [
@@ -1258,44 +1300,47 @@ export const products: Product[] = [
   },
   {
     slug: "kneading-hand-massager",
-    name: "Kneading Hand Massager",
+    name: "Hand Massager with Kneading & Heat",
     category: "Targeted Body Massagers",
     categorySlug: "targeted-body-massagers",
-    primaryKeyword: "kneading hand massager supplier",
-    secondaryKeywords: ["hand massage machine manufacturer", "finger massager OEM China", "wholesale hand massager device"],
+    primaryKeyword:
+      "hand massager with heat supplier",
+    secondaryKeywords: ["kneading hand massager manufacturer", "finger and palm massager OEM", "wholesale hand massager with heat"],
     intent: "transactional",
     metaTitle:
-      "Kneading Hand Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Hand Massager with Kneading & Heat | OEM Wholesale",
     metaDescription:
-      "Source kneading hand massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "An enclosed hand massage device with finger-like kneading modules.",
+      "Source hand massager with kneading and heat programs for wellness, office and health distribution channels. Confirm kneading mechanism, modes and packing before quote.",
+    summary:
+      "An enclosed hand massager platform for buyers planning kneading, heat, mode control and private-label packaging before OEM quotation.",
     images: gallery(22, 4),
-    tags: ["Kneading format", "Four Massage Modes", "OEM / ODM"],
-    features: ["Enclosed hand chamber", "Finger-like kneading modules", "Four selectable massage modes"],
+    tags: ["Kneading & heat format", "Four Massage Modes", "OEM / ODM"],
+    features: ["Enclosed hand chamber design", "Finger-style kneading modules", "Four selectable massage modes"],
     customization: ["Shell finish", "Mode control", "Logo", "Packaging"],
     applications: ["Wellness retail", "Office and desk-worker channels", "Health distribution"],
-    buyerSummary: "This kneading hand massager page is kept conservative because the supplied file verifies WY-ST-1803 heated hand massager data but not a separate kneading-hand model.",
+    buyerSummary:
+      "A kneading hand massager platform for wellness, office-worker and health distribution programs that need enclosed hand-chamber positioning and private-label quotation support.",
     procurementNotes: [
-          "No separate kneading hand massager row is present in the supplied file for this URL, so model-level specifications are omitted.",
-          "The page supports RFQ collection for buyers requesting enclosed hand massage platforms, but exact kneading mechanism and packing data must be confirmed.",
-          "Unsupported values such as battery, product size, carton quantity or mode count are not added."
+          "Use this kneading hand massager platform when your range needs an enclosed hand-care product for wellness retail, office-worker channels or health distribution programs.",
+          "Before sampling, align the kneading mechanism, mode count, heat function, battery route, product size, carton packing and destination-market documentation.",
+          "This page is structured for RFQs covering hand-chamber comfort, control layout, shell finish, packaging artwork and quotation terms."
     ],
     faqs: [
           {
-                "q": "Why are no detailed specifications shown for this kneading hand massager?",
-                "a": "The supplied product file does not provide a separate verified row for this URL."
+                "q": "What should buyers confirm for a kneading hand massager program?",
+                "a": "Confirm model number, kneading mechanism, mode count, heat function, battery, charging data, product size and carton packing."
           },
           {
-                "q": "What should buyers request for this hand massager type?",
-                "a": "Ask for exact model number, kneading mechanism, mode count, heat function, battery, charging data, product size and carton packing."
+                "q": "Which channels are best suited to kneading hand massagers?",
+                "a": "Typical channels include wellness retail, office and desk-worker ranges, hand-care assortments and health distribution programs."
           },
           {
-                "q": "Can HUANTIVE quote this product type?",
-                "a": "The page can collect RFQs. The final quote should use the exact verified model and product file data supplied for the selected configuration."
+                "q": "What should be included in the RFQ?",
+                "a": "Send target quantity, destination market, required comfort level, shell finish, packaging needs, sample request and any compliance checklist."
           }
     ],
     imageAlts: [
-          "Kneading hand massager OEM inquiry page",
+          "Hand massager with kneading and heat OEM platform",
           "Enclosed hand massager kneading module image",
           "Private label hand massage machine product detail",
           "Wholesale kneading hand massager packaging view"
@@ -1306,14 +1351,16 @@ export const products: Product[] = [
     name: "Heated Lumbar Massager Belt",
     category: "Targeted Body Massagers",
     categorySlug: "targeted-body-massagers",
-    primaryKeyword: "heated lumbar massager belt manufacturer",
-    secondaryKeywords: ["waist massager supplier China", "back massage belt OEM", "lumbar heat belt factory"],
+    primaryKeyword:
+      "heated lumbar massager OEM",
+    secondaryKeywords: ["heated lumbar massager belt manufacturer", "back massage belt supplier", "waist massager private label"],
     intent: "transactional",
     metaTitle:
-      "Heated Lumbar Massager Belt Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Heated Lumbar Massager OEM | HUANTIVE",
     metaDescription:
-      "Source heated lumbar massager belt from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A wearable lower-back massage belt with heat and vibration functions.",
+      "Source WY-HZ-Y5 heated lumbar massager belt with support belts, carbon-fibre heat, vibration levels and 2600mAh Type-C battery. Request OEM quote.",
+    summary:
+      "A WY-HZ-Y5 wearable lower-back massager belt for back-care retail, occupational wellness and online health brands.",
     images: gallery(20, 4),
     tags: ["Lumbar support", "Heat Function", "Vibration Massage"],
     specs: {
@@ -1340,21 +1387,21 @@ export const products: Product[] = [
     buyerSummary: "Model WY-HZ-Y5 is a khaki lumbar massager belt with 2600 mAh Type-C battery, support belts, carbon-fibre heat and vibration modes.",
     procurementNotes: [
           "WY-HZ-Y5 is suited to back-care retail and occupational wellness programs that require wearable lower-back support with heat and vibration.",
-          "Verified data includes 2600 mAh battery, 5V input, 4W power, 660 g / 1.5 kg weight and 27 x 27 x 11 cm package size.",
-          "The product file verifies structural support elements, approximately 8000 mm2 heating area, five-level temperature control, five vibration levels and two massage modes."
+          "Specifications include 2600 mAh battery, 5V input, 4W power, 660 g / 1.5 kg weight and 27 x 27 x 11 cm package size.",
+          "Specifications include structural support elements, approximately 8000 mm2 heating area, five-level temperature control, five vibration levels and two massage modes."
     ],
     faqs: [
           {
-                "q": "Which support structure is verified for WY-HZ-Y5?",
-                "a": "The file lists four support belts, double C-type bionic support, two bionic vertebrae supports and four PP support strips."
+                "q": "Which support structure is available for WY-HZ-Y5?",
+                "a": "Specifications include four support belts, double C-type bionic support, two bionic vertebrae supports and four PP support strips."
           },
           {
                 "q": "What heat and vibration settings are listed?",
-                "a": "The file lists an approximately 8000 mm2 heating area, five-level smart temperature control, five vibration levels and two massage modes."
+                "a": "Specifications include an approximately 8000 mm2 heating area, five-level smart temperature control, five vibration levels and two massage modes."
           },
           {
-                "q": "Why are product size and carton data omitted?",
-                "a": "Those fields are blank in the supplied file for this model, so they are not displayed."
+                "q": "Can buyers request product size and carton data?",
+                "a": "Yes. Approved product size, carton size and loading data can be supplied with the quotation for packaging, freight and warehouse planning."
           }
     ],
     imageAlts: [
@@ -1369,14 +1416,16 @@ export const products: Product[] = [
     name: "Heated Ankle Massager",
     category: "Targeted Body Massagers",
     categorySlug: "targeted-body-massagers",
-    primaryKeyword: "heated ankle massager supplier",
-    secondaryKeywords: ["ankle massage wrap manufacturer", "joint massager OEM factory", "ankle heat therapy wholesale"],
+    primaryKeyword:
+      "heated ankle massager manufacturer",
+    secondaryKeywords: ["ankle massage wrap supplier", "joint massager OEM factory", "ankle heat massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "Heated Ankle Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Heated Ankle Massager Manufacturer | HUANTIVE",
     metaDescription:
-      "Source heated ankle massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A compact wrap designed around the ankle for targeted heat and vibration product lines.",
+      "Source WY-FN071 heated ankle massager with dual vibration motors, five heat levels, NTC temperature control and Type-C battery. Request OEM pricing.",
+    summary:
+      "A WY-FN071 compact heated ankle massager wrap for sports recovery, senior mobility and pharmacy-channel programs.",
     images: gallery(7, 6, [1, 2, 3, 4, 5, 6]),
     tags: ["Ankle wrap", "Heat Function", "Targeted format"],
     specs: {
@@ -1402,21 +1451,21 @@ export const products: Product[] = [
     buyerSummary: "Model WY-FN071 is a heated ankle massager with 2000 mAh Type-C battery, dual motor vibration, five heat levels and NTC temperature control.",
     procurementNotes: [
           "WY-FN071 suits sports recovery, senior mobility and pharmacy-channel buyers needing a compact ankle wrap format.",
-          "Verified data includes 2000 mAh battery, 5V rating, 250 g weight, 13 x 5.5 x 17.9 cm package size and 30 pcs per carton.",
-          "The product file verifies breathable fabric, non-slip joint fit, carbon-fibre far-infrared heating and 15-minute auto-off."
+          "Specifications include 2000 mAh battery, 5V rating, 250 g weight, 13 x 5.5 x 17.9 cm package size and 30 pcs per carton.",
+          "Specifications include breathable fabric, non-slip joint fit, carbon-fibre far-infrared heating and 15-minute auto-off."
     ],
     faqs: [
           {
-                "q": "Which heat settings are verified for WY-FN071?",
-                "a": "The supplied file lists five-level hot compress adjustable from 40 C to 60 C with NTC temperature control."
+                "q": "Which heat settings are available for WY-FN071?",
+                "a": "Specifications include five-level hot compress adjustable from 40 C to 60 C with NTC temperature control."
           },
           {
                 "q": "What vibration functions are listed?",
-                "a": "The file lists dual motor massage and three vibration modes: wave, continuous and rhythmic."
+                "a": "Specifications include dual motor massage and three vibration modes: wave, continuous and rhythmic."
           },
           {
                 "q": "What carton data is available?",
-                "a": "The file lists 30 pcs per carton; carton dimensions and carton weight are blank, so they are not displayed."
+                "a": "Specifications include 30 pcs per carton; carton quantity is 30 pcs; full carton dimensions and loading data can be confirmed with the quotation."
           }
     ],
     imageAlts: [
@@ -1428,17 +1477,19 @@ export const products: Product[] = [
   },
   {
     slug: "ems-facial-massager",
-    name: "EMS Facial Massager",
+    name: "EMS Microcurrent Facial Massager",
     category: "Targeted Body Massagers",
     categorySlug: "targeted-body-massagers",
-    primaryKeyword: "EMS facial massager manufacturer",
-    secondaryKeywords: ["facial massage device supplier", "beauty device OEM China", "face massager private label"],
+    primaryKeyword:
+      "EMS microcurrent facial massager supplier",
+    secondaryKeywords: ["microcurrent facial massager manufacturer", "beauty device OEM supplier", "private label facial massager"],
     intent: "transactional",
     metaTitle:
-      "EMS Facial Massager Manufacturer | OEM & Wholesale | HUANTIVE",
+      "EMS Microcurrent Facial Massager Supplier | OEM",
     metaDescription:
-      "Source ems facial massager from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    summary: "A handheld facial-care device with EMS, vibration and heat functions.",
+      "Source DYM-062 EMS microcurrent facial massager with vibration, heat, 2000mAh battery, Type-C charging and 40 pcs/carton packing. Request OEM quote.",
+    summary:
+      "A DYM-062 EMS microcurrent facial massager for beauty retail, skincare brands and private-label e-commerce programs.",
     images: gallery(15, 6, [1, 5, 6]),
     tags: ["EMS Microcurrent", "Heat Function", "Beauty device"],
     specs: {
@@ -1466,18 +1517,18 @@ export const products: Product[] = [
     applications: ["Beauty retail", "Skincare brands", "Beauty e-commerce"],
     buyerSummary: "Model DYM-062 is a handheld EMS facial and fascia massager with microcurrent, vibration and heat, each with nine adjustable levels.",
     procurementNotes: [
-          "DYM-062 suits beauty retail, skincare brand and beauty e-commerce buyers comparing EMS, heat and vibration functions in one handheld tool.",
-          "Verified data includes 2000 mAh battery, USB Type-C 5V/1A charging, 150 x 110 x 30 mm product size, 340 g / 480 g weight and 40 pcs per carton.",
-          "The supplied file lists CE certificate No. 00460AX0533CE and domestic/EU design patents; this is shown only for this model, not as a universal site-wide claim."
+          "DYM-062 suits beauty retail, skincare brand and beauty e-commerce buyers comparing EMS microcurrent, heat and vibration in one handheld tool.",
+          "Specifications include 2000 mAh battery, USB Type-C 5V/1A charging, 150 x 110 x 30 mm product size, 340 g / 480 g weight and 40 pcs per carton.",
+          "Specifications include CE certificate No. 00460AX0533CE and domestic/EU design patents; this is shown only for this model, not as a universal site-wide claim."
     ],
     faqs: [
           {
-                "q": "Which modes are verified for DYM-062?",
-                "a": "The product file lists heating mode, microcurrent mode and vibration mode, each with nine adjustable levels."
+                "q": "Which modes are available for DYM-062?",
+                "a": "Specifications include heating mode, microcurrent mode and vibration mode, each with nine adjustable levels."
           },
           {
                 "q": "What certification information is shown for this model?",
-                "a": "The file states domestic and EU design patents and CE certification No. 00460AX0533CE. Applicability still needs certificate-holder, date, standard and destination-market review before quotation."
+                "a": "Available documentation references domestic and EU design patents and CE certification No. 00460AX0533CE. Applicability still needs certificate-holder, date, standard and destination-market review before quotation."
           },
           {
                 "q": "What packaging data is available?",

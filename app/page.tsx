@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CertificateCarousel } from "@/components/CertificateCarousel";
 import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
+import { procurementBlogPosts } from "@/lib/procurementBlogPosts";
 import { categories, products } from "@/lib/products";
 import { categoryFaqSchema, organizationSchema, websiteSchema } from "@/lib/schema";
 
@@ -39,10 +40,19 @@ const solutions = [
 const coreSourcingPages = [
   { label: "Massage device manufacturer", href: "/products", note: "Browse all 22 OEM product platforms for B2B sourcing." },
   { label: "OEM / ODM massage devices", href: "/oem-odm", note: "Review private-label development, packaging and production flow." },
+  { label: "Massage device sourcing guide", href: "/sourcing", note: "Evaluate suppliers, QC, documents, MOQ and RFQ readiness." },
+  { label: "Private label massage devices", href: "/private-label", note: "Plan logo, packaging, samples and repeatable brand programs." },
+  { label: "Wholesale massage devices", href: "/wholesale", note: "Compare categories, carton data, landed cost and distributor support." },
+  { label: "Compliance documents", href: "/compliance", note: "Check model-specific evidence before approving claims and packaging." },
   { label: "Massage gun manufacturer", href: "/products/category/massage-guns", note: "Compare hot-cold, mini, deep-tissue and cooling massage gun platforms." },
-  { label: "Neck massager manufacturer", href: "/products/category/neck-shoulder-massagers", note: "Source wearable, shiatsu and wrap-style neck and shoulder massagers." },
-  { label: "Air compression leg massagers", href: "/products/category/leg-massagers", note: "Review calf sleeves and recovery boot platforms for wholesale programs." },
+  { label: "Air compression leg massager supplier", href: "/products/category/leg-massagers", note: "Review calf sleeves and recovery boot platforms for wholesale programs." },
 ];
+const procurementGuides = procurementBlogPosts.map((post) => ({
+  title: post.title,
+  href: `/blog/${post.slug}`,
+  keyword: post.primaryKeyword,
+  excerpt: post.excerpt,
+}));
 const certificates = [
   { src: "https://sc04.alicdn.com/kf/Af336e50e1c9d431a932a4e764588e8673.jpg", alt: "Factory ISO 9001 quality management system certificate image" },
   { src: "https://sc04.alicdn.com/kf/A7e7c2b9d35a14550950a725fa44b6b20l.jpg", alt: "UK electrical equipment safety certificate image" },
@@ -122,6 +132,24 @@ export default function Home() {
           <Link href="/products">View all 22 products →</Link>
         </div>
         <ProductRail products={bestSellers} idPrefix="best" />
+      </section>
+
+      <section className="procurement-guide-band shell" aria-labelledby="procurement-guides-title">
+        <div className="procurement-guide-head">
+          <p className="tb-tag">Procurement SEO guides</p>
+          <h2 id="procurement-guides-title">Decision guides for wholesale, OEM and private-label buyers.</h2>
+          <p>These recently published pages target high-intent B2B searches and link buyers back to category, product, OEM and quotation pages.</p>
+        </div>
+        <div className="procurement-guide-grid">
+          {procurementGuides.map((guide) => (
+            <Link className="procurement-guide-card" href={guide.href} key={guide.href}>
+              <small>{guide.keyword}</small>
+              <strong>{guide.title}</strong>
+              <span>{guide.excerpt}</span>
+              <b>Read sourcing guide →</b>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <section className="tb-claim">

@@ -5,6 +5,7 @@ import { site, whatsappLink } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact Us | HUANTIVE",
   description: "Contact HUANTIVE for massage device OEM, ODM, wholesale and private-label inquiries.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage({ searchParams }: { searchParams: { product?: string; intent?: string } }) {

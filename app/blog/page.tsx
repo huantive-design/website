@@ -2,14 +2,22 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog";
+import { procurementBlogPosts } from "@/lib/procurementBlogPosts";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Blog | Massage Device Research, Safety and Sourcing",
+  title: "Blog | Massage Device Manufacturing, OEM and Sourcing Guides",
   description:
-    "Evidence-based guides on massage and recovery devices: independent test findings, safe use, specification literacy and sourcing compliance for European and North American markets.",
+    "B2B guides for massage device sourcing, OEM and ODM manufacturing, wholesale specifications, private-label programs, compliance and safe product selection.",
   alternates: { canonical: "/blog" },
 };
+
+const procurementTopics = procurementBlogPosts.map((post) => ({
+  title: post.title,
+  href: `/blog/${post.slug}`,
+  keyword: post.primaryKeyword,
+  intent: post.intent,
+}));
 
 export default function BlogIndexPage() {
   const [lead, ...rest] = blogPosts;
@@ -21,11 +29,27 @@ export default function BlogIndexPage() {
       <section className="blog-head">
         <div className="shell">
           <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Blog</span></nav>
-          <h1>Research, safety and sourcing</h1>
+          <h1>Massage device manufacturing, OEM and sourcing guides</h1>
           <p className="blog-lede">
-            Guides built on independent consumer testing, peer-reviewed research and published regulation — not marketing claims.
-            Every article states its sources and the limits of the evidence.
+            B2B buying guides for massage guns, neck massagers, air compression leg massagers, OEM/ODM programs, wholesale specifications and compliance-aware product selection.
           </p>
+        </div>
+      </section>
+
+      <section className="shell blog-topic-hub" aria-labelledby="procurement-topic-title">
+        <div className="blog-topic-copy">
+          <p className="blog-flag">High-intent procurement topics</p>
+          <h2 id="procurement-topic-title">Start with the searches most likely to become RFQs.</h2>
+          <p>These pages concentrate buying intent around wholesale comparison, private-label manufacturer selection and OEM vs ODM planning.</p>
+        </div>
+        <div className="blog-topic-grid">
+          {procurementTopics.map((topic) => (
+            <Link href={topic.href} key={topic.href}>
+              <small>{topic.keyword}</small>
+              <strong>{topic.title}</strong>
+              <span>{topic.intent}</span>
+            </Link>
+          ))}
         </div>
       </section>
 
