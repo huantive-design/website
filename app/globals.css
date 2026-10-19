@@ -942,3 +942,133 @@ body{background:var(--tb-bg)}
   .blog-topic-grid a,
   .guide-link-card{min-height:auto}
 }
+
+/* Visual carousel hubs for core sourcing pages and procurement guides */
+.visual-hub{
+  position:relative;
+  overflow:hidden;
+  border:0;
+  isolation:isolate;
+  padding:clamp(52px,6vw,88px) clamp(20px,4vw,48px);
+  margin-block:18px;
+  background:#101313;
+  color:#fff;
+}
+.visual-hub:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.03);
+}
+.visual-hub:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(8,10,10,.88),rgba(8,10,10,.62) 42%,rgba(8,10,10,.2));
+}
+.visual-hub-sourcing:before{background-image:url('/company/showroom.jpg')}
+.visual-hub-guides:before{background-image:url('/company/inspection-area.jpg')}
+.visual-hub-copy{position:relative;z-index:1;max-width:520px}
+.visual-hub .tb-tag{color:rgba(255,255,255,.72)}
+.visual-hub h2,
+.procurement-guide-band.visual-hub h2{
+  margin:10px 0 16px;
+  color:#fff;
+  text-wrap:balance;
+}
+.visual-hub-copy p:not(.tb-tag){
+  color:rgba(255,255,255,.76);
+  line-height:1.68;
+  margin:0;
+}
+.content-carousel{position:relative;z-index:1;min-width:0}
+.content-carousel-track{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:calc((100% - 28px) / 3);
+  gap:14px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:thin;
+  padding:2px 0 14px;
+}
+.content-carousel-track::-webkit-scrollbar{height:8px}
+.content-carousel-track::-webkit-scrollbar-thumb{background:rgba(255,255,255,.34);border-radius:999px}
+.visual-hub .content-carousel-track>a,
+.visual-hub .procurement-guide-card{
+  min-height:210px;
+  scroll-snap-align:start;
+  background:rgba(255,255,255,.93);
+  border:1px solid rgba(255,255,255,.42);
+  color:var(--ink);
+  box-shadow:0 20px 46px rgba(0,0,0,.18);
+  backdrop-filter:blur(6px);
+}
+.visual-hub .content-carousel-track>a.is-core,
+.visual-hub .procurement-guide-card.is-core{
+  background:#fff;
+  border-color:rgba(255,255,255,.9);
+}
+.visual-hub .content-carousel-track>a:hover,
+.visual-hub .procurement-guide-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 24px 52px rgba(0,0,0,.24);
+}
+.content-carousel-controls{display:flex;gap:10px;justify-content:flex-end;margin-top:12px}
+.content-carousel-controls button{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.42);
+  background:rgba(255,255,255,.94);
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  transition:background .2s ease,transform .2s ease;
+}
+.content-carousel-controls button:hover{background:#fff;transform:translateY(-1px)}
+.content-carousel-controls i{width:8px;height:8px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);display:block}
+@media(max-width:1180px){
+  .content-carousel-track{grid-auto-columns:calc((100% - 14px) / 2)}
+}
+@media(max-width:980px){
+  .visual-hub{grid-template-columns:1fr;gap:28px}
+  .visual-hub:after{background:linear-gradient(180deg,rgba(8,10,10,.88),rgba(8,10,10,.58))}
+}
+@media(max-width:640px){
+  .visual-hub{width:calc(100% - 28px);padding:38px 16px;margin-block:12px}
+  .visual-hub-copy{max-width:none}
+  .content-carousel-track{grid-auto-columns:86%;gap:12px}
+  .visual-hub .content-carousel-track>a,
+  .visual-hub .procurement-guide-card{min-height:230px}
+  .content-carousel-controls{justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  .content-carousel-track{scroll-behavior:auto}
+  .visual-hub .content-carousel-track>a,
+  .visual-hub .procurement-guide-card,
+  .content-carousel-controls button{transition:none}
+}
+
+/* Carousel hub polish after responsive QA */
+.visual-hub-sourcing .content-carousel-track>a strong,
+.visual-hub-sourcing .content-carousel-track>a span{
+  display:block;
+}
+.visual-hub-sourcing .content-carousel-track>a strong{
+  margin-bottom:10px;
+}
+.visual-hub-sourcing .content-carousel-track>a span{
+  line-height:1.55;
+}
+.content-carousel-track{
+  -ms-overflow-style:none;
+  scrollbar-width:none;
+}
+.content-carousel-track::-webkit-scrollbar{
+  display:none;
+}

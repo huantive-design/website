@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CertificateCarousel } from "@/components/CertificateCarousel";
+import { ContentCarousel } from "@/components/ContentCarousel";
 import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
 import { procurementBlogPosts } from "@/lib/procurementBlogPosts";
@@ -111,19 +112,20 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="seo-hub shell" aria-labelledby="core-sourcing-pages">
-        <div>
+      <section className="seo-hub visual-hub visual-hub-sourcing shell" aria-labelledby="core-sourcing-pages">
+        <div className="visual-hub-copy">
           <p className="tb-tag">Core sourcing pages</p>
           <h2 id="core-sourcing-pages">Explore massage device manufacturing solutions for OEM buyers.</h2>
+          <p>Start from the three buying paths most importers ask about first, then slide through additional product, wholesale and compliance routes when the sourcing brief becomes more specific.</p>
         </div>
-        <div className="seo-hub-grid">
-          {coreSourcingPages.map((page) => (
-            <Link href={page.href} key={page.href}>
+        <ContentCarousel label="Core sourcing pages">
+          {coreSourcingPages.map((page, index) => (
+            <Link className={index < 3 ? "is-core" : undefined} href={page.href} key={page.href}>
               <strong>{page.label}</strong>
               <span>{page.note}</span>
             </Link>
           ))}
-        </div>
+        </ContentCarousel>
       </section>
 
       <section className="tb-section shell tb-wide-shell">
@@ -134,22 +136,22 @@ export default function Home() {
         <ProductRail products={bestSellers} idPrefix="best" />
       </section>
 
-      <section className="procurement-guide-band shell" aria-labelledby="procurement-guides-title">
-        <div className="procurement-guide-head">
+      <section className="procurement-guide-band visual-hub visual-hub-guides shell" aria-labelledby="procurement-guides-title">
+        <div className="procurement-guide-head visual-hub-copy">
           <p className="tb-tag">Procurement SEO guides</p>
           <h2 id="procurement-guides-title">Decision guides for wholesale, OEM and private-label buyers.</h2>
-          <p>These recently published pages target high-intent B2B searches and link buyers back to category, product, OEM and quotation pages.</p>
+          <p>The first three guides answer the highest-intent sourcing questions. Additional articles remain crawlable and easy to browse through the carousel without pushing the page below the fold.</p>
         </div>
-        <div className="procurement-guide-grid">
-          {procurementGuides.map((guide) => (
-            <Link className="procurement-guide-card" href={guide.href} key={guide.href}>
+        <ContentCarousel label="Procurement SEO guides">
+          {procurementGuides.map((guide, index) => (
+            <Link className={`procurement-guide-card${index < 3 ? " is-core" : ""}`} href={guide.href} key={guide.href}>
               <small>{guide.keyword}</small>
               <strong>{guide.title}</strong>
               <span>{guide.excerpt}</span>
               <b>Read sourcing guide →</b>
             </Link>
           ))}
-        </div>
+        </ContentCarousel>
       </section>
 
       <section className="tb-claim">
