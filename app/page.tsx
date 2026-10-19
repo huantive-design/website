@@ -114,7 +114,7 @@ export default function Home() {
       <section className="seo-hub shell" aria-labelledby="core-sourcing-pages">
         <div>
           <p className="tb-tag">Core sourcing pages</p>
-          <h2 id="core-sourcing-pages">Start with the pages Google and buyers should understand first.</h2>
+          <h2 id="core-sourcing-pages">Explore massage device manufacturing solutions for OEM buyers.</h2>
         </div>
         <div className="seo-hub-grid">
           {coreSourcingPages.map((page) => (

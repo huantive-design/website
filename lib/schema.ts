@@ -11,7 +11,6 @@ export function organizationSchema() {
     legalName: site.legalName,
     description: site.description,
     url: base,
-    telephone: site.phone,
     address: {
       "@type": "PostalAddress",
       streetAddress: "No. 952-992, Xingrong Road, Wanquan Town",
