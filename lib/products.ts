@@ -72,12 +72,12 @@ export const categories: Category[] = [
     primaryKeyword: "massage gun manufacturer",
     secondaryKeywords: ["percussion massage gun supplier", "fascia gun OEM factory", "private label massage gun"],
     metaTitle:
-      "Massage Guns Manufacturer | OEM & Wholesale | HUANTIVE",
+      "Massage Gun Manufacturer in China | OEM & Wholesale | HUANTIVE",
     metaDescription:
-      "Source massage guns from HUANTIVE. Explore OEM branding, specifications, packaging options, MOQ, lead time and model-specific documentation. Request a factory quote.",
-    heading: "Massage gun and fascia gun manufacturing",
+      "Source mini, deep tissue, and hot & cold massage guns directly from a China manufacturer. Explore OEM options, private label packaging, and factory quotations.",
+    heading: "Massage Gun Manufacturer for OEM & Wholesale Buyers",
     intro:
-      "Percussion massage platforms covering full-size, compact and thermal-attachment formats. Each model is quoted with its own motor, stroke, battery and attachment configuration.",
+      "HUANTIVE manufactures massage guns for private label brands, distributors, and wholesale buyers. Compare mini, deep tissue, and hot & cold models, explore customization options, and request model-specific specifications, MOQ, and sample details.",
     buyerNote: "Four percussion platforms, including hot-and-cold and cooling-design concepts.",
     image: "/images/massage-gun-gym-hero.jpg",
   },
@@ -629,13 +629,13 @@ export const products: Product[] = [
     category: "Massage Guns",
     categorySlug: "massage-guns",
     primaryKeyword:
-      "deep tissue massage gun manufacturer",
-    secondaryKeywords: ["HT-HN026 massage gun OEM", "percussion massage gun wholesale", "private label fascia gun factory", "2500mAh massage gun supplier"],
+      "deep tissue massage gun wholesale",
+    secondaryKeywords: ["HT-HN026 massage gun OEM", "percussion massage gun manufacturer", "private label fascia gun factory", "2500mAh massage gun supplier"],
     intent: "transactional",
     metaTitle:
-      "Deep Tissue Massage Gun Manufacturer & OEM | HUANTIVE",
+      "HT-HN026 Deep Tissue Massage Gun | OEM & Wholesale | HUANTIVE",
     metaDescription:
-      "Source the HT-HN026 deep tissue massage gun with seven speeds, eight heads and a 2500mAh battery. Review OEM options and request factory pricing.",
+      "Compare the HT-HN026 deep tissue massage gun for wholesale and private-label programs. Review 1300-3200 RPM, 2500mAh battery, eight heads, MOQ and lead time.",
     summary:
       "A full-size HT-HN026 percussion massage gun platform for OEM, wholesale and private-label recovery programs.",
     images: gallery(12, 6),

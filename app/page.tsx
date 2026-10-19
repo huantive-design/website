@@ -116,7 +116,7 @@ export default function Home() {
         <div className="visual-hub-copy">
           <p className="tb-tag">Core sourcing pages</p>
           <h2 id="core-sourcing-pages">Explore massage device manufacturing solutions for OEM buyers.</h2>
-          <p>Start from the three buying paths most importers ask about first, then slide through additional product, wholesale and compliance routes when the sourcing brief becomes more specific.</p>
+          <p>The first three sourcing routes stay visible for quick orientation, while the remaining buyer paths rotate automatically without hiding crawlable links from search engines.</p>
         </div>
         <ContentCarousel label="Core sourcing pages">
           {coreSourcingPages.map((page, index) => (
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="procurement-guide-head visual-hub-copy">
           <p className="tb-tag">Procurement SEO guides</p>
           <h2 id="procurement-guides-title">Decision guides for wholesale, OEM and private-label buyers.</h2>
-          <p>The first three guides answer the highest-intent sourcing questions. Additional articles remain crawlable and easy to browse through the carousel without pushing the page below the fold.</p>
+          <p>The first three guides stay prominent for OEM and wholesale buyers, while the rest cycle in a lightweight loop and remain available as normal crawlable links.</p>
         </div>
         <ContentCarousel label="Procurement SEO guides">
           {procurementGuides.map((guide, index) => (

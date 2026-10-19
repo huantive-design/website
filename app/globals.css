@@ -1072,3 +1072,207 @@ body{background:var(--tb-bg)}
 .content-carousel-track::-webkit-scrollbar{
   display:none;
 }
+
+/* Full-bleed automatic carousel treatment for homepage sourcing hubs */
+.visual-hub{
+  width:100%;
+  max-width:none;
+  min-height:min(760px,100svh);
+  margin:0;
+  padding:clamp(64px,8vw,118px) max(24px,calc((100vw - 1180px) / 2)) clamp(64px,8vw,118px);
+  grid-template-columns:minmax(300px,440px) minmax(0,1fr);
+  align-items:center;
+  column-gap:clamp(34px,5vw,72px);
+}
+.visual-hub:before{
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+  transform:none;
+}
+.visual-hub-sourcing:before{background-position:center center}
+.visual-hub-guides:before{background-position:center center}
+.visual-hub:after{
+  background:
+    linear-gradient(90deg,rgba(3,5,6,.88) 0%,rgba(3,5,6,.72) 32%,rgba(3,5,6,.34) 64%,rgba(3,5,6,.16) 100%),
+    radial-gradient(circle at 72% 46%,rgba(255,255,255,.16),transparent 34%);
+}
+.visual-hub-copy{
+  padding:0;
+  background:transparent;
+  text-shadow:0 3px 22px rgba(0,0,0,.58);
+}
+.visual-hub-copy p:not(.tb-tag){
+  color:rgba(255,255,255,.88);
+}
+.content-carousel{
+  overflow:hidden;
+}
+.content-carousel-viewport{
+  overflow:hidden;
+  padding:4px 0;
+}
+.content-carousel-track{
+  display:flex;
+  width:max-content;
+  gap:16px;
+  overflow:visible;
+  scroll-snap-type:none;
+  padding:0;
+  animation:contentCarouselLoop 34s linear infinite;
+  will-change:transform;
+}
+.content-carousel:hover .content-carousel-track{
+  animation-play-state:paused;
+}
+.content-carousel-item{
+  flex:0 0 clamp(220px,18vw,292px);
+}
+.visual-hub .content-carousel-item>a,
+.visual-hub .content-carousel-item>.procurement-guide-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  min-height:270px;
+  padding:28px;
+  background:rgba(255,255,255,.9);
+  color:var(--ink);
+  border:1px solid rgba(255,255,255,.62);
+  box-shadow:0 26px 60px rgba(0,0,0,.28);
+  backdrop-filter:blur(10px);
+}
+.visual-hub .content-carousel-item>a.is-core,
+.visual-hub .content-carousel-item>.procurement-guide-card.is-core{
+  background:rgba(255,255,255,.96);
+}
+.visual-hub .content-carousel-track>a,
+.visual-hub .procurement-guide-card{
+  min-height:unset;
+}
+.content-carousel-controls{
+  display:none;
+}
+.visual-hub-sourcing .content-carousel-item>a strong,
+.visual-hub-sourcing .content-carousel-item>a span{
+  display:block;
+}
+.visual-hub-sourcing .content-carousel-item>a strong{
+  margin-bottom:12px;
+}
+.visual-hub-sourcing .content-carousel-item>a span{
+  line-height:1.58;
+}
+@keyframes contentCarouselLoop{
+  from{transform:translate3d(0,0,0)}
+  to{transform:translate3d(calc(-50% - 8px),0,0)}
+}
+@media(max-width:980px){
+  .visual-hub{
+    min-height:100svh;
+    padding:56px 20px;
+    grid-template-columns:1fr;
+    align-content:center;
+    gap:30px;
+  }
+  .visual-hub:after{
+    background:linear-gradient(180deg,rgba(3,5,6,.9) 0%,rgba(3,5,6,.7) 46%,rgba(3,5,6,.32) 100%);
+  }
+  .visual-hub-copy{max-width:680px}
+  .content-carousel-item{flex-basis:clamp(236px,72vw,320px)}
+  .visual-hub .content-carousel-item>a,
+  .visual-hub .content-carousel-item>.procurement-guide-card{min-height:238px;padding:24px}
+}
+@media(max-width:640px){
+  .visual-hub{
+    width:100%;
+    min-height:100svh;
+    padding:44px 16px;
+    margin:0;
+  }
+  .visual-hub h2,
+  .procurement-guide-band.visual-hub h2{
+    font-size:clamp(38px,12vw,58px);
+  }
+  .content-carousel-track{
+    gap:12px;
+    animation-duration:38s;
+  }
+  .content-carousel-item{flex-basis:82vw}
+  .visual-hub .content-carousel-item>a,
+  .visual-hub .content-carousel-item>.procurement-guide-card{min-height:226px}
+}
+@media(prefers-reduced-motion:reduce){
+  .content-carousel-track{
+    animation:none;
+    overflow-x:auto;
+    width:auto;
+  }
+}
+
+/* Final override: remove manual controls and white card panels from homepage visual hubs */
+.visual-hub.shell,
+.procurement-guide-band.visual-hub.shell,
+.seo-hub.visual-hub.shell{
+  width:100vw;
+  max-width:none;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  min-height:100svh;
+  border-radius:0;
+}
+.visual-hub .content-carousel-controls,
+.visual-hub .content-carousel-controls button,
+.visual-hub .arrow-left,
+.visual-hub .arrow-right{
+  display:none !important;
+}
+.visual-hub .content-carousel-item>a,
+.visual-hub .content-carousel-item>.procurement-guide-card,
+.visual-hub .content-carousel-track>a,
+.visual-hub .procurement-guide-card,
+.visual-hub .content-carousel-item>a.is-core,
+.visual-hub .content-carousel-item>.procurement-guide-card.is-core{
+  background:linear-gradient(180deg,rgba(8,10,10,.54),rgba(8,10,10,.34)) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.24) !important;
+  box-shadow:0 26px 64px rgba(0,0,0,.32) !important;
+  backdrop-filter:blur(8px);
+  text-shadow:0 2px 14px rgba(0,0,0,.44);
+}
+.visual-hub .content-carousel-item>a strong,
+.visual-hub .content-carousel-item>a span,
+.visual-hub .procurement-guide-card strong,
+.visual-hub .procurement-guide-card span,
+.visual-hub .procurement-guide-card small,
+.visual-hub .procurement-guide-card b{
+  color:#fff !important;
+}
+.visual-hub .procurement-guide-card small,
+.visual-hub .content-carousel-item>a small{
+  color:rgba(255,255,255,.72) !important;
+}
+.visual-hub .procurement-guide-card b{
+  margin-top:auto;
+  color:#fff !important;
+}
+.visual-hub .content-carousel-track{
+  animation:contentCarouselLoop 30s linear infinite !important;
+}
+.visual-hub .content-carousel-track:hover{
+  animation-play-state:paused !important;
+}
+.visual-hub .content-carousel-viewport{
+  mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 94%,transparent 100%);
+}
+@media(max-width:640px){
+  .visual-hub.shell,
+  .procurement-guide-band.visual-hub.shell,
+  .seo-hub.visual-hub.shell{
+    min-height:100svh;
+    padding-top:52px;
+    padding-bottom:52px;
+  }
+  .visual-hub .content-carousel-track{
+    animation-duration:36s !important;
+  }
+}

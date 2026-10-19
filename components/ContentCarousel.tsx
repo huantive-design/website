@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { Children } from "react";
 
 type ContentCarouselProps = {
   label: string;
@@ -8,26 +8,23 @@ type ContentCarouselProps = {
 };
 
 export function ContentCarousel({ label, children }: ContentCarouselProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  const scrollByPage = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    track.scrollBy({ left: direction * track.clientWidth, behavior: "smooth" });
-  };
+  const items = Children.toArray(children);
 
   return (
     <div className="content-carousel" aria-label={label}>
-      <div className="content-carousel-track" ref={trackRef}>
-        {children}
-      </div>
-      <div className="content-carousel-controls" aria-label={`${label} carousel controls`}>
-        <button type="button" onClick={() => scrollByPage(-1)} aria-label="Show previous items">
-          <i className="arrow-left" />
-        </button>
-        <button type="button" onClick={() => scrollByPage(1)} aria-label="Show next items">
-          <i className="arrow-right" />
-        </button>
+      <div className="content-carousel-viewport">
+        <div className="content-carousel-track" aria-live="off">
+          {items.map((item, index) => (
+            <div className="content-carousel-item" key={`primary-${index}`}>
+              {item}
+            </div>
+          ))}
+          {items.map((item, index) => (
+            <div className="content-carousel-item" key={`loop-${index}`} aria-hidden="true">
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

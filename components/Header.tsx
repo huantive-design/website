@@ -28,7 +28,7 @@ export function Header() {
       <header className="site-header" onMouseLeave={() => { if (canHover()) setMega(false); }}>
         <div className="shell header-inner">
           <Link className="brand" href="/" aria-label={`${site.name} home`} onClick={close}>
-            <span className="brand-mark">H</span>{site.name}
+            <span className="brand-mark" aria-hidden="true">H</span><span className="brand-wordmark">{site.name}</span>
           </Link>
 
           <nav id="main-navigation" className={open ? "nav open" : "nav"}>
