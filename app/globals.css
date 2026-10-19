@@ -971,7 +971,7 @@ body{background:var(--tb-bg)}
   background:linear-gradient(90deg,rgba(8,10,10,.88),rgba(8,10,10,.62) 42%,rgba(8,10,10,.2));
 }
 .visual-hub-sourcing:before{background-image:url('/company/showroom.jpg')}
-.visual-hub-guides:before{background-image:url('/company/inspection-area.jpg')}
+.visual-hub-guides:before{background-image:url('/company/showroom-product-wall.jpg')}
 .visual-hub-copy{position:relative;z-index:1;max-width:520px}
 .visual-hub .tb-tag{color:rgba(255,255,255,.72)}
 .visual-hub h2,
