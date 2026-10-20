@@ -4,10 +4,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
 import { ProductGallery } from "@/components/ProductGallery";
+import { BlogPost, getPost } from "@/lib/blog";
 import { getProduct, getCategory, products, productsByCategory, tradeTerms } from "@/lib/products";
 import { site, whatsappLink } from "@/lib/site";
 import { TrackedLink } from "@/components/TrackedLink";
-import { breadcrumbSchema, categoryFaqSchema, productSchema } from "@/lib/schema";
+import { breadcrumbSchema, categoryFaqSchema, itemListSchema, productSchema } from "@/lib/schema";
 
 type ProductPageProps = { params: Promise<{ slug: string }> };
 
@@ -77,6 +78,45 @@ function productApplicationCopy(product: ProductForApplicationCopy, application:
   return `${application} buyers should confirm contact area, comfort level, heat or vibration logic, charging method and packaging format before positioning this targeted massager in a retail range.`;
 }
 
+const productGuideMap: Record<string, string[]> = {
+  "mini-massage-gun": [
+    "private-label-massage-gun-moq-sample-cost-oem-options",
+    "mini-vs-full-size-massage-gun-retail-channel",
+    "massage-gun-private-label-packaging-customization",
+  ],
+  "deep-tissue-massage-gun": [
+    "private-label-massage-gun-moq-sample-cost-oem-options",
+    "massage-gun-specifications-oem-sampling",
+    "evaluate-massage-gun-noise-battery-performance",
+  ],
+  "hot-cold-massage-gun": [
+    "massage-gun-private-label-packaging-customization",
+    "massage-gun-specifications-oem-sampling",
+    "choose-massage-gun-manufacturer-private-label",
+  ],
+  "wearable-neck-massager": ["compare-neck-massager-designs-wholesale-buyers", "wholesale-shiatsu-neck-massagers-specifications"],
+  "shiatsu-neck-shoulder-massager": ["compare-neck-massager-designs-wholesale-buyers", "wholesale-shiatsu-neck-massagers-specifications"],
+  "compression-leg-massager-boots": ["air-compression-recovery-boots-oem-sourcing", "build-wholesale-massage-device-product-range"],
+};
+
+const categoryGuideMap: Record<string, string[]> = {
+  "massage-guns": [
+    "private-label-massage-gun-moq-sample-cost-oem-options",
+    "mini-vs-full-size-massage-gun-retail-channel",
+    "massage-gun-specifications-oem-sampling",
+  ],
+  "neck-shoulder-massagers": ["compare-neck-massager-designs-wholesale-buyers", "wholesale-shiatsu-neck-massagers-specifications"],
+  "leg-massagers": ["air-compression-recovery-boots-oem-sourcing", "build-wholesale-massage-device-product-range"],
+};
+
+function isBlogPost(post: BlogPost | undefined): post is BlogPost {
+  return Boolean(post);
+}
+
+function productGuideSlugs(product: ProductForApplicationCopy) {
+  return productGuideMap[product.slug] ?? categoryGuideMap[product.categorySlug] ?? ["build-wholesale-massage-device-product-range"];
+}
+
 export function generateStaticParams() { return products.map(({ slug }) => ({ slug })); }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
@@ -95,6 +135,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   if (!product) notFound();
   const category = getCategory(product.categorySlug);
   const related = productsByCategory(product.categorySlug).filter((item) => item.slug !== product.slug).slice(0, 3);
+  const sourcingGuides = productGuideSlugs(product).map((guideSlug) => getPost(guideSlug)).filter(isBlogPost);
   const sourcingChannels = product.applications.join(", ").toLowerCase();
   const specificationFocus = product.specs
     ? `Model ${product.specs.model} is presented with model-specific electrical, dimensional and packing data for quotation review.`
@@ -140,6 +181,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema(product.name, product.summary, { model: product.specs?.model, colors: product.specs?.colors, battery: product.specs?.battery, power: product.specs?.power, productSize: product.specs?.productSize, weight: product.specs?.netGrossWeight, packageSize: product.specs?.packageSize, cartonSize: product.specs?.cartonSize, cartonWeight: product.specs?.cartonWeight, images: product.images.slice(0, 3), category: product.category, url: `/products/${product.slug}` })) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryFaqSchema(faqs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema(sourcingGuides.map((guide) => ({ name: guide.title, path: `/blog/${guide.slug}` })))) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema([
         { name: "Home", path: "/" },
         { name: "Products", path: "/products" },
@@ -277,11 +319,26 @@ export default async function ProductPage({ params }: ProductPageProps) {
         </div>
         <div className="product-seo-links" aria-label="Product sourcing links">
           <Link href={`/products/category/${product.categorySlug}`}>Compare OEM models</Link>
+          {sourcingGuides.slice(0, 2).map((guide) => <Link key={guide.slug} href={`/blog/${guide.slug}`}>{guide.title}</Link>)}
           <Link href="/oem-odm">Review OEM / ODM process</Link>
-          <Link href={`/contact?intent=specifications&product=${product.slug}`}>Request specifications</Link>
           <Link href={`/contact?intent=quotation&product=${product.slug}`}>Get MOQ &amp; lead time</Link>
         </div>
       </div></section>
+
+      {sourcingGuides.length > 0 && (
+        <section className="section shell">
+          <div className="section-heading"><div><p className="eyebrow">Sourcing guides</p><h2>Buyer guides connected to this product.</h2></div><p>These articles help importers and private-label teams compare MOQ, sample checks, packaging scope and category fit before sending an RFQ.</p></div>
+          <div className="guide-link-grid">
+            {sourcingGuides.map((guide) => (
+              <Link className="guide-link-card" key={guide.slug} href={`/blog/${guide.slug}`}>
+                <small>{guide.primaryKeyword}</small>
+                <strong>{guide.title}</strong>
+                <b>Read guide →</b>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {related.length > 0 && (
         <section className="section section-muted related-products"><div className="shell">

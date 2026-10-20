@@ -4,10 +4,29 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InquiryForm } from "@/components/InquiryForm";
 import { ProductCard } from "@/components/ProductCard";
+import { BlogPost, getPost } from "@/lib/blog";
 import { categories, getCategory, productsByCategory } from "@/lib/products";
-import { breadcrumbSchema, categoryFaqSchema } from "@/lib/schema";
+import { breadcrumbSchema, categoryFaqSchema, itemListSchema } from "@/lib/schema";
 
 type CategoryPageProps = { params: Promise<{ slug: string }> };
+
+const categoryGuideMap: Record<string, string[]> = {
+  "massage-guns": [
+    "private-label-massage-gun-moq-sample-cost-oem-options",
+    "mini-vs-full-size-massage-gun-retail-channel",
+    "massage-gun-specifications-oem-sampling",
+    "choose-massage-gun-manufacturer-private-label",
+  ],
+  "neck-shoulder-massagers": ["compare-neck-massager-designs-wholesale-buyers", "wholesale-shiatsu-neck-massagers-specifications"],
+  "leg-massagers": ["air-compression-recovery-boots-oem-sourcing", "build-wholesale-massage-device-product-range"],
+  "foot-massagers": ["build-wholesale-massage-device-product-range"],
+  "massage-pillows-cushions": ["build-wholesale-massage-device-product-range"],
+  "targeted-body-massagers": ["quality-documents-massage-device-buyers-request"],
+};
+
+function isBlogPost(post: BlogPost | undefined): post is BlogPost {
+  return Boolean(post);
+}
 
 export function generateStaticParams() {
   return categories.map(({ slug }) => ({ slug }));
@@ -29,6 +48,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   const category = getCategory(slug);
   if (!category) notFound();
   const items = productsByCategory(category.slug);
+  const sourcingGuides = (categoryGuideMap[category.slug] ?? []).map((guideSlug) => getPost(guideSlug)).filter(isBlogPost);
   const faqs = [
     {
       q: `Do you support OEM and private label for ${category.name.toLowerCase()}?`,
@@ -56,6 +76,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         { name: category.name, path: `/products/category/${category.slug}` },
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryFaqSchema(faqs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema(sourcingGuides.map((guide) => ({ name: guide.title, path: `/blog/${guide.slug}` })))) }} />
 
       <section className="category-hero">
         <div className="category-hero-media"><Image src={category.image} alt={`${category.name} manufactured for OEM programs`} fill priority sizes="100vw" /></div>
@@ -91,6 +112,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             <article><strong>OEM / private label</strong><p>Review logo, colour, packaging, manual language and accessory options against your order volume.</p></article>
             <article><strong>Wholesale checks</strong><p>Ask for model-level specifications, carton data, sample policy, lead time and applicable compliance documents.</p></article>
           </div>
+          {sourcingGuides.length > 0 ? (
+            <div className="guide-link-grid category-guide-links">
+              {sourcingGuides.map((guide) => (
+                <Link className="guide-link-card" href={`/blog/${guide.slug}`} key={guide.slug}>
+                  <small>{guide.primaryKeyword}</small>
+                  <strong>{guide.title}</strong>
+                  <b>Read buyer guide →</b>
+                </Link>
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 
