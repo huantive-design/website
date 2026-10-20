@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/url";
 import { MotionEffects } from "@/components/MotionEffects";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <GoogleAnalytics />
         <MotionEffects />
         <Header />
         <main>{children}</main>

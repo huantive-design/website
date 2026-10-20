@@ -10,6 +10,10 @@ type TrackingPayload = {
   value?: string;
 };
 
+type GtagCommand = "event" | "config" | "js" | "set";
+
+type GtagFn = (command: GtagCommand, target: string | Date, params?: Record<string, unknown>) => void;
+
 type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
   children: ReactNode;
@@ -19,7 +23,7 @@ type TrackedLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
-    gtag?: (...args: unknown[]) => void;
+    gtag?: GtagFn;
   }
 }
 
