@@ -600,8 +600,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 7,
     excerpt:
       "Wenn der Akku ausfaellt, ist das ganze Geraet unbrauchbar, auch wenn Motor und Gehaeuse noch einwandfrei funktionieren.",
-    cover: cover(17, 1),
-    coverAlt: "Beheizbares Massagekissen fuer Nacken und Ruecken",
+    cover: cover(12, 2),
+    coverAlt: "Massagepistole mit Akku und Aufsatzset fuer Lebensdauerbewertung",
     relatedCategory: "massage-guns",
     relatedPosts: ["massagepistole-schadstoffe", "sourcing-massage-devices-compliance-checklist"],
     sections: [
@@ -847,8 +847,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 11,
     excerpt:
       "The 2024 test failures were not about massage performance. They were about materials, repairability and documentation — all decided at sourcing, not marketing.",
-    cover: cover(8, 1),
-    coverAlt: "Air compression recovery boots for leg and calf programmes",
+    cover: "/images/oem-components.png",
+    coverAlt: "Massage device compliance documents and component review for sourcing buyers",
     relatedCategory: "massage-guns",
     relatedPosts: ["massage-gun-amplitude-frequency-explained", "massagepistole-schadstoffe"],
     sections: [
@@ -997,8 +997,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "Onze pistolets testes, aucun note bon. Ce n'est pas une raison d'ecarter ces appareils, mais une raison de savoir quoi verifier avant d'acheter.",
-    cover: cover(6, 1),
-    coverAlt: "Appareil de massage des jambes a compression d'air",
+    cover: cover(11, 2),
+    coverAlt: "Pistolet de massage avec embouts pour evaluation avant achat",
     relatedCategory: "massage-guns",
     relatedPosts: ["how-to-use-a-massage-gun-safely", "massagepistole-schadstoffe"],
     sections: [
@@ -1130,8 +1130,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "Undici pistole massaggianti testate, nessuna con giudizio buono. Non e un motivo per escluderle: e un motivo per sapere cosa verificare.",
-    cover: cover(16, 1),
-    coverAlt: "Cuscino massaggiante shiatsu per collo e schiena",
+    cover: cover(12, 3),
+    coverAlt: "Pistola massaggiante con accessori per guida all'acquisto",
     relatedCategory: "massage-guns",
     relatedPosts: ["massage-gun-amplitude-frequency-explained", "how-to-use-a-massage-gun-safely"],
     sections: [
@@ -1264,8 +1264,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "Puede ayudar con molestias musculares leves y mejorar la flexibilidad a corto plazo. La evidencia es real, pero moderada.",
-    cover: cover(10, 1),
-    coverAlt: "Masajeador de pies y pantorrillas para recuperacion muscular",
+    cover: cover(11, 3),
+    coverAlt: "Pistola de masaje para recuperacion muscular y uso deportivo",
     relatedCategory: "leg-massagers",
     relatedPosts: ["massage-gun-vs-foam-roller", "how-to-use-a-massage-gun-safely"],
     sections: [
@@ -1395,7 +1395,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     excerpt:
       "Pressure numbers sell these devices, but pressure alone does not make one safe or effective. Here is what to verify before placing an order.",
-    cover: cover(16),
+    cover: cover(6, 1),
     coverAlt: "Air compression leg massager sleeves manufactured for OEM wellness programmes",
     relatedCategory: "leg-massagers",
     relatedPosts: ["sourcing-massage-devices-compliance-checklist", "neck-and-shoulder-massager-formats"],
@@ -1528,7 +1528,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "The wearable neck category splits by mechanism, and the mechanism decides your claim boundary. Here is how to pick a format and keep the listing defensible.",
-    cover: cover(21),
+    cover: cover(1, 2),
     coverAlt: "Open-neck wearable neck massager manufactured for private-label wellness brands",
     relatedCategory: "neck-shoulder-massagers",
     relatedPosts: ["neck-and-shoulder-massager-formats", "sourcing-massage-devices-compliance-checklist"],
@@ -1771,7 +1771,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     excerpt:
       "This is the highest-claim-risk product in the category. The contraindications are universal and the marketing temptation is the problem.",
-    cover: cover(14),
+    cover: cover(15, 1),
     coverAlt: "EMS facial massager manufactured for private-label beauty programmes",
     relatedCategory: "targeted-body-massagers",
     relatedPosts: ["sourcing-massage-devices-compliance-checklist", "wearable-neck-massager-selection-guide"],
@@ -2027,8 +2027,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     excerpt:
       "The tariff line is the easy part. What catches first-time importers is the stack on top of it, and the freight assumptions that quietly decide whether a programme clears margin.",
-    cover: cover(16),
-    coverAlt: "Air compression leg massager cartons prepared for export",
+    cover: "/company/showroom-product-wall.jpg",
+    coverAlt: "Massage device product range display used for landed cost and export planning",
     relatedCategory: "leg-massagers",
     relatedPosts: ["sourcing-massage-devices-compliance-checklist", "massager-factory-audit-checklist", "massager-qc-inspection-aql"],
     sections: [
@@ -2152,8 +2152,8 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 10,
     excerpt:
       "Most sourcing failures are not quality failures. They are verification failures: the buyer never confirmed who actually builds the product, who owns the tooling, or whose name is on the test report.",
-    cover: cover(21),
-    coverAlt: "Neck and shoulder massager assembly for OEM programmes",
+    cover: "/images/buyer-evaluation.png",
+    coverAlt: "Factory audit and supplier verification for massage device sourcing",
     relatedCategory: "neck-shoulder-massagers",
     relatedPosts: ["massager-qc-inspection-aql", "massager-import-duty-and-landed-cost", "sourcing-massage-devices-compliance-checklist"],
     sections: [

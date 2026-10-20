@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { blogPosts } from "@/lib/blog";
-import { procurementBlogPosts } from "@/lib/procurementBlogPosts";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -11,13 +10,6 @@ export const metadata: Metadata = {
     "B2B guides for massage device sourcing, OEM and ODM manufacturing, wholesale specifications, private-label programs, compliance and safe product selection.",
   alternates: { canonical: "/blog" },
 };
-
-const procurementTopics = procurementBlogPosts.map((post) => ({
-  title: post.title,
-  href: `/blog/${post.slug}`,
-  keyword: post.primaryKeyword,
-  intent: post.intent,
-}));
 
 export default function BlogIndexPage() {
   const [lead, ...rest] = blogPosts;
@@ -33,23 +25,6 @@ export default function BlogIndexPage() {
           <p className="blog-lede">
             B2B buying guides for massage guns, neck massagers, air compression leg massagers, OEM/ODM programs, wholesale specifications and compliance-aware product selection.
           </p>
-        </div>
-      </section>
-
-      <section className="shell blog-topic-hub" aria-labelledby="procurement-topic-title">
-        <div className="blog-topic-copy">
-          <p className="blog-flag">High-intent procurement topics</p>
-          <h2 id="procurement-topic-title">Start with the searches most likely to become RFQs.</h2>
-          <p>These pages concentrate buying intent around wholesale comparison, private-label manufacturer selection and OEM vs ODM planning.</p>
-        </div>
-        <div className="blog-topic-grid">
-          {procurementTopics.map((topic) => (
-            <Link href={topic.href} key={topic.href}>
-              <small>{topic.keyword}</small>
-              <strong>{topic.title}</strong>
-              <span>{topic.intent}</span>
-            </Link>
-          ))}
         </div>
       </section>
 
