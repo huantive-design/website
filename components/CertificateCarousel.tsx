@@ -45,7 +45,7 @@ export function CertificateCarousel({ certificates }: { certificates: Certificat
           <p className="tb-tag">Factory certificates</p>
           <h2 id="certificate-title">Factory certificate documentation</h2>
           <p>
-            Review the certificate images currently provided by the factory. Applicability and current validity should be confirmed for the quoted model and destination market.
+            Check available certificate files alongside the exact model, standard, certificate holder and target market so your quotation review is based on order-specific evidence.
           </p>
           <div className="certificate-controls" aria-label="Certificate carousel controls">
             <button type="button" onClick={() => goTo(activeIndex - 1)} aria-label="Previous certificate">←</button>

@@ -116,7 +116,7 @@ export default function Home() {
         <div className="visual-hub-copy">
           <p className="tb-tag">Core sourcing pages</p>
           <h2 id="core-sourcing-pages">Explore massage device manufacturing solutions for OEM buyers.</h2>
-          <p>The first three sourcing routes stay visible for quick orientation, while additional buyer paths rotate automatically so visitors can quickly compare products, OEM options and compliance routes.</p>
+          <p>Start with the pages buyers use most when shortlisting a massage device factory: product range, private-label scope, wholesale terms, compliance evidence and RFQ preparation.</p>
         </div>
         <ContentCarousel label="Core sourcing pages">
           {coreSourcingPages.map((page, index) => (
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="procurement-guide-head visual-hub-copy">
           <p className="tb-tag">Procurement decision guides</p>
           <h2 id="procurement-guides-title">Decision guides for wholesale, OEM and private-label buyers.</h2>
-          <p>The first three guides stay prominent for OEM and wholesale buyers, while additional articles cycle in a lightweight loop for quick browsing.</p>
+          <p>Use these guides to compare supplier fit, product specifications, MOQ, packaging options and documentation before choosing models for sampling or quotation.</p>
         </div>
         <ContentCarousel label="Procurement decision guides">
           {procurementGuides.map((guide, index) => (
