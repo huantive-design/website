@@ -341,7 +341,7 @@ export const procurementBlogPosts = [
         heading: "Why factory audits matter before the first bulk order",
         paragraphs: [
           "A massage device factory audit should answer one commercial question: can this supplier repeatedly deliver the product, documentation, packaging and communication your market requires? For European and North American importers, a low unit price is not enough if the factory cannot explain production flow, quality checkpoints, sample approval, certificate scope or after-sales responsibilities.",
-          "Public articles ranking around massage gun manufacturers and OEM sourcing usually perform well when they combine a clear buyer problem, a checklist structure, comparison tables, compliance discussion and a direct RFQ path. That pattern matches procurement search behavior: buyers do not only search for inspiration; they search to reduce supplier risk before they contact a factory."
+          "Strong sourcing content should answer a clear buyer problem, provide practical checklists, compare options, explain compliance considerations and make the RFQ path simple. That structure matches how procurement teams work: buyers are not only looking for inspiration; they are trying to reduce supplier risk before they contact a factory."
         ]
       },
       {

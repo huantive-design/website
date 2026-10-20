@@ -116,7 +116,7 @@ export default function Home() {
         <div className="visual-hub-copy">
           <p className="tb-tag">Core sourcing pages</p>
           <h2 id="core-sourcing-pages">Explore massage device manufacturing solutions for OEM buyers.</h2>
-          <p>The first three sourcing routes stay visible for quick orientation, while the remaining buyer paths rotate automatically without hiding crawlable links from search engines.</p>
+          <p>The first three sourcing routes stay visible for quick orientation, while additional buyer paths rotate automatically so visitors can quickly compare products, OEM options and compliance routes.</p>
         </div>
         <ContentCarousel label="Core sourcing pages">
           {coreSourcingPages.map((page, index) => (
@@ -138,11 +138,11 @@ export default function Home() {
 
       <section className="procurement-guide-band visual-hub visual-hub-guides shell" aria-labelledby="procurement-guides-title">
         <div className="procurement-guide-head visual-hub-copy">
-          <p className="tb-tag">Procurement SEO guides</p>
+          <p className="tb-tag">Procurement decision guides</p>
           <h2 id="procurement-guides-title">Decision guides for wholesale, OEM and private-label buyers.</h2>
-          <p>The first three guides stay prominent for OEM and wholesale buyers, while the rest cycle in a lightweight loop and remain available as normal crawlable links.</p>
+          <p>The first three guides stay prominent for OEM and wholesale buyers, while additional articles cycle in a lightweight loop for quick browsing.</p>
         </div>
-        <ContentCarousel label="Procurement SEO guides">
+        <ContentCarousel label="Procurement decision guides">
           {procurementGuides.map((guide, index) => (
             <Link className={`procurement-guide-card${index < 3 ? " is-core" : ""}`} href={guide.href} key={guide.href}>
               <small>{guide.keyword}</small>
