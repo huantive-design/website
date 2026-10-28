@@ -5,9 +5,9 @@ import { categories } from "@/lib/products";
 import { breadcrumbSchema, categoryFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Wholesale Massage Devices | Distributor Sourcing Guide",
+  title: "Wholesale Massage Devices Supplier | Distributor Factory Quote",
   description:
-    "Source wholesale massage devices from HUANTIVE for distributors, retailers and e-commerce programs. Compare categories, MOQ, carton data, packaging, QC and after-sales support.",
+    "Source wholesale massage devices from HUANTIVE for distributors, retailers and e-commerce programs. Compare category mix, MOQ, carton data, packaging, QC and factory quote details.",
   alternates: { canonical: "/wholesale" },
 };
 

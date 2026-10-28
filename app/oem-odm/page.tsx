@@ -6,9 +6,9 @@ import { categories } from "@/lib/products";
 import { breadcrumbSchema, categoryFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Massage Device OEM & ODM Manufacturer | Private Label Factory",
+  title: "Massage Device OEM & ODM Manufacturer | Private Label Quote",
   description:
-    "OEM and ODM massage device manufacturer in China. Private-label development, customization, sampling, testing and production for distributors and brands in Europe and North America.",
+    "Work with a China massage device OEM and ODM manufacturer for private-label development, customization, sampling, testing, production and factory quotations.",
   alternates: { canonical: "/oem-odm" },
 };
 

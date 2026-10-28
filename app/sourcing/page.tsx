@@ -5,9 +5,9 @@ import { categories } from "@/lib/products";
 import { breadcrumbSchema, categoryFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Massage Device Sourcing Guide | OEM Supplier Evaluation",
+  title: "Massage Device Supplier Evaluation | OEM Sourcing Checklist",
   description:
-    "Evaluate massage device suppliers for OEM and wholesale programs: product fit, factory capability, quality control, compliance documents, MOQ, lead time, packaging and after-sales support.",
+    "Evaluate massage device suppliers for OEM and wholesale programs. Compare factory capability, product fit, QC, compliance documents, MOQ, lead time and packaging before requesting a quote.",
   alternates: { canonical: "/sourcing" },
 };
 

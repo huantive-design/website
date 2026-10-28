@@ -21,9 +21,9 @@ const productGuideLinks = procurementBlogPosts.map((post) => ({
 import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Massage Device Manufacturer | 22 OEM Product Platforms",
+  title: "Massage Device Manufacturer | OEM Wholesale Product Platforms",
   description:
-    "China massage device manufacturer with 22 product platforms across massage guns, neck and shoulder massagers, foot and leg recovery, massage pillows and targeted devices. OEM, ODM and wholesale supply.",
+    "Explore HUANTIVE massage device platforms for OEM, wholesale and private-label buyers. Compare massage guns, neck massagers, foot massagers, recovery devices and request factory pricing.",
   alternates: { canonical: "/products" },
 };
 

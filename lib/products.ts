@@ -193,9 +193,9 @@ export const products: Product[] = [
     secondaryKeywords: ["cordless neck massager OEM", "TENS neck massager supplier", "private label neck massager manufacturer"],
     intent: "transactional",
     metaTitle:
-      "Wearable Neck Massager OEM Supplier | HUANTIVE",
+      "Wearable Neck Massager Manufacturer | OEM Quote | HUANTIVE",
     metaDescription:
-      "Source NM22 / ST-304 wearable TENS neck massager with heat, voice prompts, remote control and 1200mAh battery. Review private-label packaging and request factory pricing.",
+      "Source NM22 / ST-304 wearable neck massager from HUANTIVE. Compare OEM branding, private-label packaging, MOQ, lead time and request factory pricing.",
     summary:
       "A cordless NM22 / ST-304 wearable TENS neck massager platform for wellness retail, gifting and e-commerce ranges.",
     images: gallery(1, 4),
@@ -259,9 +259,9 @@ export const products: Product[] = [
     secondaryKeywords: ["shiatsu shoulder massager OEM", "heated neck massager supplier", "private label neck and shoulder massager"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Neck & Shoulder Massager Manufacturer | OEM",
+      "Shiatsu Neck Massager Manufacturer | Wholesale OEM Quote",
     metaDescription:
-      "Source OY-S003 Shiatsu Neck & Shoulder Massager with reversible kneading nodes, heat, speed control, home power and car adapter support. Request OEM quotation.",
+      "Compare shiatsu neck and shoulder massager specifications, heat, packaging, MOQ and documentation for OEM, wholesale and private-label sourcing.",
     summary:
       "A retail-ready OY-S003 shiatsu neck and shoulder massager for wholesale, distributor and private-label wellness programs.",
     images: gallery(2, 5, [1, 3, 4, 5]),
@@ -326,9 +326,9 @@ export const products: Product[] = [
     secondaryKeywords: ["pull strap shoulder massager wholesale", "heated kneading neck massager OEM", "private label shoulder wrap"],
     intent: "transactional",
     metaTitle:
-      "Kneading Neck Shoulder Massager Supplier | HUANTIVE",
+      "Kneading Neck Massager Supplier | OEM & Wholesale Quote",
     metaDescription:
-      "Source WY-NM19 kneading neck and shoulder massager with infrared heat, three speeds, pull-strap design and gift-box packaging. Review OEM options.",
+      "Source kneading neck and shoulder massagers for OEM and wholesale programs. Review comfort, heat, packaging, MOQ, lead time and private-label options.",
     summary:
       "A WY-NM19 pull-strap kneading neck and shoulder massager for wholesale, retail and private-label programs.",
     images: gallery(3, 6),
@@ -391,9 +391,9 @@ export const products: Product[] = [
     secondaryKeywords: ["heated neck massager manufacturer", "infrared shoulder massager supplier", "private label heated shoulder massager"],
     intent: "transactional",
     metaTitle:
-      "Heated Neck Shoulder Massager OEM | HUANTIVE",
+      "Heated Neck Massager OEM Supplier | Private Label Quote",
     metaDescription:
-      "Source OY18NM17 heated neck and shoulder massager with shiatsu kneading, infrared heat, PU leather finish and retail gift-box options. Request OEM pricing.",
+      "Compare heated neck and shoulder massager options for private-label and wholesale buyers. Request MOQ, sample details, packaging and documentation.",
     summary:
       "An OY18NM17 heated neck and shoulder massager platform for OEM retail, gifting and wellness programs.",
     images: gallery(4, 6),
@@ -457,9 +457,9 @@ export const products: Product[] = [
     secondaryKeywords: ["padded shoulder massager supplier", "upper body massager OEM", "private label massage wrap"],
     intent: "transactional",
     metaTitle:
-      "Wraparound Shoulder Massager Wholesale | HUANTIVE",
+      "Wraparound Shoulder Massager Wholesale | OEM Factory Quote",
     metaDescription:
-      "Source WY-NM15 wraparound shoulder massager with kneading, infrared heat, three speeds and padded arm straps. Review wholesale and OEM options.",
+      "Source wraparound shoulder massagers for wholesale and OEM programs. Compare heat, kneading comfort, packaging, MOQ, lead time and factory quotation details.",
     summary:
       "A WY-NM15 padded wraparound shoulder massager for distributor, home comfort and private-label collections.",
     images: gallery(5, 4),
@@ -521,9 +521,9 @@ export const products: Product[] = [
     secondaryKeywords: ["structured neck massager supplier", "travel neck massager OEM", "gift neck massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "U Shaped Neck Massager Manufacturer | HUANTIVE",
+      "U Shaped Neck Massager Manufacturer | OEM Wholesale Quote",
     metaDescription:
-      "Source HT-ST321 U-shaped neck massager with 1500mAh battery, heating switch, three modes and structured clamping design. Request OEM quote.",
+      "Source U-shaped neck massagers with heat from HUANTIVE. Review OEM options, packaging, MOQ, sample route, lead time and model-specific documents.",
     summary:
       "An HT-ST321 structured U-shaped neck massager for travel retail, gift programs and wellness e-commerce.",
     images: gallery(18, 6),
@@ -585,9 +585,9 @@ export const products: Product[] = [
     secondaryKeywords: ["thermal massage gun OEM", "hot cold therapy massage gun supplier", "private label hot cold massage gun"],
     intent: "transactional",
     metaTitle:
-      "Hot and Cold Massage Gun Manufacturer | HUANTIVE",
+      "Hot and Cold Massage Gun Manufacturer | OEM Quote",
     metaDescription:
-      "Source hot and cold massage gun platforms for OEM recovery ranges. Confirm model, thermal head, temperature range, attachments, packaging and carton data before quotation.",
+      "Source hot and cold massage guns for premium OEM and private-label programs. Compare thermal head options, packaging, MOQ, samples and factory pricing.",
     summary:
       "A hot and cold percussion massage gun platform for recovery brands planning thermal-head options, accessory bundles and private-label packaging before OEM quotation.",
     images: gallery(11, 6),
@@ -633,9 +633,9 @@ export const products: Product[] = [
     secondaryKeywords: ["HT-HN026 massage gun OEM", "percussion massage gun manufacturer", "private label fascia gun factory", "2500mAh massage gun supplier"],
     intent: "transactional",
     metaTitle:
-      "HT-HN026 Deep Tissue Massage Gun | OEM & Wholesale | HUANTIVE",
+      "Deep Tissue Massage Gun Wholesale | OEM Factory Quote",
     metaDescription:
-      "Compare the HT-HN026 deep tissue massage gun for wholesale and private-label programs. Review 1300-3200 RPM, 2500mAh battery, eight heads, MOQ and lead time.",
+      "Source HT-HN026 deep tissue massage gun with 1300-3200 RPM, 2500mAh battery and eight heads. Request OEM packaging, MOQ and wholesale pricing.",
     summary:
       "A full-size HT-HN026 percussion massage gun platform for OEM, wholesale and private-label recovery programs.",
     images: gallery(12, 6),
@@ -698,9 +698,9 @@ export const products: Product[] = [
     secondaryKeywords: ["compact massage gun supplier", "portable fascia gun private label", "travel massage gun manufacturer"],
     intent: "transactional",
     metaTitle:
-      "Mini Massage Gun OEM Supplier | HUANTIVE",
+      "Mini Massage Gun OEM Supplier | Private Label Wholesale Quote",
     metaDescription:
-      "Source HT-HN049 mini massage gun with 2000mAh battery, five heads, five intensities and hot/cold head options. Review private-label packaging.",
+      "Source mini massage guns for private-label and wholesale programs. Compare colors, hot/cold options, packaging, MOQ, sample route and factory lead time.",
     summary:
       "A compact HT-HN049 mini massage gun platform for travel retail, e-commerce, gifting and private-label programs.",
     images: gallery(13, 6),
@@ -763,9 +763,9 @@ export const products: Product[] = [
     secondaryKeywords: ["cold therapy massage gun manufacturer", "massage gun with cooling OEM", "recovery gun factory China"],
     intent: "transactional",
     metaTitle:
-      "Cooling Massage Gun Supplier & OEM | HUANTIVE",
+      "Cooling Massage Gun Supplier | OEM & Wholesale Quote",
     metaDescription:
-      "Source HT-HN062 cooling massage gun with 30 speed modes, 2500mAh battery, LCD screen and eight heads. Request OEM quotation and packaging options.",
+      "Compare cooling massage gun options for OEM, wholesale and private-label buyers. Request MOQ, packaging scope, sample details and factory pricing.",
     summary:
       "An HT-HN062 cooling-positioned massage gun platform for sports recovery, performance retail and specialist distributors.",
     images: gallery(14, 6),
@@ -828,9 +828,9 @@ export const products: Product[] = [
     secondaryKeywords: ["air compression foot massager supplier", "heated foot massager OEM", "wholesale shiatsu foot massager"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Foot Massager with Heat & Compression | OEM",
+      "Shiatsu Foot Massager Manufacturer | OEM Wholesale Quote",
     metaDescription:
-      "Source WY-FN054 shiatsu foot massager with heat, air compression, rolling massage, scraping action and 36W power. Request OEM factory pricing.",
+      "Source shiatsu foot massagers with heat and air compression. Compare OEM packaging, voltage options, MOQ, carton data, lead time and factory pricing.",
     summary:
       "A WY-FN054 enclosed shiatsu foot massager with heat and air compression for home wellness, senior care and department-store programs.",
     images: gallery(9, 4, [1, 2, 3, 4]),
@@ -891,9 +891,9 @@ export const products: Product[] = [
     secondaryKeywords: ["leg and foot massager manufacturer", "premium foot massager OEM", "calf massage machine factory"],
     intent: "transactional",
     metaTitle:
-      "Foot and Calf Massager Supplier | OEM Wholesale",
+      "Foot and Calf Massager Supplier | OEM Wholesale Quote",
     metaDescription:
-      "Source HT-FN001 foot and calf massager with six modes, three intensity levels, foot heat settings and enclosed lower-leg coverage. Request OEM quote.",
+      "Source foot and calf massagers for wholesale and private-label programs. Review functions, packaging, MOQ, carton data, lead time and quotation details.",
     summary:
       "An HT-FN001 enclosed foot and calf massager platform for premium wellness retail, clinic supply and gifting programs.",
     images: gallery(10, 6),
@@ -952,9 +952,9 @@ export const products: Product[] = [
     secondaryKeywords: ["calf compression massager supplier", "pneumatic leg massager OEM", "air pressure leg massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "Air Compression Leg Massager Manufacturer | HUANTIVE",
+      "Air Compression Leg Massager Manufacturer | OEM Quote",
     metaDescription:
-      "Source FM10-3 air compression leg massager with calf wrap design, 2000mAh battery, heat settings and single or pair packing options. Request OEM quote.",
+      "Source air compression leg massagers for recovery and wellness channels. Compare heat, fit, packaging, MOQ, documentation and factory quote details.",
     summary:
       "An FM10-3 calf-wrap air compression leg massager for recovery, wellness retail and private-label health programs.",
     images: gallery(6, 6),
@@ -1020,9 +1020,9 @@ export const products: Product[] = [
     secondaryKeywords: ["compression recovery boots supplier", "leg recovery boots OEM", "private label air compression boots"],
     intent: "transactional",
     metaTitle:
-      "Air Compression Recovery Boots Manufacturer | OEM",
+      "Air Compression Recovery Boots Manufacturer | OEM Quote",
     metaDescription:
-      "Source air compression recovery boot programs for sports recovery and physiotherapy channels. Confirm chamber layout, pressure range, controller, sleeve size and packaging before quotation.",
+      "Source air compression recovery boots for sports and wellness brands. Compare pressure design, controller logic, packaging, MOQ and OEM documentation.",
     summary:
       "An air compression recovery boots RFQ platform for buyers planning full-leg recovery boot programs before OEM quotation.",
     images: gallery(8, 5),
@@ -1068,9 +1068,9 @@ export const products: Product[] = [
     secondaryKeywords: ["kneading massage pillow supplier", "neck and back massage pillow manufacturer", "wholesale massage pillow China"],
     intent: "transactional",
     metaTitle:
-      "Shiatsu Massage Pillow OEM Supplier | HUANTIVE",
+      "Shiatsu Massage Pillow OEM Supplier | Wholesale Quote",
     metaDescription:
-      "Source WY-P001 shiatsu massage pillow with four reversible heads, infrared heat, 15-minute auto-off and six colorway options. Request OEM pricing.",
+      "Source shiatsu massage pillows for home comfort and gifting ranges. Compare heat, adapter route, packaging, MOQ, lead time and private-label options.",
     summary:
       "A WY-P001 compact shiatsu massage pillow for home, office, automotive and gift-channel OEM programs.",
     images: gallery(16, 6),
@@ -1131,9 +1131,9 @@ export const products: Product[] = [
     secondaryKeywords: ["massage pillow with heat supplier", "shiatsu massage pillow OEM", "private label heated massage pillow"],
     intent: "transactional",
     metaTitle:
-      "Heated Shiatsu Massage Pillow Manufacturer | OEM",
+      "Heated Shiatsu Massage Pillow Manufacturer | OEM Quote",
     metaDescription:
-      "Source heated shiatsu massage pillow programs for home, office and vehicle wellness ranges. Confirm heat function, adapter route and packaging before quotation.",
+      "Source heated shiatsu massage pillows for OEM and wholesale programs. Review packaging, power route, MOQ, sample details and model documentation.",
     summary:
       "A heated shiatsu massage pillow platform for buyers planning heat function, adapter route, upholstery and packaging before OEM quotation.",
     images: gallery(17, 5),
@@ -1179,9 +1179,9 @@ export const products: Product[] = [
     secondaryKeywords: ["full back massage cushion supplier", "chair massage pad OEM", "office chair massager factory"],
     intent: "transactional",
     metaTitle:
-      "Massage Seat Cushion Manufacturer | HUANTIVE",
+      "Massage Seat Cushion Manufacturer | OEM Wholesale Quote",
     metaDescription:
-      "Source WY-MC013 full back massage seat cushion with neck, back, waist and hip coverage, heat, vibration and adjustable massage head spacing.",
+      "Source full back massage seat cushions for home, office and vehicle channels. Compare heat, coverage, packaging, MOQ and factory quotation details.",
     summary:
       "A WY-MC013 chair-mounted full-back massage seat cushion for office furniture, automotive and home wellness channels.",
     images: gallery(19, 6, [5, 6]),
@@ -1245,9 +1245,9 @@ export const products: Product[] = [
     secondaryKeywords: ["electric hand massager supplier", "palm massager OEM factory", "hand massage device wholesale"],
     intent: "transactional",
     metaTitle:
-      "Heated Hand Massager Manufacturer | HUANTIVE",
+      "Heated Hand Massager Manufacturer | OEM Wholesale Quote",
     metaDescription:
-      "Source WY-ST-1803 heated hand massager with four modes, three heat settings, five intensity levels and 2000mAh battery. Request OEM quote.",
+      "Source heated hand massagers for wellness and desk-worker channels. Compare fit, heat, controls, packaging, MOQ, lead time and private-label options.",
     summary:
       "A WY-ST-1803 enclosed heated hand massager for senior care retail, wellness e-commerce and health gifting programs.",
     images: gallery(21, 5),
@@ -1308,9 +1308,9 @@ export const products: Product[] = [
     secondaryKeywords: ["kneading hand massager manufacturer", "finger and palm massager OEM", "wholesale hand massager with heat"],
     intent: "transactional",
     metaTitle:
-      "Hand Massager with Kneading & Heat | OEM Wholesale",
+      "Hand Massager with Heat Supplier | OEM Wholesale Quote",
     metaDescription:
-      "Source hand massager with kneading and heat programs for wellness, office and health distribution channels. Confirm kneading mechanism, modes and packing before quote.",
+      "Source kneading hand massagers with heat for private-label and wholesale programs. Review mode logic, packaging, MOQ, samples and factory pricing.",
     summary:
       "An enclosed hand massager platform for buyers planning kneading, heat, mode control and private-label packaging before OEM quotation.",
     images: gallery(22, 4),
@@ -1356,9 +1356,9 @@ export const products: Product[] = [
     secondaryKeywords: ["heated lumbar massager belt manufacturer", "back massage belt supplier", "waist massager private label"],
     intent: "transactional",
     metaTitle:
-      "Heated Lumbar Massager OEM | HUANTIVE",
+      "Heated Lumbar Massager Belt OEM Supplier | Factory Quote",
     metaDescription:
-      "Source WY-HZ-Y5 heated lumbar massager belt with support belts, carbon-fibre heat, vibration levels and 2600mAh Type-C battery. Request OEM quote.",
+      "Source heated lumbar massager belts for private-label programs. Compare temperature logic, fit, packaging, MOQ, lead time and documentation scope.",
     summary:
       "A WY-HZ-Y5 wearable lower-back massager belt for back-care retail, occupational wellness and online health brands.",
     images: gallery(20, 4),
@@ -1421,9 +1421,9 @@ export const products: Product[] = [
     secondaryKeywords: ["ankle massage wrap supplier", "joint massager OEM factory", "ankle heat massager wholesale"],
     intent: "transactional",
     metaTitle:
-      "Heated Ankle Massager Manufacturer | HUANTIVE",
+      "Heated Ankle Massager Manufacturer | OEM Wholesale Quote",
     metaDescription:
-      "Source WY-FN071 heated ankle massager with dual vibration motors, five heat levels, NTC temperature control and Type-C battery. Request OEM pricing.",
+      "Source heated ankle massagers for targeted wellness ranges. Compare fit, heat, controls, packaging, MOQ, samples and factory quotation details.",
     summary:
       "A WY-FN071 compact heated ankle massager wrap for sports recovery, senior mobility and pharmacy-channel programs.",
     images: gallery(7, 6, [1, 2, 3, 4, 5, 6]),
@@ -1485,9 +1485,9 @@ export const products: Product[] = [
     secondaryKeywords: ["microcurrent facial massager manufacturer", "beauty device OEM supplier", "private label facial massager"],
     intent: "transactional",
     metaTitle:
-      "EMS Microcurrent Facial Massager Supplier | OEM",
+      "EMS Facial Massager Supplier | OEM Private Label Quote",
     metaDescription:
-      "Source DYM-062 EMS microcurrent facial massager with vibration, heat, 2000mAh battery, Type-C charging and 40 pcs/carton packing. Request OEM quote.",
+      "Source EMS microcurrent facial massagers for private-label beauty programs. Review claims, packaging, MOQ, sample details and compliance scope.",
     summary:
       "A DYM-062 EMS microcurrent facial massager for beauty retail, skincare brands and private-label e-commerce programs.",
     images: gallery(15, 6, [1, 5, 6]),

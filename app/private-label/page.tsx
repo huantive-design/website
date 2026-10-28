@@ -4,9 +4,9 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { breadcrumbSchema, categoryFaqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Private Label Massage Devices | OEM Program Guide",
+  title: "Private Label Massage Devices | MOQ, Packaging & OEM Quote",
   description:
-    "Plan a private-label massage device program with HUANTIVE: model selection, logo, packaging, manuals, samples, MOQ, lead time, quality checks and after-sales support.",
+    "Plan a private-label massage device program with HUANTIVE. Compare model selection, logo, packaging, manuals, samples, MOQ, lead time, quality checks and factory quote details.",
   alternates: { canonical: "/private-label" },
 };
 
