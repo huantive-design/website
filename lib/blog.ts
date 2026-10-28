@@ -1,6 +1,8 @@
 import { priorityBlogPosts } from "./priorityBlogPosts";
 import { procurementBlogPosts } from "./procurementBlogPosts";
 
+export type BlogIntentGroup = "procurement" | "decision" | "informational";
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -11,6 +13,7 @@ export type BlogPost = {
   lang: string;
   intent: string;
   primaryKeyword: string;
+  intentGroup?: BlogIntentGroup;
   published: string;
   updated: string;
   readingMinutes: number;
@@ -41,6 +44,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Informational",
     primaryKeyword: "how to use a massage gun",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -180,6 +184,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "massage gun vs foam roller",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 9,
@@ -317,6 +322,7 @@ export const blogPosts: BlogPost[] = [
     lang: "de",
     intent: "Informational / Commercial",
     primaryKeyword: "Massagepistole Schadstoffe",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -451,6 +457,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "massage gun amplitude",
+    intentGroup: "decision",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -595,6 +602,7 @@ export const blogPosts: BlogPost[] = [
     lang: "de",
     intent: "Informational",
     primaryKeyword: "Massagepistole Akku wechselbar",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 7,
@@ -718,6 +726,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "neck and shoulder massager",
+    intentGroup: "decision",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -842,6 +851,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation / Transactional",
     primaryKeyword: "massage device manufacturer",
+    intentGroup: "procurement",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 11,
@@ -992,6 +1002,7 @@ export const blogPosts: BlogPost[] = [
     lang: "fr",
     intent: "Informational",
     primaryKeyword: "pistolet de massage avis",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -1125,6 +1136,7 @@ export const blogPosts: BlogPost[] = [
     lang: "it",
     intent: "Informational / Commercial",
     primaryKeyword: "pistola massaggiante",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -1259,6 +1271,7 @@ export const blogPosts: BlogPost[] = [
     lang: "es",
     intent: "Informational",
     primaryKeyword: "pistola de masaje",
+    intentGroup: "informational",
     published: "2026-10-02",
     updated: "2026-10-02",
     readingMinutes: 8,
@@ -1390,6 +1403,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "air compression leg massager",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 9,
@@ -1523,6 +1537,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "wearable neck massager",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 8,
@@ -1643,6 +1658,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "heated lumbar massager belt",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 9,
@@ -1766,6 +1782,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "EMS facial massager",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 9,
@@ -1896,6 +1913,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "shiatsu foot massager",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 9,
@@ -2022,6 +2040,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "massager import duty",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 9,
@@ -2147,6 +2166,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "massager factory audit",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 10,
@@ -2278,6 +2298,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "AQL inspection massage device",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 10,
@@ -2412,6 +2433,7 @@ export const blogPosts: BlogPost[] = [
     lang: "en",
     intent: "Commercial investigation",
     primaryKeyword: "GPSR compliance massage device",
+    intentGroup: "decision",
     published: "2026-10-07",
     updated: "2026-10-07",
     readingMinutes: 11,

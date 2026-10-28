@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { blogPosts } from "@/lib/blog";
+import { blogPosts, type BlogIntentGroup, type BlogPost } from "@/lib/blog";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -11,8 +11,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
+const groupConfig: Record<BlogIntentGroup, { title: string; intro: string }> = {
+  procurement: {
+    title: "Manufacturer, OEM, MOQ and wholesale guides",
+    intro: "Core pages for visitors already comparing suppliers, customization scope, MOQ, wholesale terms and RFQ requirements.",
+  },
+  decision: {
+    title: "Model comparison, cost, packaging and quality checks",
+    intro: "Keep these guides deep and practical so buyers can compare product fit, landed cost, testing records, packaging routes and launch risk.",
+  },
+  informational: {
+    title: "Safety, usage and general product research",
+    intro: "These articles can bring useful discovery traffic, but they are not treated as primary inquiry KPIs; they route qualified buyers toward products and sourcing pages.",
+  },
+};
+
+function groupPosts(posts: BlogPost[], group: BlogIntentGroup) {
+  return posts.filter((post) => post.intentGroup === group);
+}
+
 export default function BlogIndexPage() {
-  const [lead, ...rest] = blogPosts;
+  const procurementPosts = groupPosts(blogPosts, "procurement");
+  const decisionPosts = groupPosts(blogPosts, "decision");
+  const informationalPosts = groupPosts(blogPosts, "informational");
+  const [lead, ...rest] = procurementPosts.length ? procurementPosts : blogPosts;
 
   return (
     <>
@@ -43,21 +65,39 @@ export default function BlogIndexPage() {
       </section>
 
       <section className="shell blog-grid-wrap">
-        <h2 className="blog-section-title">All articles</h2>
-        <div className="blog-grid">
-          {rest.map((post) => (
-            <Link className="blog-card" key={post.slug} href={`/blog/${post.slug}`}>
-              <div className="blog-card-media">
-                <Image src={post.cover} alt={post.coverAlt} width={600} height={600} sizes="(max-width: 700px) 100vw, 33vw" />
+        <h2 className="blog-section-title">Articles by buyer intent</h2>
+        {[
+          ["procurement", rest],
+          ["decision", decisionPosts],
+          ["informational", informationalPosts],
+        ].map(([group, posts]) => {
+          const typedGroup = group as BlogIntentGroup;
+          const typedPosts = posts as BlogPost[];
+          if (!typedPosts.length) return null;
+          return (
+            <section className="blog-intent-section" key={typedGroup} aria-labelledby={`blog-${typedGroup}`}>
+              <div className="blog-intent-head">
+                <span className="blog-flag">{typedGroup === "procurement" ? "Core RFQ intent" : typedGroup === "decision" ? "Buyer decision support" : "Discovery traffic"}</span>
+                <h3 id={`blog-${typedGroup}`}>{groupConfig[typedGroup].title}</h3>
+                <p>{groupConfig[typedGroup].intro}</p>
               </div>
-              <div className="blog-card-body">
-                <span className="blog-flag">{post.market} · {post.readingMinutes} min</span>
-                <h3>{post.title}</h3>
-                <p>{post.excerpt}</p>
+              <div className="blog-grid">
+                {typedPosts.map((post) => (
+                  <Link className="blog-card" key={post.slug} href={`/blog/${post.slug}`}>
+                    <div className="blog-card-media">
+                      <Image src={post.cover} alt={post.coverAlt} width={600} height={600} sizes="(max-width: 700px) 100vw, 33vw" />
+                    </div>
+                    <div className="blog-card-body">
+                      <span className="blog-flag">{post.market} · {post.readingMinutes} min</span>
+                      <h3>{post.title}</h3>
+                      <p>{post.excerpt}</p>
+                    </div>
+                  </Link>
+                ))}
               </div>
-            </Link>
-          ))}
-        </div>
+            </section>
+          );
+        })}
       </section>
 
       <section className="blog-note">

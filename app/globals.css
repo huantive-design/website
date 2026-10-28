@@ -70,6 +70,10 @@ body{background:var(--tb-bg)}
 .blog-more{font:700 14px "Manrope",sans-serif;border-bottom:2px solid var(--tb-ink);padding-bottom:2px}
 .blog-grid-wrap{padding:56px 0 72px}
 .blog-section-title{font:800 26px/1.2 "Manrope",sans-serif;letter-spacing:-.02em;margin:0 0 28px}
+.blog-intent-section{margin:0 0 52px}
+.blog-intent-head{max-width:760px;margin:0 0 22px}
+.blog-intent-head h3{font:800 clamp(22px,2.4vw,30px)/1.18 "Manrope",sans-serif;letter-spacing:-.02em;margin:10px 0 10px}
+.blog-intent-head p{color:var(--tb-muted);line-height:1.65;margin:0}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .blog-card{display:flex;flex-direction:column;border:1px solid var(--tb-line);border-radius:4px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;background:#fff}
 .blog-card:hover{border-color:var(--tb-ink);transform:translateY(-3px)}
@@ -93,6 +97,12 @@ body{background:var(--tb-bg)}
 .post-cover{background:var(--tb-soft);padding:0 0 48px}
 .post-cover img{width:100%;max-height:520px;object-fit:contain;background:#fff;border-radius:4px}
 .post-body{max-width:760px;padding:56px 0 24px}
+.post-path-note{margin:0 0 42px;padding:24px 26px;background:#f3f0e8;border:1px solid var(--tb-line);border-left:4px solid var(--tb-ink)}
+.post-path-note h2{font:800 clamp(20px,2vw,26px)/1.2 "Manrope",sans-serif;letter-spacing:-.02em;margin:10px 0 10px}
+.post-path-note p{color:#3f4648;line-height:1.65;margin:0 0 18px}
+.post-path-note div{display:flex;gap:10px;flex-wrap:wrap}
+.post-path-note a{font:700 13px "Manrope",sans-serif;padding:11px 14px;border:1px solid var(--tb-ink);background:#fff}
+.post-path-note a:first-child{background:var(--tb-ink);color:#fff}
 .post-section{margin:0 0 44px}
 .post-section h2{font:800 clamp(22px,2.4vw,30px)/1.2 "Manrope",sans-serif;letter-spacing:-.02em;margin:0 0 18px}
 .post-section p{font-size:17px;line-height:1.75;color:#2c2c2c;margin:0 0 18px}
@@ -138,8 +148,8 @@ body{background:var(--tb-bg)}
   .post-head{padding:36px 0 30px}
   .post-body{padding:36px 0 16px}
   .post-section p,.post-section li{font-size:16px}
-  .post-cta{padding:26px 22px}
-  .post-cta-actions a{width:100%;text-align:center}
+  .post-cta,.post-path-note{padding:26px 22px}
+  .post-cta-actions a,.post-path-note a{width:100%;text-align:center}
 }
 
 /* Hero background video — matches the previous still-image framing exactly */

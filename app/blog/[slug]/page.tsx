@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { blogPosts, getPost, otherPosts } from "@/lib/blog";
+import { blogPosts, getPost, otherPosts, type BlogIntentGroup } from "@/lib/blog";
 import { getCategory } from "@/lib/products";
 import { articleSchema, blogFaqSchema, breadcrumbSchema } from "@/lib/schema";
 
@@ -47,6 +47,30 @@ const labels: Record<string, { faq: string; links: string; sources: string; disc
   },
 };
 
+const pathPrompts: Record<BlogIntentGroup, { label: string; title: string; body: string; primary: { label: string; href: string }; secondary: { label: string; href: string } }> = {
+  procurement: {
+    label: "RFQ-ready topic",
+    title: "Use this article as a quotation checklist.",
+    body: "This page targets manufacturer, OEM, MOQ, wholesale or supplier-selection intent. If you are comparing factories, move from the article into model shortlisting and RFQ preparation.",
+    primary: { label: "Request OEM quotation", href: "/contact?intent=quotation" },
+    secondary: { label: "View product platforms", href: "/products" },
+  },
+  decision: {
+    label: "Buyer decision support",
+    title: "Turn the guide into a product shortlist.",
+    body: "Use the comparison points here to judge product fit, packaging scope, test evidence, landed-cost risk or quality-control requirements before selecting samples.",
+    primary: { label: "Compare product categories", href: "/products" },
+    secondary: { label: "Review OEM process", href: "/oem-odm" },
+  },
+  informational: {
+    label: "Discovery traffic",
+    title: "If you are sourcing in bulk, continue to the buyer path.",
+    body: "This article can answer consumer or safety questions. For importers, wholesalers and private-label brands, the next step is to compare product platforms, specifications and OEM options instead of stopping at general product research.",
+    primary: { label: "View massage gun platforms", href: "/products/category/massage-guns" },
+    secondary: { label: "See OEM sourcing options", href: "/oem-odm" },
+  },
+};
+
 export function generateStaticParams() { return blogPosts.map(({ slug }) => ({ slug })); }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
@@ -69,6 +93,7 @@ export default async function BlogPostPage({ params }: PostPageProps) {
   const category = getCategory(post.relatedCategory);
   const related = post.relatedPosts.map((related) => getPost(related)).filter(Boolean);
   const more = related.length ? related : otherPosts(post.slug, 2);
+  const pathPrompt = pathPrompts[post.intentGroup ?? "decision"];
 
   return (
     <article lang={post.lang}>
@@ -96,6 +121,16 @@ export default async function BlogPostPage({ params }: PostPageProps) {
       </div>
 
       <div className="shell post-body">
+        <aside className="post-path-note" aria-label="Buyer path guidance">
+          <span className="blog-flag">{pathPrompt.label}</span>
+          <h2>{pathPrompt.title}</h2>
+          <p>{pathPrompt.body}</p>
+          <div>
+            <Link href={pathPrompt.primary.href}>{pathPrompt.primary.label}</Link>
+            <Link href={pathPrompt.secondary.href}>{pathPrompt.secondary.label}</Link>
+          </div>
+        </aside>
+
         {post.sections.map((section) => (
           <section className="post-section" key={section.heading}>
             <h2>{section.heading}</h2>
