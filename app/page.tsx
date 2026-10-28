@@ -101,7 +101,7 @@ export default function Home() {
       <section className="featured-category-banner" aria-label="Featured product categories">
         {featuredCategories.map((category, index) => (
           <Link className="featured-category-card" href={category.href} key={category.label}>
-            <img src={category.image} alt={`${category.label} category`} loading={index === 0 ? "eager" : "lazy"} decoding="async" />
+            <img src={category.image} alt={`${category.label} category`} loading="lazy" decoding="async" width="900" height="1350" />
             <span className="featured-category-overlay" />
             <span className="featured-category-copy">
               <strong>{category.label}</strong>

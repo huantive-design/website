@@ -56,7 +56,7 @@ export function CertificateCarousel({ certificates }: { certificates: Certificat
 
         <div className="certificate-stage">
           <button className="certificate-main" type="button" onClick={() => setPreviewIndex(activeIndex)} aria-label="Open certificate preview">
-            <img src={activeCertificate.src} alt={activeCertificate.alt} loading="eager" decoding="async" />
+            <img src={activeCertificate.src} alt={activeCertificate.alt} loading="lazy" decoding="async" width="900" height="1260" />
           </button>
           <div className="certificate-thumbs" aria-label="Certificate thumbnails">
             {certificates.map((certificate, index) => (
@@ -68,7 +68,7 @@ export function CertificateCarousel({ certificates }: { certificates: Certificat
                 aria-label={`Show certificate ${index + 1}`}
                 aria-pressed={index === activeIndex}
               >
-                <img src={certificate.src} alt="" loading="lazy" decoding="async" />
+                <img src={certificate.src} alt="" loading="lazy" decoding="async" width="180" height="252" />
               </button>
             ))}
           </div>
@@ -79,7 +79,7 @@ export function CertificateCarousel({ certificates }: { certificates: Certificat
         <div className="certificate-lightbox" role="dialog" aria-modal="true" aria-label="Certificate image preview" onClick={() => setPreviewIndex(null)}>
           <button className="certificate-lightbox-close" type="button" onClick={() => setPreviewIndex(null)} aria-label="Close certificate preview">×</button>
           <button className="certificate-lightbox-nav certificate-lightbox-prev" type="button" onClick={(event) => { event.stopPropagation(); setPreviewIndex((previewIndex - 1 + certificates.length) % certificates.length); }} aria-label="Previous certificate">←</button>
-          <img src={certificates[previewIndex].src} alt={certificates[previewIndex].alt} onClick={(event) => event.stopPropagation()} />
+          <img src={certificates[previewIndex].src} alt={certificates[previewIndex].alt} loading="lazy" decoding="async" width="1200" height="1680" onClick={(event) => event.stopPropagation()} />
           <button className="certificate-lightbox-nav certificate-lightbox-next" type="button" onClick={(event) => { event.stopPropagation(); setPreviewIndex((previewIndex + 1) % certificates.length); }} aria-label="Next certificate">→</button>
         </div>
       )}

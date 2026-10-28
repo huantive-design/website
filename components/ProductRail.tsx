@@ -20,7 +20,7 @@ export function ProductRail({ products, idPrefix }: { products: Product[]; idPre
         {products.map((product) => (
           <article className="rail-card" key={product.slug}>
             <Link className="rail-media" href={`/products/${product.slug}`}>
-              <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 640px) 70vw, 300px" />
+              <Image src={product.images[0]} alt={product.name} fill sizes="(max-width: 640px) 70vw, 300px" loading="lazy" />
             </Link>
             <div className="rail-body">
               <p className="rail-cat">{product.category}</p>
