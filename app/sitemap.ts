@@ -12,6 +12,10 @@ const priorityBlogSlugs = new Set([
   "air-compression-recovery-boots-oem-sourcing",
   "massage-gun-specifications-oem-sampling",
   "build-wholesale-massage-device-product-range",
+  "wholesale-massage-gun-comparison-real-models",
+  "wholesale-eye-massagers-heat-air-pressure-vibration",
+  "wholesale-neck-shoulder-massagers-wy-065001-vs-wy-065141",
+  "wholesale-massage-cushions-features-carton-data",
 ]);
 
 const priorityProductSlugs = new Set([
