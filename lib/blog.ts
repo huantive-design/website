@@ -2132,7 +2132,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         q: "What do you need from us to quote accurately?",
-        a: "Destination market, target order quantity, whether you need custom branding or a custom colour, and your preferred shipping mode. Branding starts at 1,000 pieces per item and a custom colour at 2,000 pieces, so those two answers change the quotation materially.",
+        a: "Destination market, target order quantity, whether you need custom branding or a custom colour, and your preferred shipping mode. MOQ starts from 100 pieces per item, subject to actual model, current availability and customization scope, so quantity and branding requirements still change the quotation materially.",
       },
     ],
     cta: {
@@ -2241,7 +2241,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "How we answer these questions",
         paragraphs: [
-          "We manufacture in Wenzhou, Zhejiang, with a second plant in Anlu, Hubei. Branding starts at 1,000 pieces per item covering logo, manual and packaging, and a custom colour starts at 2,000 pieces per item because it requires a dedicated material run.",
+          "We manufacture in Wenzhou, Zhejiang, with a second plant in Anlu, Hubei. MOQ starts from 100 pieces per item, subject to actual model, current availability and customization scope; logo, manual, packaging or custom colour requirements are confirmed with the quotation.",
           "Every set ships with a certified adapter, car plug where applicable, user manual and colour box. Massage heads and inner modules use eco-friendly ABS. Warranty is twelve months. None of that is unusual for a serious supplier, which is precisely why you should ask every supplier to state it in writing.",
         ],
       },
