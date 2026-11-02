@@ -32,10 +32,17 @@ const scopes = [
   { title: "Accessory sets", copy: "Attachment heads, cases, chargers and bundled accessories." },
 ];
 
+const evidence = [
+  { src: "/company/showroom-product-wall.jpg", alt: "Massage device product platform wall for OEM model selection", caption: "Product platform review" },
+  { src: "/company/cutting-workshop.jpg", alt: "Material preparation process inside the massage device workshop", caption: "Workshop process" },
+  { src: "/company/inspection-area.jpg", alt: "Inspection area used for massage device quality checks", caption: "Inspection checkpoint" },
+  { src: "/company/showroom.jpg", alt: "Massage device showroom for category and packaging discussion", caption: "Showroom evaluation" },
+];
+
 const faqs = [
   { q: "What is the difference between OEM and ODM in your factory?", a: "OEM applies your brand and customization to an existing platform. ODM develops a differentiated product around your market brief, which involves additional engineering, tooling and lead time." },
   { q: "Can you develop a product that does not exist in your catalog?", a: "Yes, subject to volume and tooling commitment. Feasibility, development cost and timeline are assessed against your target price and launch date before work starts." },
-  { q: "Do you support compliance for EU, UK and North American markets?", a: "Selected products have supporting EU LVD, UK electrical safety, RoHS, REACH, FCC and UL/CSA test documentation. Applicability is confirmed by model and destination market for each order." },
+  { q: "Do you support compliance for EU, UK and North American markets?", a: "Compliance support is reviewed against the selected model, configuration, certificate holder, standard, issue date and destination market before quotation or shipment." },
   { q: "How long does a private-label program take?", a: "Lead time depends on customization depth, testing scope and production schedule. A milestone plan is issued with your quotation instead of a single published figure." },
 ];
 
@@ -70,6 +77,13 @@ export default function OemOdmPage() {
         <div className="shell">
           <div className="section-heading"><div><p className="eyebrow">One accountable process</p><h2>From brief to delivery.</h2></div><p>Every milestone is visible before the next commitment, helping you control product fit, customization, testing and delivery risk.</p></div>
           <ol className="step-list">{steps.map((step, index) => <li key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><strong>{step.title}</strong><p>{step.copy}</p></li>)}</ol>
+        </div>
+      </section>
+
+      <section className="section shell">
+        <div className="section-heading"><div><p className="eyebrow">Factory evidence</p><h2>Review the process behind the quotation.</h2></div><p>OEM decisions should be based on visible product platforms, workshop process, inspection checkpoints and model-specific documentation review.</p></div>
+        <div className="factory-gallery oem-evidence-gallery">
+          {evidence.map((item) => <figure key={item.src}><Image src={item.src} alt={item.alt} fill sizes="(max-width: 800px) 100vw, 50vw" /><figcaption>{item.caption}</figcaption></figure>)}
         </div>
       </section>
 

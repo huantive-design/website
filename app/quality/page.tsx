@@ -32,7 +32,7 @@ const checkpoints = [
 
 const evidence = [
   ["Model-specific scope", "Certificates, declarations and test reports are matched to the quoted model, certificate holder, standard, date and destination market."],
-  ["EU and UK documents", "Selected products have supporting EU LVD, UK electrical safety, RoHS and REACH documentation that must be verified by model."],
+  ["EU and UK documents", "Available EU LVD, UK electrical safety, RoHS and REACH documentation is reviewed by model, configuration and destination market."],
   ["North America checks", "Selected neck and shoulder massager models have UL/CSA testing references, and FCC documentation is available for selected models."],
   ["Factory monitoring", "The Wenzhou manufacturing site has undergone amfori BSCI monitoring; this is not a product certification."],
 ];

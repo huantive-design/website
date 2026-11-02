@@ -233,7 +233,7 @@ export default function Home() {
           <h2>Quality and compliance evidence</h2>
           <div className="tb-research-grid">
             <article>
-              <p>Selected products have supporting <strong>EU LVD, UK electrical safety, RoHS, REACH, FCC and UL/CSA</strong> test documentation. Applicability is confirmed by model and destination market.</p>
+              <p>Available certificates, declarations and test reports are reviewed by <strong>exact model, certificate holder, standard, issue date and destination market</strong> before quotation or shipment.</p>
               <Link href="/our-story">Review compliance scope →</Link>
             </article>
             <article>

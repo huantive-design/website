@@ -49,6 +49,20 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) notFound();
   const items = productsByCategory(category.slug);
   const sourcingGuides = (categoryGuideMap[category.slug] ?? []).map((guideSlug) => getPost(guideSlug)).filter(isBlogPost);
+  const massageGunComparison = category.slug === "massage-guns" ? items.map((product) => ({
+    product,
+    role:
+      product.slug === "mini-massage-gun"
+        ? "Compact retail, gifting and travel programs"
+        : product.slug === "deep-tissue-massage-gun"
+          ? "Full-size sports recovery and distributor ranges"
+          : product.slug === "hot-cold-massage-gun"
+            ? "Thermal-feature differentiation for premium recovery lines"
+            : product.slug === "cooling-massage-gun"
+              ? "Cooling-positioned performance retail and specialist channels"
+              : "Massage gun sourcing program",
+  })) : [];
+
   const faqs = [
     {
       q: `Do you support OEM and private label for ${category.name.toLowerCase()}?`,
@@ -64,7 +78,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     },
     {
       q: "Which compliance documents can you provide?",
-      a: "Selected products have supporting EU LVD, UK electrical safety, RoHS, REACH, FCC and UL/CSA test documentation. Applicability is always confirmed by model and destination market.",
+      a: "Available certificates, declarations and test reports are reviewed against the selected model, configuration, certificate holder, standard, issue date and destination market before quotation or shipment.",
     },
   ];
 
@@ -100,6 +114,30 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </div>
         <div className="product-grid">{items.map((product, index) => <ProductCard key={product.slug} product={product} index={index} />)}</div>
       </section>
+
+      {massageGunComparison.length > 0 ? (
+        <section className="section shell">
+          <div className="section-heading">
+            <div><p className="eyebrow">Massage gun comparison</p><h2>Choose by model role and verified data.</h2></div>
+            <p>Mini, deep tissue, hot-cold and cooling-positioned massage guns should not use the same purchase story. Compare the model role, available specifications and missing confirmation points before requesting samples.</p>
+          </div>
+          <div className="comparison-table-wrap">
+            <table className="comparison-table">
+              <thead><tr><th>Platform</th><th>Best-fit buyer role</th><th>Available proof on page</th><th>Quotation focus</th></tr></thead>
+              <tbody>
+                {massageGunComparison.map(({ product, role }) => (
+                  <tr key={product.slug}>
+                    <th scope="row"><Link href={`/products/${product.slug}`}>{product.name}</Link></th>
+                    <td>{role}</td>
+                    <td>{product.specs ? [product.specs.model, product.specs.battery, product.specs.power, product.specs.cartonSize].filter(Boolean).join("; ") : product.features.slice(0, 3).join("; ")}</td>
+                    <td>{product.slug === "hot-cold-massage-gun" ? "Confirm thermal-head model, temperature range, runtime, battery, package size and carton data before comparing quotations." : "Confirm logo or packaging MOQ, sample route, accessory scope, lead time and destination-market documents for the selected model."}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section section-muted">
         <div className="shell">

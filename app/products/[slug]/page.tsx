@@ -172,8 +172,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       a: "Send target quantity, destination market, required plug or voltage, logo and packaging needs, sample request, launch timeline and any retailer compliance checklist.",
     },
     {
-      q: "Are certifications shown as universal approvals?",
-      a: "No. Certificates and test reports are treated as model-specific documents. Applicability is checked by model, certificate holder, standard, issue date and destination market before quotation.",
+      q: "Are certificates and test reports shown as universal approvals?",
+      a: "No. Certificates and test reports are treated as model-specific documents, not universal approvals. Applicability is checked by model, certificate holder, standard, issue date and destination market before quotation.",
     },
   ];
 

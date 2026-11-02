@@ -13,6 +13,14 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
         <p className="card-kicker">{product.category} · B2B Manufacturer</p>
         <h3><Link href={`/products/${product.slug}`}>{product.name}</Link></h3>
         <p>{product.summary}</p>
+        {product.specs ? (
+          <dl className="card-specs">
+            <div><dt>Model</dt><dd>{product.specs.model}</dd></div>
+            {product.specs.battery ? <div><dt>Battery</dt><dd>{product.specs.battery}</dd></div> : null}
+            {product.specs.power ? <div><dt>Power</dt><dd>{product.specs.power}</dd></div> : null}
+            {product.specs.cartonSize ? <div><dt>Carton</dt><dd>{product.specs.cartonSize}</dd></div> : null}
+          </dl>
+        ) : product.procurementNotes?.[0] ? <p className="card-proof">{product.procurementNotes[0]}</p> : null}
         <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
         <div className="card-actions"><Link href={`/products/${product.slug}`}>View details</Link><Link href={`/contact?product=${product.slug}`}>Get quote →</Link></div>
       </div>
