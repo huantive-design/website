@@ -16,6 +16,9 @@ const priorityBlogSlugs = new Set([
   "wholesale-eye-massagers-heat-air-pressure-vibration",
   "wholesale-neck-shoulder-massagers-wy-065001-vs-wy-065141",
   "wholesale-massage-cushions-features-carton-data",
+  "geo-massage-device-supplier-selection-oem-wholesale",
+  "geo-private-label-massage-gun-oem-buyer-questions",
+  "geo-massage-device-quality-control-after-sales-checklist",
 ]);
 
 const priorityProductSlugs = new Set([
