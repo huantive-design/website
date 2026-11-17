@@ -190,7 +190,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     excerpt:
       "Neither is clinically proven better. But independent testing found a quality problem with massage guns that buyers should know about before spending.",
-    cover: cover(12, 1),
+    cover: "/products/hot-selling/1/image-1.png",
     coverAlt: "Deep tissue percussive massage device with attachment set",
     relatedCategory: "massage-guns",
     relatedPosts: ["how-to-use-a-massage-gun-safely", "massage-gun-amplitude-frequency-explained"],
@@ -328,7 +328,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "Elf Massagepistolen im Test, keine mit der Note gut. Der Grund liegt nicht in der Massageleistung, sondern in Schadstoffen und fest verbauten Akkus.",
-    cover: cover(14, 1),
+    cover: "/products/hot-selling/3/image-1.png",
     coverAlt: "Massagepistole mit Kuehlfunktion und Aufsaetzen",
     relatedCategory: "massage-guns",
     relatedPosts: ["massagepistole-akku-lebensdauer", "how-to-use-a-massage-gun-safely"],
@@ -732,7 +732,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "The thing that determines whether a device gets used is simpler than the feature list: does its shape suit where and how you intend to use it?",
-    cover: cover(1, 1),
+    cover: "/products/hot-selling/10/image-1.jpg",
     coverAlt: "Wearable open-neck massager for desk and travel use",
     relatedCategory: "neck-shoulder-massagers",
     relatedPosts: ["how-to-use-a-massage-gun-safely", "massage-gun-vs-foam-roller"],
@@ -2439,7 +2439,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 11,
     excerpt:
       "GPSR did not make massage devices harder to build. It made it much clearer who answers when an authority asks a question, and that person is usually the importer rather than the factory.",
-    cover: cover(14),
+    cover: "/products/hot-selling/4/image-1.png",
     coverAlt: "EMS facial massager prepared for European distribution",
     relatedCategory: "targeted-body-massagers",
     relatedPosts: ["sourcing-massage-devices-compliance-checklist", "massager-factory-audit-checklist", "ems-facial-massager-claims-and-compliance"],
