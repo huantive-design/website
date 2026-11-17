@@ -608,7 +608,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 7,
     excerpt:
       "Wenn der Akku ausfaellt, ist das ganze Geraet unbrauchbar, auch wenn Motor und Gehaeuse noch einwandfrei funktionieren.",
-    cover: cover(12, 2),
+    cover: "/products/hot-selling/2/image-1.jpg",
     coverAlt: "Massagepistole mit Akku und Aufsatzset fuer Lebensdauerbewertung",
     relatedCategory: "massage-guns",
     relatedPosts: ["massagepistole-schadstoffe", "sourcing-massage-devices-compliance-checklist"],
@@ -1142,7 +1142,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     excerpt:
       "Undici pistole massaggianti testate, nessuna con giudizio buono. Non e un motivo per escluderle: e un motivo per sapere cosa verificare.",
-    cover: cover(12, 3),
+    cover: "/products/hot-selling/3/image-1.png",
     coverAlt: "Pistola massaggiante con accessori per guida all'acquisto",
     relatedCategory: "massage-guns",
     relatedPosts: ["massage-gun-amplitude-frequency-explained", "how-to-use-a-massage-gun-safely"],
