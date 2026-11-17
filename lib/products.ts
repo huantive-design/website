@@ -40,8 +40,8 @@ export type ProductSpecs = {
  * change to MOQ, lead time or warranty never has to be edited product by product.
  */
 export const tradeTerms = {
-  moqBranding: "MOQ starts from 100 pcs per item, subject to actual model and customization scope",
-  moqColor: "MOQ starts from 100 pcs per item, subject to actual model and customization scope",
+  moqBranding: "MOQ tiers: 100 / 200 / 500 pcs, subject to actual model and customization scope",
+  moqColor: "Logo, packaging, manual and color requirements are quoted against the selected 100 / 200 / 500 pcs tier",
   accessoryScope: "Included accessories are confirmed by selected model, bill of materials and approved quotation",
   packagingScope: "Retail box, manual language, carton data and private-label artwork are confirmed by model and order scope",
   complianceScope: "Applicable test reports and conformity documents are confirmed by exact model, certificate holder, standard, date and destination market before quotation",

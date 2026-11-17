@@ -70,7 +70,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     },
     {
       q: "What is the minimum order quantity?",
-      a: "MOQ starts from 100 pcs, subject to actual model, customization scope and destination market, and is confirmed in writing with your quotation.",
+      a: "MOQ tiers are 100 / 200 / 500 pcs, subject to actual model, customization scope and destination market, and is confirmed in writing with your quotation.",
     },
     {
       q: "Can we order samples before production?",

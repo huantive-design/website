@@ -24,6 +24,9 @@ const fields: Field[] = [
   { key: "phone", label: "Phone / WhatsApp", required: false },
   { key: "intent", label: "Enquiry type", required: false },
   { key: "product", label: "Product or category", required: false },
+  { key: "moqTier", label: "MOQ tier", required: false },
+  { key: "market", label: "Target market", required: false },
+  { key: "sourceUrl", label: "Source URL", required: false },
   { key: "message", label: "Message", required: false },
 ];
 

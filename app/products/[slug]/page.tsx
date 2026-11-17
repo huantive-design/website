@@ -189,7 +189,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
         { name: product.name, path: `/products/${product.slug}` },
       ])) }} />
 
-      <section className="product-hero section"><div className="shell product-hero-grid">
+      <section className="product-hero section"><div className="shell product-hero-rfq-strip">
+        <div><span>MOQ tiers</span><strong>100 / 200 / 500 pcs</strong><small>Stock, OEM and private-label quotation by model.</small></div>
+        <TrackedLink className="button button-primary" href={`/contact?intent=quotation&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_hero_top", label: product.slug }}>Get MOQ &amp; Lead Time</TrackedLink>
+      </div><div className="shell product-hero-grid">
         <ProductGallery images={product.images} alts={product.imageAlts} productName={product.name} />
         <div className="product-info">
           <nav className="crumbs" aria-label="Breadcrumb">
@@ -203,19 +206,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <dl className="quick-specs">
             {product.specs?.model ? <div><dt>Model</dt><dd>{product.specs.model}</dd></div> : null}
             <div><dt>Product category</dt><dd><Link href={`/products/category/${product.categorySlug}`}>{product.category}</Link></dd></div>
+            <div><dt>MOQ tiers</dt><dd>100 / 200 / 500 pcs</dd></div>
             <div><dt>Business model</dt><dd>OEM / ODM / private label</dd></div>
-            <div><dt>Sales enquiries</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
           </dl>
-          <div className="button-row product-cta-row">
+          <div className="button-row product-cta-row hero-cta-visible">
             <TrackedLink className="button button-primary" href={`/contact?intent=quotation&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_hero", label: product.slug }}>Get MOQ &amp; Lead Time</TrackedLink>
             <TrackedLink className="button button-secondary" href={`/contact?intent=oem&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_hero", label: `${product.slug}:oem` }}>Ask OEM Options</TrackedLink>
-            <TrackedLink className="button button-secondary" href={whatsappLink} target="_blank" rel="noopener noreferrer" tracking={{ event: "whatsapp_click", category: "product_hero", label: product.slug }}>WhatsApp Supplier</TrackedLink>
           </div>
-          <p className="quote-promise">Send the model and target quantity. We reply with MOQ, lead time, packaging options and available compliance documents.</p>
+          <p className="quote-promise">Choose a 100 / 200 / 500 pcs MOQ tier and send the model. We reply with lead time, sample route, packaging options and available compliance documents.</p>
           <div className="buyer-summary-card" aria-label="B2B sourcing summary">
             <div><span>Best-fit buyers</span><strong>{product.applications.slice(0, 3).join(" / ")}</strong></div>
             <div><span>Factory program</span><strong>OEM / ODM / private label</strong></div>
-            <div><span>Quotation scope</span><strong>MOQ, sample, packaging, lead time</strong></div>
+            <div><span>MOQ tiers</span><strong>100 / 200 / 500 pcs</strong></div>
             <div><span>Document review</span><strong>By model and destination market</strong></div>
           </div>
         </div>
@@ -275,8 +277,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="section section-muted"><div className="shell">
         <div className="section-heading"><div><p className="eyebrow">Ordering terms</p><h2>Factory terms for this product range.</h2></div><p>Commercial terms are confirmed by selected model, customization scope, destination market and approved quotation.</p></div>
         <dl className="terms-grid">
-          <div><dt>Branding MOQ</dt><dd>{tradeTerms.moqBranding}</dd></div>
-          <div><dt>Custom colour MOQ</dt><dd>{tradeTerms.moqColor}</dd></div>
+          <div><dt>MOQ tiers</dt><dd>{tradeTerms.moqBranding}</dd></div>
+          <div><dt>Customization scope</dt><dd>{tradeTerms.moqColor}</dd></div>
           <div><dt>Production lead time</dt><dd>{tradeTerms.leadTime}</dd></div>
           <div><dt>Warranty</dt><dd>{tradeTerms.warranty}</dd></div>
           <div><dt>Accessory set</dt><dd>{tradeTerms.accessoryScope}</dd></div>
@@ -313,7 +315,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <section className="section section-muted"><div className="shell">
         <div className="section-heading"><div><p className="eyebrow">RFQ checklist</p><h2>Send the details buyers usually compare.</h2></div><p>Including these items helps us answer with a model-specific quotation instead of a generic catalogue reply.</p></div>
         <div className="scope-grid">
-          <article><strong>Product and quantity</strong><p>Target model, estimated first order quantity, sample requirement and expected launch window.</p></article>
+          <article><strong>Product and MOQ tier</strong><p>Target model, 100 / 200 / 500 pcs tier, sample requirement and expected launch window.</p></article>
           <article><strong>Market and compliance</strong><p>Destination country, voltage or plug needs, document requirements and retailer onboarding checks.</p></article>
           <article><strong>Branding scope</strong><p>Logo, colour, manual language, packaging artwork, accessory set and any private-label changes.</p></article>
         </div>
@@ -359,8 +361,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
       )}
 
       <section className="section final-rfq"><div className="shell rfq-layout">
-        <div><p className="eyebrow eyebrow-light">Factory quote</p><h2>Get MOQ, lead time and OEM options.</h2><p>Tell us the product and your approximate quantity. We will reply with the available specification, MOQ, sample option, packaging route, lead time and applicable compliance documents.</p></div>
-        <InquiryForm compact defaultProduct={product.name} defaultMessage={`Please send MOQ, sample cost, lead time, packaging options and applicable compliance documents for ${product.name}.`} />
+        <div><p className="eyebrow eyebrow-light">Factory quote</p><h2>Get MOQ, lead time and OEM options.</h2><p>Tell us the product and choose a 100 / 200 / 500 pcs tier. We will reply with the available specification, sample option, packaging route, lead time and applicable compliance documents.</p></div>
+        <InquiryForm compact defaultProduct={product.name} defaultMessage={`Please send the suitable 100 / 200 / 500 pcs MOQ tier, sample cost, lead time, packaging options and applicable compliance documents for ${product.name}.`} />
       </div></section>
     </>
   );
