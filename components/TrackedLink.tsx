@@ -29,13 +29,26 @@ declare global {
 
 export function trackConversion({ event, category, label, value }: TrackingPayload) {
   if (typeof window === "undefined") return;
+  const payload = { event_category: category, event_label: label, value };
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, event_category: category, event_label: label, value });
-  window.gtag?.("event", event, {
-    event_category: category,
-    event_label: label,
-    value,
-  });
+  window.dataLayer.push({ event, ...payload });
+  window.gtag?.("event", event, payload);
+
+  if (["form_submit", "whatsapp_click", "email_click"].includes(event)) {
+    window.dataLayer.push({ event: "generate_lead", lead_source: category, lead_label: label });
+    window.gtag?.("event", "generate_lead", {
+      event_category: category,
+      event_label: label,
+      method: event,
+    });
+  }
+
+  if (event === "quote_click") {
+    window.gtag?.("event", "lead_intent", {
+      event_category: category,
+      event_label: label,
+    });
+  }
 }
 
 export function TrackedLink({ href, children, tracking, onClick, ...props }: TrackedLinkProps) {

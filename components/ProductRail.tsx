@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { TrackedLink } from "@/components/TrackedLink";
 import type { Product } from "@/lib/products";
 
 export function ProductRail({ products, idPrefix }: { products: Product[]; idPrefix: string }) {
@@ -27,7 +28,7 @@ export function ProductRail({ products, idPrefix }: { products: Product[]; idPre
               <h3><Link href={`/products/${product.slug}`}>{product.name}</Link></h3>
               <p className="rail-desc">{product.summary}</p>
               <div className="rail-actions">
-                <Link href={`/contact?product=${product.slug}`}>Request quote</Link>
+                <TrackedLink href={`/contact?intent=quotation&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_rail", label: product.slug }}>Request quote</TrackedLink>
                 <Link className="rail-secondary" href={`/products/${product.slug}`}>Details</Link>
               </div>
             </div>

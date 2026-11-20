@@ -74,10 +74,12 @@ export function InquiryForm({
       <label>MOQ tier<select name="moqTier" defaultValue=""><option value="">Select if known</option><option value="100 pcs">100 pcs trial order</option><option value="200 pcs">200 pcs small wholesale</option><option value="500 pcs">500 pcs bulk / private-label planning</option></select></label>
       <label>Target market<input name="market" placeholder="US, UK, EU or other" /></label>
       <label>Message<textarea name="message" rows={compact ? 3 : 4} defaultValue={defaultMessage} placeholder="Which product are you interested in? Quantity or customization can be added if available." /></label>
+      <label>Requirement file<input name="file" type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" /></label>
       <input className="honeypot" name="website" tabIndex={-1} autoComplete="off" />
       <button className="button button-primary" disabled={state === "sending"}>
         {state === "sending" ? "Sending..." : "Get MOQ & Lead Time"}
       </button>
+      <p className="rfq-microcopy">No account is required. A product model, target quantity or destination market is enough for the first quotation reply.</p>
       {state === "success" && (
         <p className="form-status success">
           Thank you. Your inquiry has been sent to our sales team — we reply within 24 hours on business days.

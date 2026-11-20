@@ -1324,3 +1324,18 @@ body{background:var(--tb-bg)}
 .product-hero-rfq-strip small{color:#526067;font-size:14px}
 .product-hero-rfq-strip .button{min-height:42px;white-space:nowrap}
 @media(max-width:640px){.product-hero-rfq-strip{display:grid;gap:12px;margin-bottom:16px;padding:14px}.product-hero-rfq-strip div{display:grid;gap:3px}.product-hero-rfq-strip .button{width:100%}}
+
+/* Conversion optimization: make RFQ routes and buyer reassurance visible earlier. */
+.home-rfq-shortcut{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-block:18px;padding:18px 20px;background:#111515;color:#fff;border-radius:3px;box-shadow:0 18px 42px rgba(0,0,0,.12)}
+.home-rfq-shortcut div{display:grid;gap:5px}
+.home-rfq-shortcut span{font:800 11px "Manrope";letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.home-rfq-shortcut strong{font:700 clamp(16px,1.8vw,22px)/1.35 "Manrope";max-width:760px}
+.home-rfq-shortcut .button{background:#fff;color:#111515;border-color:#fff;white-space:nowrap}
+.blog-head-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.blog-head-actions .button-secondary{background:#fff;color:var(--tb-ink);border-color:var(--tb-line)}
+.contact-trust-box{margin:24px 0;padding:18px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:4px}
+.contact-trust-box strong{display:block;margin-bottom:10px;font:700 16px "Manrope"}
+.contact-trust-box ul{margin:0;padding-left:19px;color:rgba(255,255,255,.78)}
+.contact-trust-box li{margin:0 0 6px}
+.rfq-microcopy{margin:10px 0 0;color:var(--tb-muted);font-size:13px;line-height:1.45}
+@media(max-width:640px){.home-rfq-shortcut{display:grid;margin-block:12px;padding:16px}.home-rfq-shortcut .button,.blog-head-actions .button{width:100%}}

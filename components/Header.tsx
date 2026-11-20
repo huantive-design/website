@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { TrackedContactLink } from "@/components/TrackedContactLink";
+import { TrackedLink } from "@/components/TrackedLink";
 import { categories } from "@/lib/products";
 import { megaMenuSolutions, navigation, site, whatsappLink } from "@/lib/site";
 
@@ -20,7 +22,7 @@ export function Header() {
       {banner && (
         <div className="promo-bar">
           <div className="shell promo-inner">
-            <p>OEM &amp; ODM massage device programs for Europe and North America — <Link href="/contact">request a quote</Link></p>
+            <p>OEM &amp; ODM massage device programs for Europe and North America — <TrackedLink href="/contact?intent=quotation" tracking={{ event: "quote_click", category: "promo_bar", label: "request_quote" }}>request a quote</TrackedLink></p>
             <button type="button" onClick={() => setBanner(false)} aria-label="Dismiss announcement">×</button>
           </div>
         </div>
@@ -71,7 +73,7 @@ export function Header() {
           </nav>
 
           <div className="header-actions">
-            <Link className="header-quote" href="/contact?intent=quotation">Request a Quote</Link>
+            <TrackedLink className="header-quote" href="/contact?intent=quotation" tracking={{ event: "quote_click", category: "header", label: "request_quote" }}>Request a Quote</TrackedLink>
             <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-navigation">
               <span /> <span />
               <span className="sr-only">Toggle navigation</span>
@@ -79,8 +81,8 @@ export function Header() {
           </div>
         </div>
         <div className="header-contact-strip" aria-label="Sales contact">
-          <a href={`mailto:${site.email}`}><span aria-hidden="true">✉</span>{site.email}</a>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span><strong>WhatsApp:</strong> {site.whatsapp}</a>
+          <TrackedContactLink href={`mailto:${site.email}`} event="email_click" category="header_contact" label="email"><span aria-hidden="true">✉</span>{site.email}</TrackedContactLink>
+          <TrackedContactLink href={whatsappLink} target="_blank" rel="noopener noreferrer" event="whatsapp_click" category="header_contact" label="whatsapp"><span aria-hidden="true">◉</span><strong>WhatsApp:</strong> {site.whatsapp}</TrackedContactLink>
         </div>
       </header>
     </>

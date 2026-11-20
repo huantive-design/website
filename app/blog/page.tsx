@@ -5,9 +5,9 @@ import { blogPosts, type BlogIntentGroup, type BlogPost } from "@/lib/blog";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Blog | Massage Device Manufacturing, OEM and Sourcing Guides",
+  title: "Massage Device OEM Sourcing Guides | MOQ, Factory & Wholesale",
   description:
-    "B2B guides for massage device sourcing, OEM and ODM manufacturing, wholesale specifications, private-label programs, compliance and safe product selection.",
+    "Practical massage device OEM sourcing guides for importers and distributors comparing factories, MOQ, private-label options, samples, packaging, compliance and lead time.",
   alternates: { canonical: "/blog" },
 };
 
@@ -43,10 +43,14 @@ export default function BlogIndexPage() {
       <section className="blog-head">
         <div className="shell">
           <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><span>Blog</span></nav>
-          <h1>Massage device manufacturing, OEM and sourcing guides</h1>
+          <h1>Massage device OEM sourcing guides for importers</h1>
           <p className="blog-lede">
-            B2B buying guides for massage guns, neck massagers, air compression leg massagers, OEM/ODM programs, wholesale specifications and compliance-aware product selection.
+            Compare massage device factories, MOQ tiers, sample routes, private-label packaging, compliance documents and lead time before sending a quotation request.
           </p>
+          <div className="blog-head-actions">
+            <Link className="button button-primary" href="/contact?intent=quotation">Request OEM quotation</Link>
+            <Link className="button button-secondary" href="/products">Compare product platforms</Link>
+          </div>
         </div>
       </section>
 

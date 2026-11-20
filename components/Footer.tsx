@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { TrackedContactLink } from "@/components/TrackedContactLink";
+import { TrackedLink } from "@/components/TrackedLink";
 import { categories } from "@/lib/products";
 import { site, whatsappLink } from "@/lib/site";
 
@@ -14,15 +16,15 @@ export function Footer() {
         <div><h3>Company</h3><Link href="/products">All Products</Link><Link href="/oem-odm">OEM & ODM</Link><Link href="/sourcing">Sourcing</Link><Link href="/private-label">Private Label</Link><Link href="/wholesale">Wholesale</Link><Link href="/compliance">Compliance</Link><Link href="/blog">Blog</Link><Link href="/our-story">Our Story</Link><Link href="/manufacturing">Manufacturing</Link><Link href="/quality">Quality</Link></div>
         <div className="footer-connect">
           <h3>Contact us</h3>
-          <a href={`mailto:${site.email}`}>
+          <TrackedContactLink href={`mailto:${site.email}`} event="email_click" category="footer_contact" label="email">
             <span className="connect-label">Email</span>
             <span className="connect-value">{site.email}</span>
-          </a>
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+          </TrackedContactLink>
+          <TrackedContactLink href={whatsappLink} target="_blank" rel="noopener noreferrer" event="whatsapp_click" category="footer_contact" label="whatsapp">
             <span className="connect-label">WhatsApp</span>
             <span className="connect-value">{site.whatsapp}</span>
-          </a>
-          <Link className="connect-cta" href="/contact">Request a quote →</Link>
+          </TrackedContactLink>
+          <TrackedLink className="connect-cta" href="/contact?intent=quotation" tracking={{ event: "quote_click", category: "footer", label: "request_quote" }}>Request a quote →</TrackedLink>
         </div>
       </div>
       <div className="shell footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>{site.manufacturer}</span></div>

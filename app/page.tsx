@@ -5,6 +5,7 @@ import { CertificateCarousel } from "@/components/CertificateCarousel";
 import { ContentCarousel } from "@/components/ContentCarousel";
 import { HeroVideo } from "@/components/HeroVideo";
 import { ProductRail } from "@/components/ProductRail";
+import { TrackedLink } from "@/components/TrackedLink";
 import { procurementBlogPosts } from "@/lib/procurementBlogPosts";
 import { categories, products } from "@/lib/products";
 import { categoryFaqSchema, organizationSchema, websiteSchema } from "@/lib/schema";
@@ -91,11 +92,19 @@ export default function Home() {
             <h1>Massage device manufacturer for OEM &amp; wholesale buyers</h1>
             <p>Source massage guns, neck and shoulder massagers, foot and leg recovery devices, pillows and targeted massagers from a China factory serving private-label, retail and distribution programs.</p>
             <div className="tb-hero-actions">
-              <Link className="button button-dark" href="/contact?intent=quotation">Request factory quote</Link>
-              <Link className="button button-outline" href="/oem-odm">Review OEM process</Link>
+              <TrackedLink className="button button-dark" href="/contact?intent=quotation" tracking={{ event: "quote_click", category: "home_hero", label: "factory_quote" }}>Request factory quote</TrackedLink>
+              <TrackedLink className="button button-outline" href="/contact?intent=sample" tracking={{ event: "quote_click", category: "home_hero", label: "sample_and_moq" }}>Get sample & MOQ</TrackedLink>
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="home-rfq-shortcut shell" aria-label="Fast quotation path">
+        <div>
+          <span>Fast RFQ route</span>
+          <strong>Send product direction, MOQ tier and target market — get model fit, lead time and packaging scope.</strong>
+        </div>
+        <TrackedLink className="button button-dark" href="/contact?intent=quotation" tracking={{ event: "quote_click", category: "home_rfq_shortcut", label: "fast_rfq" }}>Get MOQ &amp; Lead Time</TrackedLink>
       </section>
 
       <section className="featured-category-banner" aria-label="Featured product categories">
@@ -208,7 +217,7 @@ export default function Home() {
             <p className="tb-tag">Find your product fit</p>
             <h2>Not sure which platform suits your market?</h2>
             <p>Send your target channel, price position and estimated quantity. We match your brief to an existing platform or propose a differentiated development route.</p>
-            <Link className="button button-dark" href="/contact?intent=oem">Discuss your brief</Link>
+            <TrackedLink className="button button-dark" href="/contact?intent=oem" tracking={{ event: "quote_click", category: "home_finder", label: "brief_match" }}>Discuss your brief</TrackedLink>
           </div>
         </div>
       </section>

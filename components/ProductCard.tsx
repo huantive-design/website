@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TrackedLink } from "@/components/TrackedLink";
 import type { Product } from "@/lib/products";
 
 export function ProductCard({ product, index = 0 }: { product: Product; index?: number }) {
@@ -22,7 +23,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           </dl>
         ) : product.procurementNotes?.[0] ? <p className="card-proof">{product.procurementNotes[0]}</p> : null}
         <div className="tag-list">{product.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-        <div className="card-actions"><Link href={`/products/${product.slug}`}>View details</Link><Link href={`/contact?product=${product.slug}`}>Get quote →</Link></div>
+        <div className="card-actions"><Link href={`/products/${product.slug}`}>View details</Link><TrackedLink href={`/contact?intent=quotation&product=${product.slug}`} tracking={{ event: "quote_click", category: "product_card", label: product.slug }}>Get quote →</TrackedLink></div>
       </div>
     </article>
   );
